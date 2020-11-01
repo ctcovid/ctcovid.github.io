@@ -1,7 +1,7 @@
 <p><strong><a href="/">&laquo; Go Back To The Data</a></strong></p>
 
 <h1>Privacy Policy for CTCOVID.com</h1>
-<p>Last Updated: April 18, 2020</p>
+<p>Last Updated: November 1, 2020</p>
 
 <hr/>
 
@@ -11,7 +11,7 @@
 
 <h3>The Information We Collect</h3>
 
-<p>When you visit our website, CTCOVID.com and our analytics provider, <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener nofollow">Google Analytics</a>, collect information (log data) that is automatically provided by your internet service provider, operating system, browser, hardware and software on your device.</p>
+<p>When you visit our website, CTCOVID.com, our web hosting provider, and our analytics provider, <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener nofollow">Google Analytics</a>, collect information (log data) that is automatically provided by your internet service provider, operating system, browser, hardware and software on your device.</p>
 
 <p>It is possible to use log data to derive other information that is not automatically provided to us. The type of information that is logged and/or derived includes, but may not be limited to:</p>
 
@@ -63,24 +63,6 @@
 <h3>Cookies and Web Beacons</h3>
 
 <p>CTCOVID.com uses cookies and local storage to store information about visitors' preferences, to record user-specific information on which pages the site visitor accesses or visits, and to personalize or customize our web page content based upon visitors' browser type or other information that the visitor sends via their browser.</p>
-
-<!--
-<h3>Our Advertising Partners</h3>
-
-<p>Some of our advertising partners may use cookies and web beacons on our site. Our advertising partners include Google. You may consult the Google Ads privacy policy located here: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener nofollow">https://policies.google.com/technologies/ads</a></p>
-
-<p>These third-party ad servers or ad networks use technology in their respective advertisements and links that appear on CTCOVID.com and which are sent directly to your browser. They automatically receive your IP address when this occurs. Other technologies (such as cookies, JavaScript, or Web Beacons) may also be used by our site's third-party ad networks to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on the site.</p>
-
-<p>CTCOVID.com has no access to or control over these cookies that are used by third-party advertisers.</p>
-
-<p>For more information about the types of advertisements located on this website, please visit <a href="http://www.aboutads.info/choices/" target="_blank" rel="noopener nofollow">http://www.aboutads.info/choices/</a>.</p>
-
-<h3>DoubleClick DART Cookie</h3>
-
-<p>Google, as a third party vendor, uses cookies to serve ads on CTCOVID.com. Google's use of the DART cookie enables it to serve ads to our site's visitors based upon their visit to CTCOVID.com and other sites on the Internet.</p>
-
-<p>Users may opt out of the use of the DART cookie by visiting the Google ad and content network privacy policy at the following URL: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener nofollow">https://policies.google.com/technologies/ads</a></p>
--->
 
 <h3>Third Party Privacy Policies</h3><p>
 	
