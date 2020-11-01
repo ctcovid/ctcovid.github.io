@@ -570,14 +570,10 @@ var COVID_Tracker = function(city) {
 		if(page != 'page') {
 			document.querySelector("article").innerHTML = '';
 			document.querySelector("article").style.display = 'none';
-			document.querySelector("section#top").style.display = 'none';
-			document.querySelector("section#twitter").style.display = 'none';
 			document.querySelector("main").style.display = 'block';
 		} else {
 			document.querySelector("article").innerHTML = '<div class="container">' + data + '</div>';
 			document.querySelector("article").style.display = 'block';
-			document.querySelector("section#top").style.display = 'block';
-			document.querySelector("section#twitter").style.display = 'block';
 			document.querySelector("main").style.display = 'none';
 		}
 	};
