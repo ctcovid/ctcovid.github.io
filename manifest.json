@@ -1,0 +1,22 @@
+{
+  "name": "CT COVID",
+  "short_name": "CT COVID",
+  "theme_color": "#1f70ad",
+  "background_color": "#ffffff",
+  "display": "minimal-ui",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/icons/192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icons/512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+<p><strong><a href="/">&laquo; Go Back To The Data</a></strong></p>
+
+<h1>Attribution</h1>
+
+<p>CTCOVID.com would like to thank the following projects and services for allowing this website to be possible:</p>
+
+<ul>
+	<li><a href="https://www.chartjs.org" target="_blank" rel="noopener nofollow">Chart.js</a><br />We use Chart.js as our graphing library. (<a href="/licenses/chartjs.txt" rel="nofollow">License</a>)<br />&nbsp;</li>
+	
+	<li><a href="https://github.com/emn178/chartjs-plugin-labels" target="_blank" rel="noopener nofollow">Chart.js Labels</a><br />We use this for showing labels on our Chart.js doughnut graphs. Chart.js Label Plug-In is released under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener nofollow">MIT License</a><br />&nbsp;</li>
+	
+	<li><a href="https://github.com/Makanz/chartjs-plugin-trendline" target="_blank" rel="noopener nofollow">Chart.js Trendline Plug-In</a><br />We use this for showing trendlines on our Chart.js graph. Chart.js Trendline Plug-In is released under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener nofollow">MIT License</a><br />&nbsp;</li>
+	
+	<li><a href="https://www.covidactnow.org" target="_blank" rel="noopener nofollow">COVIDActNow</a><br/>We use data from COVIDActNow to inform our outbreak indication monitor.<br />&nbsp;</li>
+
+	<li><a href="https://data.ct.gov/" target="_blank" rel="noopener nofollow">Connecticut Open Data</a><br />We use Connecticut Open Data to gather our data for the site each day. Connecticut Open Data operates their site and releases their data as public service.<br />&nbsp;</li>
+	
+	<li><a href="https://www.fontawesome.com/" target="_blank" rel="noopener nofollow">FontAwesome</a><br />We use this package for the "exclamation" and "piggy bank" icons on our site. FontAwesome is released under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener nofollow">CC 4.0 BY License</a><br />&nbsp;</li>
+	
+	<li><a href="https://www.html5boilerplate.com/" target="_blank" rel="noopener nofollow">HTML5 Boilerplate</a><br />Used for some server-side configuration on previous versions of CTCOVID.com  (<a href="/licenses/html5boilerplate.txt" rel="nofollow">License</a>)<br />&nbsp;</li>
+	
+	<li><a href="https://fonts.google.com/specimen/Libre+Franklin" target="_blank" rel="noopener nofollow">Libre Franklin Typeface</a><br />This is the typeface used on our site. Libre Franklin is released under the <a href="https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL" target="_blank" rel="noopener nofollow">Open Font License</a>.<br />&nbsp;</li>
+	
+	<li><a href="https://www.iconfinder.com/iconsets/outbreak-epidemic" target="_blank" rel="noopener nofollow">Pandemic and Outbreak Icon Pack by Anthony Ledoux</a><br />We are using a modified version of an icon in this package as our websites' favicon and app icon. In accordance with the terms of the license, our modifications to this icon also released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener nofollow">CC BY-SA 3.0 License</a><br />&nbsp;</li>
+	
+	<li><a href="https://rt.live" target="_blank" rel="noopener nofollow">R<sub>t</sub> Live</a><br />We use data provided by Rt.live to provide the R<sup>0</sup> number visible on the Statewide and County pages.<br />&nbsp;</li>
+
+	<li><a href="https://github.com/rgrove/lazyload" target="_blank" rel="noopener nofollow">LazyLoad.js</a><br/>This is used to "lazy load" assets on the website to ensure the site loads faster (<a href="/licenses/lazyload.txt" rel="nofollow">License</a>)</li>
+</ul>

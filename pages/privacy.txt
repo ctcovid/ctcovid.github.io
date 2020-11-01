@@ -1,0 +1,104 @@
+<p><strong><a href="/">&laquo; Go Back To The Data</a></strong></p>
+
+<h1>Privacy Policy for CTCOVID.com</h1>
+<p>Last Updated: April 18, 2020</p>
+
+<hr/>
+
+<p>If you require any more information or have any questions about our privacy policy, please feel free to contact us by email at privacy@ctcovid.com. Please be sure to use the exact subject <strong>Privacy Policy</strong> to ensure delivery; you will receive an auto-response if we receive your email.</p>
+
+<p>At CTCOVID.com we consider the privacy of our visitors to be extremely important. This privacy policy document describes in detail the types of personal information is collected and recorded by CTCOVID.com and how we use it.</p>
+
+<h3>The Information We Collect</h3>
+
+<p>When you visit our website, CTCOVID.com and our analytics provider, <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener nofollow">Google Analytics</a>, collect information (log data) that is automatically provided by your internet service provider, operating system, browser, hardware and software on your device.</p>
+
+<p>It is possible to use log data to derive other information that is not automatically provided to us. The type of information that is logged and/or derived includes, but may not be limited to:</p>
+
+<ul>
+	<li>Your IP (internet protocol address) and/or ISP (internet service provider)</li>
+	<li>Your operating system and version, including certain configuration information such as language, screen resolution, screen colors and time zone.</li>
+	<li>Your browser and version, including information about software, extensions, run-times and/or plug-ins you have installed.</li>
+	<li>Your device type, including manufacturer, model name, model number and touch screen capability.</li>
+	<li>Your estimated location, such as city, state, province, district, region, country, continent and/or any other similar sub-division.</li>
+</ul>
+
+<p>Additionally, the following information may also collected about how you use our website, including, but not limited to:</p>
+
+<ul>
+	<li>The list of pages, files or other content that you viewed while using our website.</li>
+	<li>The dates and times that you accessed our website or requested information from our website.</li>
+	<li>The number of times that you have visited our website or requested information from our website.</li>
+	<li>The amount of time that you have spent on our website.</li>
+	<li>The website, application or search engine that referred you to our website.</li>
+</ul>
+
+<h3>How We Use This Information</h3>
+
+<p>We primarily use the information we collect to better understand how visitors use our website, improve the website and perform actions necessary for the operation of CTCOVID.com. Some of the ways we use this information can include:</p>
+
+<ul>
+	<li>To understand how our users, in aggregate or individually, use our website.</li>
+	<li>To improve or change the website or its' underlying infrastructure.</li>
+	<li>To determine the hardware and software used by our visitors so we can improve the compatibility of CTCOVID.com.</li>
+	<li>To monitor or protect the security, performance, availability and/or stability of the website.</li>
+	<!--<li>To provide information to advertisers about the traffic we receive, such as how many visitors we receive per day and how long they spend on our website.</li>-->
+	<li>To protect our intellectual property or enforce our terms of use.</li>
+</ul>
+
+<h3>Disclosure Of Information</h3>
+
+<p>There may be times where we need to disclose information about our visitors to third parties, including, but not limited to:</p>
+
+<ul>
+	<li>To permit others to provide the CTCOVID.com service.
+	<li>To permit others to perform actions or act on our behalf or in conjunction or collaboration with us.</li>
+	<li>To provide information about our traffic and users to third parties.</li>
+	<li>To investigate or pursue legal action for violations of our terms of service or the enforcement of our intellectual property.</li>
+	<li>To respond to legal requests or requests from law enforcement or government agencies.</li>
+</ul>
+
+<p>Additionally, in the event that we sell, merge or otherwise transfer the ownership of any assets of CTCOVID.com, it is likely that the information we collect as described in "The Information We Collect" would be among the assets included in such a transfer, including access to any associated third party service provider accounts, analytics, log data, web hosting, emails, social media accounts or any other types of information related to CTCOVID.com.</p>
+
+<h3>Cookies and Web Beacons</h3>
+
+<p>CTCOVID.com uses cookies and local storage to store information about visitors' preferences, to record user-specific information on which pages the site visitor accesses or visits, and to personalize or customize our web page content based upon visitors' browser type or other information that the visitor sends via their browser.</p>
+
+<!--
+<h3>Our Advertising Partners</h3>
+
+<p>Some of our advertising partners may use cookies and web beacons on our site. Our advertising partners include Google. You may consult the Google Ads privacy policy located here: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener nofollow">https://policies.google.com/technologies/ads</a></p>
+
+<p>These third-party ad servers or ad networks use technology in their respective advertisements and links that appear on CTCOVID.com and which are sent directly to your browser. They automatically receive your IP address when this occurs. Other technologies (such as cookies, JavaScript, or Web Beacons) may also be used by our site's third-party ad networks to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on the site.</p>
+
+<p>CTCOVID.com has no access to or control over these cookies that are used by third-party advertisers.</p>
+
+<p>For more information about the types of advertisements located on this website, please visit <a href="http://www.aboutads.info/choices/" target="_blank" rel="noopener nofollow">http://www.aboutads.info/choices/</a>.</p>
+
+<h3>DoubleClick DART Cookie</h3>
+
+<p>Google, as a third party vendor, uses cookies to serve ads on CTCOVID.com. Google's use of the DART cookie enables it to serve ads to our site's visitors based upon their visit to CTCOVID.com and other sites on the Internet.</p>
+
+<p>Users may opt out of the use of the DART cookie by visiting the Google ad and content network privacy policy at the following URL: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener nofollow">https://policies.google.com/technologies/ads</a></p>
+-->
+
+<h3>Third Party Privacy Policies</h3><p>
+	
+<p>You should consult the respective privacy policies of these third-party ad servers for more detailed information on their practices as well as for instructions about how to opt-out of certain practices. CTCOVID.com's privacy policy does not apply to, and we cannot control the activities of, such other advertisers or web sites.</p>
+
+<p>If you wish to disable cookies, you may do so through your individual browser options. More detailed information about cookie management with specific web browsers can be found at the browsers' respective websites.</p>
+
+<h3>Children's Information</h3>
+<p>We believe it is important to provide added protection for children online. We encourage parents and guardians to spend time online with their children to observe, participate in and/or monitor and guide their online activity.</p>
+
+<p>CTCOVID.com does not knowingly collect any personally identifiable information from children under the age of 13. If a parent or guardian believes that CTCOVID.com has in its database the personally-identifiable information of a child under the age of 13, please contact us immediately (using the contact in the first paragraph) and we will use our best efforts to promptly remove such information from our records.</p>
+
+<h3>Online Privacy Policy Only</h3>
+
+<p>This privacy policy applies only to our online activities and is valid for visitors to our website and regarding information shared and/or collected there. This policy does not apply to any information collected offline or via channels other than this website.</p>
+
+<h3>Consent</h3>
+<p>By using our website, you hereby consent to our privacy policy and agree to its terms.</p>
+
+<h3>Update</h3>
+<p>This Privacy Policy was last updated on April 18, 2020. Should we update, amend or make any changes to our privacy policy, those changes will be posted here.</p>

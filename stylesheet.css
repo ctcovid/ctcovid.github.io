@@ -1,0 +1,938 @@
+body {
+	font-family: 'Libre Franklin', Helvetica, sans-serif;
+	font-weight: 300;
+	margin: 0;
+	margin-top: 61px;
+	padding: 0;
+}
+
+/* Utility Classes */
+.fc {
+	clear: both;
+	height: 0;
+}
+
+.container {
+	margin: 0 auto;
+	width: 100%;
+}
+
+/* Make CSS behave like it's supposed to */
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+/* Page */
+main {
+	margin: 0 auto;
+	max-width: 1200px;
+	padding: 25px;
+}
+
+article {
+	margin: 25px auto;
+	margin-top: 85px;
+	max-width: 1150px;
+}
+
+article a,
+article a:active,
+article a:link,
+article a:visited {
+	color: #1f70ad;
+}
+
+article h1 {
+	font-size: 20pt;
+	margin-bottom: 8px;
+	margin-top: 30px;
+}
+
+article h3 {
+	font-size: 15pt;
+	font-weight: 500;
+	margin-bottom: 8px;
+	margin-top: 40px;
+}
+
+article h4 {
+	font-size: 15pt;
+	font-weight: 500;
+	margin-bottom: 8px;
+	margin-top: 30px;
+}
+
+article h1 + p,
+article h3 + p,
+article h4 + p {
+	margin-top: 0;
+}
+
+article hr {
+	border: 0;
+	border-top: 4px solid #f1f1f1;
+}
+
+article p,
+article ul li {
+	line-height: 175%;
+}
+
+article ul {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+/* Nav Bar */
+nav {
+	background: #1a5079;
+	color: #fff;
+	display: block;
+	left: 0;
+	padding: 15px 25px;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 20;
+}
+
+nav .container {
+	max-width: 1160px;
+}
+
+nav h1 {
+	float: left;
+	font-size: 13pt;
+	font-weight: 500;
+	line-height: 30px;
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+}
+
+nav select {
+	float: right;
+	font-size: 11pt;
+	padding: 4px;
+}
+
+/* Notice */
+section#notice {
+	margin-top: 15px;
+	margin-bottom: 40px;
+}
+
+section#notice div.alert {
+	background: #fff7db;
+	border: 2px solid #ffd900;
+	padding: 12px;
+}
+
+section#notice div.alert p {
+	line-height: 175%;
+	margin: 0;
+	padding: 0;
+	padding-left: 45px;
+	position: relative;
+}
+
+section#notice div.alert p a,
+section#notice div.alert p a:active,
+section#notice div.alert p a:link,
+section#notice div.alert p a:visited {
+	color: #1f70ad;
+	font-weight: 500;
+}
+
+section#notice div.alert strong {
+	text-decoration: underline;
+}
+
+section#notice div.alert p:before {
+	background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NzYgNTEyIiBmaWxsPSIjZmZkOTAwIj48cGF0aCBkPSJNNTY5LjUxNyA0NDAuMDEzQzU4Ny45NzUgNDcyLjAwNyA1NjQuODA2IDUxMiA1MjcuOTQgNTEySDQ4LjA1NGMtMzYuOTM3IDAtNTkuOTk5LTQwLjA1NS00MS41NzctNzEuOTg3TDI0Ni40MjMgMjMuOTg1YzE4LjQ2Ny0zMi4wMDkgNjQuNzItMzEuOTUxIDgzLjE1NCAwbDIzOS45NCA0MTYuMDI4ek0yODggMzU0Yy0yNS40MDUgMC00NiAyMC41OTUtNDYgNDZzMjAuNTk1IDQ2IDQ2IDQ2IDQ2LTIwLjU5NSA0Ni00Ni0yMC41OTUtNDYtNDYtNDZ6bS00My42NzMtMTY1LjM0Nmw3LjQxOCAxMzZjLjM0NyA2LjM2NCA1LjYwOSAxMS4zNDYgMTEuOTgyIDExLjM0Nmg0OC41NDZjNi4zNzMgMCAxMS42MzUtNC45ODIgMTEuOTgyLTExLjM0Nmw3LjQxOC0xMzZjLjM3NS02Ljg3NC01LjA5OC0xMi42NTQtMTEuOTgyLTEyLjY1NGgtNjMuMzgzYy02Ljg4NCAwLTEyLjM1NiA1Ljc4LTExLjk4MSAxMi42NTR6Ii8+PC9zdmc+");
+	background-position: center center;
+	background-repeat: no-repeat;
+	bottom: 0;
+	content: '';
+	height: 24px;
+	left: 2px;
+	position: absolute;
+	top: 2px;
+	width: 24px;
+}
+
+/* Top */
+section#top {
+	background: #f8f8f8;
+	padding: 0 25px;
+	position: relative;
+}
+
+section#top div.limit {
+	margin: 0 auto;
+	max-width: 1160px;
+}
+
+/* Twitter */
+section#twitter {
+	background: #373737;
+	color: #fff;
+	font-size: 10pt;
+	font-weight: 300;
+	margin-top: -1px;
+	padding: 12px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+section#twitter a,
+section#twitter a:active,
+section#twitter a:link,
+section#twitter a:visited {
+	color: #fff;
+	font-weight: 500;
+}
+
+/* Meta Data */
+section#meta {
+	float: left;
+	padding: 40px 0;
+	padding-right: 40px;
+	position: relative;
+	width: 40%;
+	z-index: 10;
+}
+
+section#meta div.container {
+	padding: 0;
+}
+
+section#meta h3#city {
+	font-size: 18pt;
+	font-weight: 500;
+	margin: 0;
+	padding: 0;
+}
+
+section#meta span#population {
+	display: block;
+	font-size: 13pt;
+	font-weight: 500;
+	line-height: 24pt;
+	margin-bottom: 12px;
+	margin-top: 6px;
+}
+
+section#meta p:last-child {
+	margin-bottom: 0;
+}
+
+section#meta div#summary,
+section#meta div#updated {
+	color: #555;
+	font-size: 12pt;
+	line-height: 175%;
+	margin: 0;
+	margin-top: 12px;
+	padding: 0;
+}
+
+section#meta div#updated strong {
+	font-weight: 500;
+}
+
+section#meta div#summary strong {
+	font-weight: 500;
+}
+
+section#meta div#summary strong.bad {
+	color: #d42200;
+}
+
+section#meta div#summary strong.good {
+	color: #4ab53e;
+}
+
+/* Statistics */
+section#stats {
+	float: left;
+	padding: 40px 0;
+	position: relative;
+	width: 60%;
+	z-index: 10;
+}
+
+section#stats div.column {
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+	cursor: default;
+	float: left;
+	width: 21%;
+	margin-bottom: 4%;
+	margin-left: 4%;
+	overflow: hidden;
+	padding-bottom: 0;
+	padding-top: 12px;
+	text-align: center;
+	-moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+	-webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+}
+
+section#stats div.column.single {
+	padding: 24px 12px;
+}
+
+section#stats div.column.last {
+	margin-bottom: 0;
+}
+
+section#stats div.column div.name {
+	color: #2c2c2c;
+	font-size: 9pt;
+	margin-bottom: 8px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+section#stats div.column div.val {
+	font-weight: 500;
+}
+
+section#stats div.column div.val span.low:before,
+section#stats div.column div.val span.medium:before,
+section#stats div.column div.val span.high:before,
+section#stats div.column div.val span.critical:before {
+	content: '\25cf';
+	margin-left: -18px;
+	margin-top: -1px;
+	position: absolute;
+}
+
+section#stats div.column div.val span.low:before {
+	color: #4ab53e;
+}
+
+section#stats div.column div.val span.medium:before {
+	color: #ffe100;
+}
+
+section#stats div.column div.val span.high:before {
+	color: #ff8800;
+}
+
+section#stats div.column div.val span.critical:before {
+	color: #d42200;
+}
+
+section#stats div.column div.meta {
+	color: #fff;
+	font-size: 8pt;
+	margin-top: 8px;
+	padding: 8px;
+}
+
+section#stats div.column#stat-tests-new div.meta.decreasing,
+section#stats div.column div.meta.increasing {
+	background: #d42200;
+}
+
+section#stats div.column div.meta.flat {
+	background: #ffc400;
+	color: #000;
+}
+
+section#stats div.column#stat-tests-new div.meta.increasing,
+section#stats div.column div.meta.decreasing {
+	background: #4ab53e;
+}
+
+/* Chart */
+section#chart {
+	margin: 40px 0;
+}
+
+/* Options */
+section#options {
+	margin-top: 25px;
+}
+
+section#options #data,
+section#options #range,
+section#options #segmentation {
+	float: left;
+	margin-right: 25px;
+}
+
+section#options #plotting {
+	float: right;
+}
+
+section#options #data p,
+section#options #plotting p,
+section#options #range p,
+section#options #segmentation p {
+	font-size: 11pt;
+	font-weight: 500;
+	margin: 0;
+	margin-bottom: 12px;
+	text-transform: uppercase;
+}
+
+section#options ul {
+	font-size: 0;
+	list-style: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+section#options ul li {
+	border-left: 1px solid #e1e1e1;
+	float: left;
+}
+
+section#options ul li:first-child {
+	border-left: 1px solid #fff;
+}
+
+section#options ul li a,
+section#options ul li a:active,
+section#options ul li a:link,
+section#options ul li a:visited {
+	background: #f1f1f1;
+	color: #000;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 9pt;
+	overflow: hidden;
+	padding: 12px;
+	position: relative;
+	text-decoration: none;
+	text-overflow: ellipsis;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+section#options ul li:first-child a {
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+}
+
+section#options ul li a.selected {
+	background: #1f70ad;
+	color: #fff;
+	cursor: default;
+}
+
+body.city section#options ul li#selector-hospitalizations {
+	display: none;
+}
+
+body.city section#options ul li#selector-tests a,
+body.county section#options ul li#selector-tests a,
+body.state section#options ul li#selector-tests a,
+section#options ul li#selector-60 a,
+section#options ul li#selector-delta a,
+section#options ul li#selector-logarithmic a {
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+body.city section#options div#delta {
+	margin-right: 0;
+}
+
+body.city section#stats div.column {
+	width: 28.33%;
+}
+
+body.city section#stats div#stat-hospitalized-new,
+body.city section#stats div#stat-hospitalized-total,
+body.city section#stats div#stat-r0 {
+	display: none;
+}
+
+/* Demographics */
+section#demographics div.column {
+	float: left;
+	margin-right: 5%;
+	margin-bottom: 60px;
+	width: 30%;
+}
+
+section#demographics div.column.last {
+	margin-right: 0;
+}
+
+section#demographics div.column h4 {
+	font-weight: 400;
+	margin-top: 0;
+	text-transform: capitalize;
+}
+
+section#demographics h3 {
+	font-weight: 500;
+}
+
+body.city section#demographics,
+body.county section#demographics {
+	display: none;
+}
+
+/* Table */
+section#table {
+	font-size: 11pt;
+	margin-top: 50px;
+}
+
+section#table h3 {
+	font-weight: 500;
+}
+
+section#table table {
+	border: 1px solid #f1f1f1;
+	border-collapse: collapse;
+}
+
+section#table table thead th {
+	background: #f1f1f1;
+	font-weight: 500;
+}
+
+section#table table tbody td,
+section#table table thead th {
+	border: 1px solid #f1f1f1;
+	padding: 8px;
+	text-align: center;
+	width: 11.11%;
+}
+
+/* Important Information */
+section#information {
+	font-size: 11pt;
+	margin: 50px 0;
+}
+
+section#information a,
+section#information a:active,
+section#information a:link,
+section#information a:visited {
+	color: #1f70ad;
+}
+
+section#information h3 {
+	font-weight: 500;
+	margin: 0;
+	padding: 0;
+}
+
+section#information p {
+	line-height: 175%;
+}
+
+section#information ul li {
+	padding: 3px 0;
+}
+
+/* Copyright */
+section#copyright {
+	margin-top: 100px;
+}
+
+section#copyright p {
+	color: #777;
+	font-size: 10pt;
+	font-weight: 300;
+	line-height: 175%;
+	margin: 0;
+	margin-top: 4px;
+	text-align: center;
+}
+
+section#copyright p a,
+section#copyright p a:active,
+section#copyright p a:link,
+section#copyright p a:visited {
+	color: #777;
+}
+
+section#copyright p:first-child {
+	font-weight: 500;
+	font-size: 12pt;
+}
+
+@media screen and (max-width: 640px) {
+	body {
+		font-size: 12pt;
+		margin-top: 88px;
+	}
+	
+	#mobile-notice {
+		display: block;
+	}
+	
+	main {
+		padding: 25px;
+	}
+	
+	nav {
+		padding: 10px 25px;
+		text-align: center;
+	}
+	
+	nav h1 {
+		display: block;
+		float: none;
+		margin-bottom: 10px;
+		width: 100%;
+	}
+	
+	nav select {
+		float: none;
+	}
+	
+	section#meta {
+		padding: 25px;
+		padding-bottom: 0;
+	}
+	
+	section#meta,
+	section#stats {
+		float: none;
+		width: 100%;
+	}
+	
+	section#meta div.container {
+		padding-top: 0;
+	}
+	
+	section#meta h3#city,
+	section#meta span#population {
+		display: block;
+		float: none;
+	}
+	
+	section#meta span#population {
+		margin-top: 4px;
+	}
+
+	section#stats {
+		padding: 0;
+		padding-bottom: 13px;
+	}
+	
+	section#stats div.container {
+		padding: 13px;
+	}
+	
+	section#stats div.column {
+		box-sizing: border-box;
+		display: inline-block;
+		margin-bottom: 0 !important;
+		margin-left: 12px;
+		margin-right: 12px;
+		margin-top: 25px;
+		width: calc(50% - 24px);
+	}
+	
+	section#stats div.column strong {
+		font-size: 9pt;
+	}
+	
+	section#options {
+		font-size: 0;
+	}
+	
+	section#options strong {
+		margin-bottom: 0;
+	}
+	
+	section#options ul li {
+		display: inline-block;
+		float: none;
+		margin-left: 0;
+		width: 33.3%;
+	}
+	
+	section#options div#data ul li {
+		width: 25%;
+	}
+	
+	section#options #plotting ul li {
+		width: 50%;
+	}
+	
+	section#options ul li a {
+		display: block;
+		text-align: center;
+		width: 100%;
+	}
+	
+	section#options #data, 
+	section#options #plotting, 
+	section#options #range,
+	section#options #segmentation {
+		float: none;
+		margin-bottom: 25px;
+		width: 100%;
+	}
+	
+	section#options #plotting {
+		float: none;
+		width: 100%;
+	}
+	
+	section#demographics div.column {
+		margin: 20px 0;
+		width: 100%;
+	}
+	
+	section#table {
+		margin-right: -25px;
+		overflow: hidden;
+	}
+	
+	section#table .container {
+		overflow-x: scroll;
+		width: 100%;
+	}
+	
+	section#table .container table {
+		width: 1000px;
+	}
+	
+	section#table .container table td,
+	section#table .container table th {
+		font-size: 11pt;
+	}
+	
+	section#notice div.alert p {
+		padding-left: 45px;
+	}
+	
+	section#notice div.alert p:before {
+		width: 24px;
+		height: 24px;
+	}
+	
+	section#information p {
+		font-size: 12pt;
+	}
+	
+	section#copyright {
+		background: none;
+	}
+	
+	section#copyright p:first-child {
+		display: block;
+		float: none;
+	}
+
+	section#copyright span {
+		display: block;
+	}
+	
+	body.city section#options div#data ul li {
+		width: 33.3%;
+	}
+}
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+	section#information p {
+		font-size: 11pt;
+	}
+	
+	section#options ul li a, 
+	section#options ul li a:active, 
+	section#options ul li a:link, 
+	section#options ul li a:visited {
+		font-size: 8pt;
+		padding: 8px;
+	}
+
+	section#table table {
+		font-size: 11pt;
+	}
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+	body {
+		margin-top: 61px;
+	}
+	
+	section#meta div#summary,
+	section#meta div#updated,
+	section#meta div#summary p,
+	section#meta div#updated p {
+		font-size: 8pt;
+	}
+	
+	section#options div#data,
+	section#options div#plotting,
+	section#options div#range,
+	section#options div#segmentation {
+		margin-right: 0;
+		padding-right: 5%;
+		width: 25%;
+	}
+	
+	section#options div#plotting {
+		padding-right: 0;
+	}
+	
+	section#options ul {
+		width: 100%;
+	}
+	
+	section#options div#data ul li,
+	section#options div#segmentation ul li {
+		width: 33.3%;
+	}
+	
+	section#options div#data ul li {
+		width: 25% !important;
+	}
+	
+	section#options div#plotting ul li {
+		width: 50%;
+	}
+	
+	section#options div#data ul li a,
+	section#options div#plotting ul li a,
+	section#options div#range ul li a {
+	section#options div#segmentation ul li a {
+		display: block;
+		text-align: center;
+		width: 100%;
+	}
+	
+	section#stats div.container {
+		padding-top: 25px;
+	}
+	
+	section#stats div.column {
+		padding: 0 10px;
+		padding-bottom: 25px;
+		height: 80px;
+		width: 25%;
+	}
+	
+	body.city section#stats div.column {
+		width: 25%;
+	}
+}
+
+aside.open {
+	animation-name: open;
+	animation-duration: 0.4s;
+	animation-fill-mode: both;
+	-webkit-animation-duration: 0.4s;
+	-webkit-animation-fill-mode: both;
+	-webkit-animation-name: open;
+}
+
+aside.closed {
+	animation-name: closed;
+	animation-duration: 0.4s;
+	animation-fill-mode: both;
+	-webkit-animation-duration: 0.4s;
+	-webkit-animation-fill-mode: both;
+	-webkit-animation-name: closed;
+}
+
+/* Menu */
+aside {
+	background: #222;
+	bottom: 0;
+	box-sizing: border-box;
+	color: #fff;
+	height: 100vh;
+	left: 0;
+	overflow-y: scroll;
+	padding: 25px;
+	position: fixed;
+	text-align: left;
+	transform: translate3d(-100%, 0, 0);
+	top: 0;
+	width: 300px;
+	z-index: 50;
+	-webkit-transform: translate3d(-100%, 0, 0);
+}
+
+aside h1 {
+	margin: 0;
+	margin-bottom: 40px;
+}
+
+aside h4 {
+	color: #0df;
+	font-size: 10pt;
+	font-weight: 700;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+
+aside ul {
+	list-style: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+aside ul li {
+	font-size: 11pt;
+	font-weight: 300;
+	padding: 6px 0;
+}
+
+aside ul li a {
+	color: #fff;
+	line-height: 125%;
+	text-decoration: underline;
+}
+
+aside #filler {
+	background: rgba(0,0,0,0.2);
+	display: none;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 30;
+}
+
+aside.open #filler {
+	display: block;
+}
+
+@keyframes open {
+	from {
+		-webkit-transform: translate3d(-100%, 0, 0);
+		transform: translate3d(-100%, 0, 0);
+		visibility: visible;
+	}
+	
+	to {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes closed {
+	from {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+	
+	to {
+		-webkit-transform: translate3d(-100%, 0, 0);
+		transform: translate3d(-100%, 0, 0);
+		visibility: visible;
+	}
+}
