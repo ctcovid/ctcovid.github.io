@@ -10,9 +10,6 @@ var COVID_Tracker = function(city) {
 	// list of states
 	this.states = ['Connecticut'];
 
-	// list of college towns
-	this.colleges = ['Bridgeport', 'Cromwell', 'Danbury', 'Danielson', 'East Hartford', 'Enfield', 'Farmington', 'Fairfield', 'Hamden', 'Hartford', 'Manchester', 'Mansfield', 'Middletown', 'New Britain', 'New Haven', 'New London', 'Norwalk', 'Norwich', 'Waterbury', 'West Hartford', 'West Haven', 'Willimantic', 'Winsted'];
-	
 	// list of pages
 	this.pages = ['privacy', 'disclaimer', 'faq', 'attribution'];
 	
@@ -714,6 +711,24 @@ var COVID_Tracker = function(city) {
 			document.querySelector("#stats #stat-per-100k div.val").innerHTML = this.formatColorIndicator('density', this.calculateCasesPer100K());
 			document.querySelector("#stats #stat-tpr div.val").innerHTML = this.formatColorIndicator('positivity', this.calculateTestPositivityRate());
 			document.querySelector("#stats #stat-fatality-rate div.val").innerHTML = this.calculateFatalityRate();
+		}
+
+		// college town indicator
+		document.querySelector("#badges").innerHTML = '';
+		if(this.data.city != 'Connecticut') {
+			if(this.calculateCasesPer100K() >= 15) {
+				document.querySelector("#badges").innerHTML += '<span class="red-alert" title="This city/town has critical levels of infection">Red Alert</span>';
+			} else if(this.calculateCasesPer100K() >= 10) {
+				document.querySelector("#badges").innerHTML += '<span class="orange-alert" title="This city/town has near critical levels of infection">Orange Alert</span>';
+			} else if(this.calculateCasesPer100K() >= 5) {
+				document.querySelector("#badges").innerHTML += '<span class="yellow-alert" title="This city/town has significant levels of infection">Yellow Alert</span>';
+			} else {
+				document.querySelector("#badges").innerHTML += '<span class="on-alert" title="This city/town must has normal levels of infection">On Alert - Stay Vigilent</span>';
+			}
+		}
+		
+		if(typeof(this.data.colleges) == 'object' && this.data.colleges.length > 0) {
+			document.querySelector("#badges").innerHTML += '<span class="college">College/University Town</span>';
 		}
 	};
 
