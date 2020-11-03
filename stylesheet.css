@@ -240,6 +240,49 @@ section#meta div#updated {
 	padding: 0;
 }
 
+section#meta div#badges {
+	margin: 12px 0;
+}
+
+section#meta div#badges span {
+	border-radius: 50px;
+	display: inline-block;
+	font-size: 8pt;
+	font-weight: 500;
+	margin-right: 12px;
+	padding: 8px 15px;
+	text-transform: uppercase;
+}
+
+section#meta div#badges span:last-child {
+	margin-right: 0;
+}
+
+section#meta div#badges span.college {
+	background: #600080;
+	color: #fff;
+}
+
+section#meta div#badges span.on-alert {
+	background: #d1d1d1;
+	color: #000;
+}
+
+section#meta div#badges span.orange-alert {
+	background: #ff8800;
+	color: #000;
+}
+
+section#meta div#badges span.red-alert {
+	background: #d42200;
+	color: #fff;
+}
+
+section#meta div#badges span.yellow-alert {
+	background: #ffe100;
+	color: #000;
+}
+
 section#meta div#updated strong {
 	font-weight: 500;
 }
