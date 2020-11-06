@@ -813,7 +813,7 @@ var COVID_Tracker = function(city) {
 		
 		for(k in this.data.dates) {
 			html.push([
-				'<tr>',
+				'<tr' + (k <= (this.data.dates.length - 14) ? ' class="hideable"' : '') + '>',
 					'<td>' + this.data.dates[k] + '</td>',
 					'<td>' + this.formatWithCommas(this.data.cases.data[k]) + '</td>',
 					'<td>' + this.calculateDifferenceAtIndex('cases', k) + '</td>',
@@ -851,6 +851,11 @@ var COVID_Tracker = function(city) {
 				'<tbody>',
 					html.reverse().join(""),
 				'</tbody>',
+				'<tfoot>',
+					'<tr>',
+						'<td colspan="8"><a href="javascript:;" onclick="javascript:void(CT.toggleTable());">Show All Dates</a></td>',
+					'</tr>',
+				'</tfoot>',
 			'</table>'
 		].join("");
 	};
@@ -1125,6 +1130,17 @@ var COVID_Tracker = function(city) {
 		}
 		
 		return null;
+	};
+	
+	// ui
+	this.toggleTable = function() {
+		document.querySelector("#table table tfoot").style.display = 'none';
+		
+		var elems = document.querySelectorAll("#table table tbody tr.hideable");
+		
+		for(e in elems) {
+			elems[e].className = '';
+		}
 	};
 	
 	// fetchers
