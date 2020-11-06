@@ -1090,14 +1090,13 @@ var COVID_Tracker = function(city) {
 
 		var num = parseFloat(val);
 
-		for(k in thresholds[type]) {
-			if(num <= thresholds[type][k]) {
-				idx = k;
-				break;
+		for(threshold in thresholds[type]) {
+			if(num >= thresholds[type][threshold]) {
+				idx = threshold;
 			}
 		}
 
-		return '<span class="' + cls[Math.max(0, idx - 1)] + '">' + val + '</span>';
+		return '<span class="' + cls[Math.max(0, idx)] + '">' + val + '</span>';
 	};
 
 	this.formatColumn = function(type, val) {
