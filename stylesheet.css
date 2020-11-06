@@ -543,6 +543,24 @@ section#table table {
 	border-collapse: collapse;
 }
 
+section#table table tbody tr.hideable {
+	display: none;
+}
+
+section#table table tfoot td {
+	background: #f1f1f1;
+	padding: 8px;
+	text-align: center;
+}
+
+section#table table tfoot td a,
+section#table table tfoot td a:active,
+section#table table tfoot td a:link,
+section#table table tfoot td a:visited {
+	color: #1f70ad;
+	font-weight: 600;
+}
+
 section#table table thead th {
 	background: #f1f1f1;
 	font-weight: 500;
