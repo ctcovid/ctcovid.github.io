@@ -893,7 +893,8 @@ var COVID_Tracker = function(city) {
 					}
 					
 					document.querySelector("#schools div.container").innerHTML = [
-						'<h3>Cases of COVID-19 in ' + this.data.city + ' Schools (K-12)</h3>',
+						'<h3>Cases in ' + this.data.city + ' Schools (K-12)</h3>',
+						'<p>Please Note: Only schools with at least 1 or more positive case of COVID-19 will be shown below.</p>',
 						'<p>Last Updated: ' + schools[0].date + '</p>',
 						'<table width="100%" border="1">',
 							'<thead>',
