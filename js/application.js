@@ -859,6 +859,48 @@ var COVID_Tracker = function(city) {
 			'</table>'
 		].join("");
 	};
+
+	this.buildTableSchool = function() {
+		if(this.data.city != 'connecticut' && this.data.city.indexOf('county') == -1) {
+			var html = [];
+			
+			if(typeof(this.data.schools) == 'object') {
+				for(k in this.data.schools) {
+					var schools = this.data.schools[k];
+					break;
+				}
+
+				if(typeof(schools) == 'object') {
+					for(k in schools) {
+						html.push([
+							'<tr>',
+								'<td>' + schools[k].name + '</td>',
+								'<td>' + schools[k].cases + '</td>',
+							'</tr>'
+						].join(""));
+					}
+					
+					document.querySelector("#schools div.container").innerHTML = [
+						'<h3>Cases of COVID-19 in ' + this.data.city + ' Schools (K-12)</h3>',
+						'<p>Last Updated: ' + schools[0].date + '</p>',
+						'<table width="100%" border="1">',
+							'<thead>',
+								'<th>School</th>',
+								'<th>Total Cases</th>',
+							'</thead>',
+							'<tbody>',
+								html.join(""),
+							'</tbody>',
+						'</table>'
+					].join("");
+					
+					document.querySelector("#schools div.container").style.display = 'block';
+				}
+			}
+		} else {
+			document.querySelector("#schools div.container").style.display = 'none';
+		}
+	}
 	
 	// calculation functions
 	this.calculateAverage = function(data) {
@@ -1227,6 +1269,7 @@ var COVID_Tracker = function(city) {
 			this.buildSummaryMessage();
 			this.buildStatistics();
 			this.buildTable();
+			this.buildTableSchool();
 			
 			document.querySelector("#meta #summary").innerHTML = this.buildSummaryMessage();
 			document.querySelector("#meta #city").innerHTML = this.data.city + (this.data.city != 'Connecticut' ? ', Connecticut' : '');

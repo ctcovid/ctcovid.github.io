@@ -528,16 +528,26 @@ body.county section#demographics {
 	display: none;
 }
 
+/* Schools */
+section#schools table tbody td:first-child,
+section#schools table thead th:first-child {
+	text-align: left !important;
+	width: 70%;
+}
+
 /* Table */
+section#schools,
 section#table {
 	font-size: 11pt;
 	margin-top: 50px;
 }
 
+section#schools h3,
 section#table h3 {
 	font-weight: 500;
 }
 
+section#schools table,
 section#table table {
 	border: 1px solid #f1f1f1;
 	border-collapse: collapse;
@@ -561,11 +571,14 @@ section#table table tfoot td a:visited {
 	font-weight: 600;
 }
 
+section#schools table thead th,
 section#table table thead th {
 	background: #f1f1f1;
 	font-weight: 500;
 }
 
+section#schools table tbody td,
+section#schools table thead th,
 section#table table tbody td,
 section#table table thead th {
 	border: 1px solid #f1f1f1;
@@ -720,6 +733,10 @@ section#copyright p:first-child {
 		margin-left: 0;
 		width: 33.3%;
 	}
+
+	section#options div#range ul li {
+		width: 25%;
+	}
 	
 	section#options div#data ul li {
 		width: 25%;
@@ -752,6 +769,17 @@ section#copyright p:first-child {
 	section#demographics div.column {
 		margin: 20px 0;
 		width: 100%;
+	}
+
+	section#schools table tbody td {
+		width: 30%;
+	}
+
+	section#schools table tbody td:first-child {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		width: 70%;
 	}
 	
 	section#table {
@@ -801,6 +829,10 @@ section#copyright p:first-child {
 	
 	body.city section#options div#data ul li {
 		width: 33.3%;
+	}
+
+	body.city section#stats div.column {
+		width: 43%;
 	}
 }
 
@@ -866,7 +898,7 @@ section#copyright p:first-child {
 	
 	section#options div#data ul li a,
 	section#options div#plotting ul li a,
-	section#options div#range ul li a {
+	section#options div#range ul li a,
 	section#options div#segmentation ul li a {
 		display: block;
 		text-align: center;
