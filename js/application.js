@@ -885,26 +885,25 @@ var COVID_Tracker = function(city) {
 					}
 
 					if(html.length == 0) {
-						html.push([
-							'<tr>',
-								'<td colspan="2">There have been no known cases of COVID-19 in ' + this.data.city + ' schools</td>',
-							'</tr>'
-						].join(""));
+						document.querySelector("#schools div.container").innerHTML = [
+							'<h3>Cases in ' + this.data.city + ' Schools (K-12) - As of ' + schools[0].date + '</h3>',
+							'<p>There have been no known reported cases of COVID-19 in ' + this.data.city + ' schools.</p>'
+						].join("");
+					} else {
+						document.querySelector("#schools div.container").innerHTML = [
+							'<h3>Cases in ' + this.data.city + ' Schools (K-12) - As of ' + schools[0].date + '</h3>',
+							'<table width="100%" border="1">',
+								'<thead>',
+									'<th>School</th>',
+									'<th>Total Cases</th>',
+								'</thead>',
+								'<tbody>',
+									html.join(""),
+								'</tbody>',
+							'</table>',
+							'<p>Please Note: Only schools with at least 1 or more positive case of COVID-19 will be shown above.</p>'
+						].join("");
 					}
-					
-					document.querySelector("#schools div.container").innerHTML = [
-						'<h3>Cases in ' + this.data.city + ' Schools (K-12) - As of ' + schools[0].date + '</h3>',
-						'<table width="100%" border="1">',
-							'<thead>',
-								'<th>School</th>',
-								'<th>Total Cases</th>',
-							'</thead>',
-							'<tbody>',
-								html.join(""),
-							'</tbody>',
-						'</table>',
-						'<p>Please Note: Only schools with at least 1 or more positive case of COVID-19 will be shown above.</p>'
-					].join("");
 					
 					document.querySelector("#schools div.container").style.display = 'block';
 				}
