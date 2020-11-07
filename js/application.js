@@ -903,7 +903,7 @@ var COVID_Tracker = function(city) {
 								html.join(""),
 							'</tbody>',
 						'</table>',
-						'<p>Please Note: Only schools with at least 1 or more positive case of COVID-19 will be shown below.</p>'
+						'<p>Please Note: Only schools with at least 1 or more positive case of COVID-19 will be shown above.</p>'
 					].join("");
 					
 					document.querySelector("#schools div.container").style.display = 'block';
