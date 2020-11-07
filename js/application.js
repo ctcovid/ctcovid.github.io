@@ -872,10 +872,22 @@ var COVID_Tracker = function(city) {
 
 				if(typeof(schools) == 'object') {
 					for(k in schools) {
+						if(schools[k].cases == 0) {
+							continue;
+						}
+
 						html.push([
 							'<tr>',
 								'<td>' + schools[k].name + '</td>',
 								'<td>' + schools[k].cases + '</td>',
+							'</tr>'
+						].join(""));
+					}
+
+					if(html.length == 0) {
+						html.push([
+							'<tr>',
+								'<td colspan="2">There have been no known cases of COVID-19 in ' + this.data.city + ' schools</td>',
 							'</tr>'
 						].join(""));
 					}
