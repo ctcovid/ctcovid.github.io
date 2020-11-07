@@ -861,7 +861,7 @@ var COVID_Tracker = function(city) {
 	};
 
 	this.buildTableSchool = function() {
-		if(this.data.city != 'connecticut' && this.data.city.indexOf('county') == -1) {
+		if(this.data.city != 'Connecticut' && this.data.city.indexOf('county') == -1) {
 			var html = [];
 			
 			if(typeof(this.data.schools) == 'object') {
