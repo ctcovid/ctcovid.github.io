@@ -376,7 +376,7 @@ section#stats div.column div.val span.critical:before {
 section#stats div.column div.meta {
 	color: #fff;
 	font-size: 8pt;
-	margin-top: 8px;
+	margin-top: 6px;
 	padding: 8px;
 }
 
@@ -454,7 +454,7 @@ section#options ul li a:visited {
 	display: inline-block;
 	font-size: 9pt;
 	overflow: hidden;
-	padding: 12px;
+	padding: 10px;
 	position: relative;
 	text-decoration: none;
 	text-overflow: ellipsis;
@@ -652,7 +652,7 @@ section#copyright p:first-child {
 	}
 	
 	main {
-		padding: 25px;
+		padding: 15px;
 	}
 	
 	nav {
@@ -669,6 +669,10 @@ section#copyright p:first-child {
 	
 	nav select {
 		float: none;
+	}
+	
+	section#top {
+		padding: 0;
 	}
 	
 	section#meta {
@@ -739,7 +743,7 @@ section#copyright p:first-child {
 	}
 	
 	section#options div#data ul li {
-		width: 25%;
+		width: 20%;
 	}
 	
 	section#options #plotting ul li {
@@ -783,7 +787,7 @@ section#copyright p:first-child {
 	}
 	
 	section#table {
-		margin-right: -25px;
+		margin-right: -15px;
 		overflow: hidden;
 	}
 	
@@ -828,7 +832,7 @@ section#copyright p:first-child {
 	}
 	
 	body.city section#options div#data ul li {
-		width: 33.3%;
+		width: 25%;
 	}
 
 	body.city section#stats div.column {
@@ -889,7 +893,7 @@ section#copyright p:first-child {
 	}
 	
 	section#options div#data ul li {
-		width: 25% !important;
+		width: 20% !important;
 	}
 	
 	section#options div#plotting ul li {

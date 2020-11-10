@@ -539,7 +539,7 @@ var COVID_Tracker = function(city) {
 			    }
 			});
 			
-			if(['new', 'total', 'delta', 'cases', 'deaths', 'hospitalizations', 'tests'].indexOf(g) != -1 || css == 'range') {
+			if(['new', 'total', 'delta', 'cases', 'per100k', 'deaths', 'hospitalizations', 'tests'].indexOf(g) != -1 || css == 'range') {
 				if(css) {
 					var elems = document.querySelectorAll("#options #" + css + " ul li a");
 					
