@@ -645,7 +645,7 @@ var COVID_Tracker = function(city) {
 			this.formatColumn('cases', this.calculateIncreaseOrDecrease(
 				this.calculateDailyDifferences('cases').slice(-1).shift(), 
 				this.calculateDailyDifferences('cases').slice(-2).shift()
-			)) >= 0 ? ' More Than Yest.' : ' Less Than Yest.'
+			)) >= 0 ? ' More Than Yesterday' : ' Less Than Yesterday'
 		].join("");
 
 		// deaths
@@ -663,7 +663,7 @@ var COVID_Tracker = function(city) {
 			this.formatColumn('deaths', this.calculateIncreaseOrDecrease(
 				this.calculateDailyDifferences('deaths').slice(-1).shift(), 
 				this.calculateDailyDifferences('deaths').slice(-2).shift()
-			)) >= 0 ? ' More Than Yest.' : ' Less Than Yest.'
+			)) >= 0 ? ' More Than Yesterday' : ' Less Than Yesterday'
 		].join("");
 
 		// hospitalization
@@ -682,7 +682,7 @@ var COVID_Tracker = function(city) {
 				this.formatColumn('hospitalized', this.calculateIncreaseOrDecrease(
 					this.calculateDailyDifferences('hospitalizations').slice(-1).shift(), 
 					this.calculateDailyDifferences('hospitalizations').slice(-2).shift()
-				)) >= 0 ? ' More Than Yest.' : '  Less Than Yest.'
+				)) >= 0 ? ' More Than Yesterday' : '  Less Than Yesterday'
 			].join("");
 		}
 
@@ -701,7 +701,7 @@ var COVID_Tracker = function(city) {
 			this.formatColumn('tests', this.calculateIncreaseOrDecrease(
 				this.calculateDailyDifferences('tests').slice(-2).shift(), 
 				this.calculateDailyDifferences('tests').slice(-1).shift()
-			)) >= 0 ? ' More Than Yest.' : ' Less Than Yest.'
+			)) >= 0 ? ' More Than Yesterday' : ' Less Than Yesterday'
 		].join("");
 
 		// cases per 100k
