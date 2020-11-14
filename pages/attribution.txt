@@ -15,7 +15,7 @@
 
 	<li><a href="https://data.ct.gov/" target="_blank" rel="noopener nofollow">Connecticut Open Data</a><br />We use Connecticut Open Data to gather our data for the site each day. Connecticut Open Data operates their site and releases their data as public service.<br />&nbsp;</li>
 	
-	<li><a href="https://www.fontawesome.com/" target="_blank" rel="noopener nofollow">FontAwesome</a><br />We use this package for the "exclamation" and "piggy bank" icons on our site. FontAwesome is released under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener nofollow">CC 4.0 BY License</a><br />&nbsp;</li>
+	<li><a href="https://www.fontawesome.com/" target="_blank" rel="noopener nofollow">FontAwesome</a><br />We use this package for the "exclamation", "info-circle" and "piggy bank" icons on our site. FontAwesome is released under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener nofollow">CC 4.0 BY License</a><br />&nbsp;</li>
 	
 	<li><a href="https://www.html5boilerplate.com/" target="_blank" rel="noopener nofollow">HTML5 Boilerplate</a><br />Used for some server-side configuration on previous versions of CTCOVID.com  (<a href="/licenses/html5boilerplate.txt" rel="nofollow">License</a>)<br />&nbsp;</li>
 	
