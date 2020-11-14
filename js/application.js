@@ -1248,7 +1248,18 @@ var COVID_Tracker = function(city) {
 	
 	this.validatePage = function(city) {
 		return this.pages.indexOf(city) != -1;
-	}
+	};
+
+	// lookup functions
+	this.locationType = function(city) {
+		if(city == 'connecticut') {
+			return 'statewide';
+		} else if(city.substring(city.length - 6) == 'county') {
+			return 'counties';
+		}
+
+		return 'cities';
+	};
 	
 	// ui functions
 	this.changeCity = function(city) {
@@ -1256,7 +1267,7 @@ var COVID_Tracker = function(city) {
 			this.fetchData('pages/' + this.formatCityName(city) + '.txt?' + window.Build);
 		} else if(this.validateCity(city)) {
 			this.graphing.range = 0;
-			this.fetchData('data/' + this.formatCityName(city) + '.json?' + window.Build);
+			this.fetchData('data/' + this.locationType(city) + '/' + this.formatCityName(city) + '.json?' + window.Build);
 			
 			try {
 				window.localStorage.setItem('last_viewed_city', city);
