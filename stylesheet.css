@@ -402,7 +402,7 @@ section#stats div.column div.meta {
 
 section#stats div.column#stat-tests-new div.meta.decreasing,
 section#stats div.column div.meta.increasing {
-	background: #d42200;
+	background: #d42200 !important;
 }
 
 section#stats div.column div.meta.flat {
@@ -412,7 +412,7 @@ section#stats div.column div.meta.flat {
 
 section#stats div.column#stat-tests-new div.meta.increasing,
 section#stats div.column div.meta.decreasing {
-	background: #4ab53e;
+	background: #4ab53e !important;
 }
 
 /* Chart */

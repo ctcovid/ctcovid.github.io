@@ -641,11 +641,11 @@ var COVID_Tracker = function(city) {
 		document.querySelector("#stats #stat-cases-total div.val").innerHTML = this.formatWithCommas(this.data.cases.data[this.data.cases.data.length - 1]);
 
 		document.querySelector("#stats #stat-cases-new div.meta div.delta").innerHTML = [
-			this.formatWithDigits(this.calculateDelta('cases', this.data.cases.data.length - 1), 2) + '%',
+			this.formatWithCommas(Math.abs(this.calculateDifferenceAtIndex('cases', this.data.cases.data.length - 2) - this.calculateDifferenceAtIndex('cases', this.data.cases.data.length - 1))),
 			this.formatColumn('cases', this.calculateIncreaseOrDecrease(
-				this.calculateDailyDelta('cases').slice(-1).shift(), 
-				this.calculateDailyDelta('cases').slice(-2).shift()
-			)) >= 0 ? ' Increase' : ' Decrease'
+				this.calculateDailyDifferences('cases').slice(-1).shift(), 
+				this.calculateDailyDifferences('cases').slice(-2).shift()
+			)) >= 0 ? ' More Than Yest.' : ' Less Than Yest.'
 		].join("");
 
 		// deaths
@@ -659,8 +659,11 @@ var COVID_Tracker = function(city) {
 		document.querySelector("#stats #stat-deaths-total div.val").innerHTML = this.formatWithCommas(this.data.deaths.data[this.data.deaths.data.length - 1]);
 		
 		document.querySelector("#stats #stat-deaths-new div.meta div.delta").innerHTML = [
-			this.formatWithDigits(this.calculateDelta('deaths', this.data.deaths.data.length - 1), 2) + '%',
-			this.formatColumn('deaths', this.calculateIncreaseOrDecrease(this.calculateDailyDelta('deaths').slice(-1).shift(), this.calculateDailyDelta('deaths').slice(-2).shift())) ? ' Increase' : ' Decrease'
+			this.formatWithCommas(Math.abs(this.calculateDifferenceAtIndex('deaths', this.data.deaths.data.length - 2) - this.calculateDifferenceAtIndex('deaths', this.data.deaths.data.length - 1))),
+			this.formatColumn('deaths', this.calculateIncreaseOrDecrease(
+				this.calculateDailyDifferences('deaths').slice(-1).shift(), 
+				this.calculateDailyDifferences('deaths').slice(-2).shift()
+			)) >= 0 ? ' More Than Yest.' : ' Less Than Yest.'
 		].join("");
 
 		// hospitalization
@@ -675,8 +678,11 @@ var COVID_Tracker = function(city) {
 			document.querySelector("#stats #stat-hospitalized-total div.val").innerHTML = this.formatWithCommas(this.data.hospitalizations.data[this.data.hospitalizations.data.length - 1]);
 			
 			document.querySelector("#stats #stat-hospitalized-new div.meta div.delta").innerHTML = [
-				this.formatWithDigits(this.calculateDelta('hospitalizations', this.data.hospitalizations.data.length - 1), 2) + '%',
-				this.formatColumn('hospitalized', this.calculateIncreaseOrDecrease(this.calculateDailyDelta('hospitalizations').slice(-1).shift(), this.calculateDailyDelta('hospitalizations').slice(-2).shift())) ? ' Increase' : ' Decrease'
+				this.formatWithCommas(Math.abs(this.calculateDifferenceAtIndex('hospitalizations', this.data.hospitalizations.data.length - 2) - this.calculateDifferenceAtIndex('hospitalizations', this.data.hospitalizations.data.length - 1))),
+				this.formatColumn('hospitalized', this.calculateIncreaseOrDecrease(
+					this.calculateDailyDifferences('hospitalizations').slice(-1).shift(), 
+					this.calculateDailyDifferences('hospitalizations').slice(-2).shift()
+				)) >= 0 ? ' More Than Yest.' : '  Less Than Yest.'
 			].join("");
 		}
 
@@ -691,8 +697,11 @@ var COVID_Tracker = function(city) {
 		document.querySelector("#stats #stat-tests-total div.val").innerHTML = this.formatWithCommas(this.data.tests.data[this.data.tests.data.length - 1]);
 		
 		document.querySelector("#stats #stat-tests-new div.meta div.delta").innerHTML = [
-			this.formatWithDigits(this.calculateDelta('tests', this.data.tests.data.length - 1), 2) + '%',
-			this.formatColumn('tests', this.calculateIncreaseOrDecrease(this.calculateDailyDelta('tests').slice(-2).shift(), this.calculateDailyDelta('tests').slice(-1).shift())) ? ' More Than Yest.' : ' Less Than Yest.'
+			this.formatWithCommas(Math.abs(this.calculateDifferenceAtIndex('tests', this.data.tests.data.length - 2) - this.calculateDifferenceAtIndex('tests', this.data.tests.data.length - 1))),
+			this.formatColumn('tests', this.calculateIncreaseOrDecrease(
+				this.calculateDailyDifferences('tests').slice(-2).shift(), 
+				this.calculateDailyDifferences('tests').slice(-1).shift()
+			)) >= 0 ? ' More Than Yest.' : ' Less Than Yest.'
 		].join("");
 
 		// cases per 100k
@@ -816,10 +825,10 @@ var COVID_Tracker = function(city) {
 				'<tr' + (k <= (this.data.dates.length - 14) ? ' class="hideable"' : '') + '>',
 					'<td>' + this.data.dates[k] + '</td>',
 					'<td>' + this.formatWithCommas(this.data.cases.data[k]) + '</td>',
-					'<td>' + this.calculateDifferenceAtIndex('cases', k) + '</td>',
+					'<td>' + this.formatWithCommas(this.calculateDifferenceAtIndex('cases', k)) + '</td>',
 					'<td>' + this.formatWithDigits(this.calculateDelta('cases', k), 2) + '%</td>',
 					'<td>' + this.formatWithCommas(this.data.deaths.data[k]) + '</td>',
-					'<td>' + this.calculateDifferenceAtIndex('deaths', k) + '</td>',
+					'<td>' + this.formatWithCommas(this.calculateDifferenceAtIndex('deaths', k)) + '</td>',
 					'<td>' + this.formatWithDigits(this.calculateDelta('deaths', k), 2) + '%</td>',
 					'<td>' + this.calculateAttackRate(this.data.dates.length - k) + '</td>',
 				'</tr>'
@@ -990,7 +999,7 @@ var COVID_Tracker = function(city) {
 			return 0;
 		}
 		
-		return this.formatWithCommas(this.data[type].data[a] - this.data[type].data[b]);
+		return this.data[type].data[a] - this.data[type].data[b];
 	};
 	
 	this.calculateIncreaseOrDecrease = function(a, b) {
@@ -1000,13 +1009,9 @@ var COVID_Tracker = function(city) {
 	this.calculateCasesPer100K = function(index) {
 		index = index || 0;
 
-		if(!isNaN(parseInt(this.calculateDifferenceAtIndex('cases', this.data.cases.data.length - (index || 1)).replace(',', ''), 10))) {
-			result = (parseInt(this.calculateDifferenceAtIndex('cases', this.data.cases.data.length - (index || 1)).replace(',', ''), 10) / this.data.population) * 100000;
+		if(!isNaN(this.calculateDifferenceAtIndex('cases', this.data.cases.data.length - (index || 1)))) {
+			result = (this.calculateDifferenceAtIndex('cases', this.data.cases.data.length - (index || 1)) / this.data.population) * 100000;
 
-			if(this.data.updated.day == 'Sun') {
-				//result = result / 3;
-			}
-			
 			return this.formatWithDigits(result, 1);
 		}
 
@@ -1048,8 +1053,8 @@ var COVID_Tracker = function(city) {
 	};
 	
 	this.calculateTestPositivityRate = function(index) {
-		var cases = parseInt(this.calculateDifferenceAtIndex('cases', this.data.cases.data.length - (index || 1)).replace(',', ''), 10),
-			tests = parseInt(this.calculateDifferenceAtIndex('tests', this.data.tests.data.length - (index || 1)).replace(',', ''), 10);
+		var cases = this.calculateDifferenceAtIndex('cases', this.data.cases.data.length - (index || 1)),
+			tests = this.calculateDifferenceAtIndex('tests', this.data.tests.data.length - (index || 1));
 
 		if(!isNaN(cases) && !isNaN(tests)) {
 			result = (cases / tests) * 100;
@@ -1155,13 +1160,13 @@ var COVID_Tracker = function(city) {
 	this.formatColumn = function(type, val) {
 		switch(val) {
 			case -1: (function() {
-					document.querySelector("#stat-" + type + "-new div.meta").className = "meta increasing";
+					document.querySelector("#stat-" + type + "-new div.meta").className = "meta decreasing";
 				})(); break;
 			case 0: (function() {
 					document.querySelector("#stat-" + type + "-new div.meta").className = "meta flat";
 				})(); break;
 			case 1: (function() {
-					document.querySelector("#stat-" + type + "-new div.meta").className = "meta decreasing";
+					document.querySelector("#stat-" + type + "-new div.meta").className = "meta increasing";
 				})(); break;
 		}
 		
