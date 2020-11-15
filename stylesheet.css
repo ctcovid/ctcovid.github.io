@@ -426,7 +426,7 @@ section#stats div.column#stat-alert-status div.val span {
 }
 
 section#stats div.column#stat-alert-status div.val span.white {
-	color: #d1d1d1;
+	color: #808080;
 }
 
 section#stats div.column#stat-alert-status div.val span.yellow {
