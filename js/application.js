@@ -893,12 +893,12 @@ var COVID_Tracker = function(city) {
 
 					if(html.length == 0) {
 						document.querySelector("#schools div.container").innerHTML = [
-							'<h3>Cases in ' + this.data.city + ' Schools (K-12) - As of ' + schools[0].date + '</h3>',
-							'<p>There have been no known reported cases of COVID-19 in ' + this.data.city + ' schools.</p>'
+							'<h3>Cases in ' + this.data.city + ' Schools (K-12 Public Schools) - As of ' + schools[0].date + '</h3>',
+							'<p>There have been no known reported cases of COVID-19 in ' + this.data.city + ' public schools.</p>'
 						].join("");
 					} else {
 						document.querySelector("#schools div.container").innerHTML = [
-							'<h3>Cases in ' + this.data.city + ' Schools (K-12) - As of ' + schools[0].date + '</h3>',
+							'<h3>Cases in ' + this.data.city + ' Schools (K-12 Public Schools) - As of ' + schools[0].date + '</h3>',
 							'<table width="100%" border="1">',
 								'<thead>',
 									'<th>School</th>',
