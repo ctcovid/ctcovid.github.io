@@ -1,7 +1,7 @@
 <p><strong><a href="/">&laquo; Go Back To The Data</a></strong></p>
 
 <h1>CTCOVID.com Frequently Asked Questions</h1>
-<p>Last Updated: April 23, 2020</p>
+<p>Last Updated: November 15, 2020</p>
 
 <hr/>
 
@@ -9,13 +9,13 @@
 <p>No, this website is operated by a private individual.</p>
 
 <h4>Does this site provide medical advice or public health recommendations?</h4>
-<p>No. Please visit the <a href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html" target="_blank" rel="noopener nofollow">Centers for Disease Control and Prevention</a> COVID-19 website for more information. If you suspect you have COVID-19, isolate yourself from others and contact your physician or a licensed medical professional. If you feel you are experiencing worrying symptoms, call 911.</p>
+<p>No. Please visit the <a href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html" target="_blank" rel="noopener nofollow">Centers for Disease Control and Prevention</a> website or the <a href="https://portal.ct.gov/coronavirus" target="_blank" rel="noopener nofollow">Connecticut COVID-19 Portal</a> websites for more information. If you suspect you have COVID-19, isolate yourself from others and contact your physician or a licensed medical professional. If you feel you are experiencing worrying symptoms, seek medical help or call 911.</p>
 
 <h4>Why is hospitalization data not available for my town/city or county?</h4>
 <p>Unfortunately, the State of Connecticuts' Department of Public Health only provides this information on a state-wide level. In the event that the state offers this data on a more granular level, we will add it as soon as possible.</p>
 
 <h4>When is this site updated?</h4>
-<p>The site is updated daily at approximately 5:00pm EDT. We depend on the data being available from the State of Connecticut, as a result, there may be some delay. We will usually announce on Twitter when the data has been updated.</p>
+<p>The site is updated daily at approximately 5:30pm EDT. We depend on the data being available from the State of Connecticut, as a result, there may be some delay. We will usually announce on Twitter when the data has been updated.</p>
 
 <h4>Do you guarantee the accuracy of the data on this website?</h4>
 <p>No &mdash; all information on CTCOVID.com is presented without any guarantee of accuracy, correctness or completeness.</p>
@@ -23,13 +23,16 @@
 <h4>Can I find out who has COVID-19 using this website?</h4>
 <p>No. This website does not provide, contain or possess information about any protected health information, including names or addresses of individuals who have contracted COVID-19.</p>
 
+<h4>How can I report a bug or request a feature?</h4>
+<p>You can report a bug or request a feature on our <a href="https://www.github.com/ctcovid/ctcovid.github.io" target="_blank" rel="noopener nofollow">GitHub</a> issues page or you can reach out to us on <a href="https://www.twitter.com/ctcovid" target="_blank" rel="noopener nofollow">Twitter</a>.</p>
+
 <h4>Is the software behind CTCOVID.com open source?</h4>
-<p>No, the software behind CTCOVID.com, except the components described on our <a href="#attribution">Attribution</a> page, is copyrighted and proprietary. However, most of source code is written in HTML and JavaScript, and as a result, is "source available"; you are free to review it for self-educational purposes.</p>
+<p>No, the software behind CTCOVID.com, except the components described on our <a href="#attribution">Attribution</a> page, is copyrighted and proprietary. However, most of source code is written in HTML and JavaScript, and as a result, is "source available"; you are free to review it for self-educational purposes on <a href="https://www.github.com/ctcovid/ctcovid.github.io" target="_blank" rel="noopener nofollow">GitHub</a>.</p>
 
 <p>If you are a Local/State/County Government located in the United States or one of its' territories and would like to license this software, please email <a href="mailto:media@ctcovid.com">licensing@ctcovid.com</a>.</p>
 
 <h4>Do you accept tips?</h4>
-<p>CTCOVID.com is provided free of charge, operated at my own expense and without the use of advertisements that would harm the usability of the website.</p>
+<p>No. CTCOVID.com is provided free of charge and is not monetized.</p>
 
 <h4>I am a member of the media, how can I contact CTCOVID.com?</h4>
 <p>If you are a member of the media, you can send an email to <a href="mailto:media@ctcovid.com">media@ctcovid.com</a>. Please be sure to use the subject <strong>Media Inquiry</strong>; if you do not use this exact subject, your email will be discarded by our spam rules.</p>
@@ -37,4 +40,4 @@
 <p>Please be sure to include your name, phone number and name of the organization that you represent. You must email us from an email address associated with your organization.</p>
 
 <h4>I have another question or comment about this website, how can I contact CTCOVID.com?</h4>
-<p>If you are not a member of the media, please reach out to us via Twitter if you have any questions about our website.</p>
+<p>If you are not a member of the media or a government/public health official, please reach out to us via Twitter if you have any questions about our website.</p>
