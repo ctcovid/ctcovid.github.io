@@ -441,6 +441,22 @@ section#stats div.column#stat-alert-status div.val span.red {
 	color: #d42200;
 }
 
+section#stats div.column.hoverable div.discrete {
+	display: block;
+}
+
+section#stats div.column.hoverable div.delta {
+	display: none;
+}
+
+section#stats div.column.hoverable:hover div.discrete {
+	display: none;
+}
+
+section#stats div.column.hoverable:hover div.delta {
+	display: block;
+}
+
 /* Chart */
 section#chart {
 	margin: 40px 0;
@@ -537,8 +553,8 @@ body.city section#options div#delta {
 	margin-right: 0;
 }
 
-body.city section#stats div#stat-hospitalized-new,
-body.city section#stats div#stat-hospitalized-total,
+body.city section#stats div#stat-hospitalizations-new,
+body.city section#stats div#stat-hospitalizations-total,
 body.city section#stats div#stat-r0 {
 	display: none;
 }
@@ -638,6 +654,11 @@ section#table table thead th {
 	padding: 8px;
 	text-align: center;
 	width: 11.11%;
+}
+
+section#table table tbody td,
+section#table table thead th {
+	width: 10%;
 }
 
 /* Important Information */

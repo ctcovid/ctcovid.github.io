@@ -634,6 +634,14 @@ var COVID_Tracker = function(city) {
 		document.querySelector("#stats #stat-cases-total div.val").innerHTML = this.formatWithCommas(this.data.cases.data[this.data.cases.data.length - 1]);
 
 		document.querySelector("#stats #stat-cases-new div.meta div.delta").innerHTML = [
+			this.formatWithDigits(this.calculateDayToDayDelta('cases'), 2) + '%',
+			this.formatColumn('cases', this.calculateIncreaseOrDecrease(
+				this.calculateDailyDifferences('cases').slice(-1).shift(), 
+				this.calculateDailyDifferences('cases').slice(-2).shift()
+			)) >= 0 ? ' Daily Increase' : ' Daily Decrease'
+		].join("");
+
+		document.querySelector("#stats #stat-cases-new div.meta div.discrete").innerHTML = [
 			this.formatWithCommas(Math.abs(this.calculateDifferenceAtIndex('cases', this.data.cases.data.length - 2) - this.calculateDifferenceAtIndex('cases', this.data.cases.data.length - 1))),
 			this.formatColumn('cases', this.calculateIncreaseOrDecrease(
 				this.calculateDailyDifferences('cases').slice(-1).shift(), 
@@ -652,6 +660,14 @@ var COVID_Tracker = function(city) {
 		document.querySelector("#stats #stat-deaths-total div.val").innerHTML = this.formatWithCommas(this.data.deaths.data[this.data.deaths.data.length - 1]);
 		
 		document.querySelector("#stats #stat-deaths-new div.meta div.delta").innerHTML = [
+			this.formatWithDigits(this.calculateDayToDayDelta('deaths'), 2) + '%',
+			this.formatColumn('deaths', this.calculateIncreaseOrDecrease(
+				this.calculateDailyDifferences('deaths').slice(-1).shift(), 
+				this.calculateDailyDifferences('deaths').slice(-2).shift()
+			)) >= 0 ? ' Daily Increase' : ' Daily Decrease'
+		].join("");
+
+		document.querySelector("#stats #stat-deaths-new div.meta div.discrete").innerHTML = [
 			this.formatWithCommas(Math.abs(this.calculateDifferenceAtIndex('deaths', this.data.deaths.data.length - 2) - this.calculateDifferenceAtIndex('deaths', this.data.deaths.data.length - 1))),
 			this.formatColumn('deaths', this.calculateIncreaseOrDecrease(
 				this.calculateDailyDifferences('deaths').slice(-1).shift(), 
@@ -661,18 +677,26 @@ var COVID_Tracker = function(city) {
 
 		// hospitalization
 		if(typeof(this.data.hospitalizations.data) == 'object' && this.data.hospitalizations.data.length > 0) {
-			document.querySelector("#stats #stat-hospitalized-new div.val").innerHTML = [
+			document.querySelector("#stats #stat-hospitalizations-new div.val").innerHTML = [
 				this.formatWithCommas(Math.abs(
 					this.data.hospitalizations.data[this.data.hospitalizations.data.length - 1] -
 					this.data.hospitalizations.data[this.data.hospitalizations.data.length - 2]
 				))
 			].join("");
 			
-			document.querySelector("#stats #stat-hospitalized-total div.val").innerHTML = this.formatWithCommas(this.data.hospitalizations.data[this.data.hospitalizations.data.length - 1]);
+			document.querySelector("#stats #stat-hospitalizations-total div.val").innerHTML = this.formatWithCommas(this.data.hospitalizations.data[this.data.hospitalizations.data.length - 1]);
 			
-			document.querySelector("#stats #stat-hospitalized-new div.meta div.delta").innerHTML = [
+			document.querySelector("#stats #stat-hospitalizations-new div.meta div.delta").innerHTML = [
+				this.formatWithDigits(this.calculateDayToDayDelta('hospitalizations'), 2) + '%',
+				this.formatColumn('hospitalizations', this.calculateIncreaseOrDecrease(
+					this.calculateDailyDifferences('hospitalizations').slice(-1).shift(), 
+					this.calculateDailyDifferences('hospitalizations').slice(-2).shift()
+				)) >= 0 ? ' Daily Increase' : ' Daily Decrease'
+			].join("");
+
+			document.querySelector("#stats #stat-hospitalizations-new div.meta div.discrete").innerHTML = [
 				this.formatWithCommas(Math.abs(this.calculateDifferenceAtIndex('hospitalizations', this.data.hospitalizations.data.length - 2) - this.calculateDifferenceAtIndex('hospitalizations', this.data.hospitalizations.data.length - 1))),
-				this.formatColumn('hospitalized', this.calculateIncreaseOrDecrease(
+				this.formatColumn('hospitalizations', this.calculateIncreaseOrDecrease(
 					this.calculateDailyDifferences('hospitalizations').slice(-1).shift(), 
 					this.calculateDailyDifferences('hospitalizations').slice(-2).shift()
 				)) >= 0 ? ' More Than Yest.' : '  Less Than Yest.'
@@ -690,10 +714,18 @@ var COVID_Tracker = function(city) {
 		document.querySelector("#stats #stat-tests-total div.val").innerHTML = this.formatWithCommas(this.data.tests.data[this.data.tests.data.length - 1]);
 		
 		document.querySelector("#stats #stat-tests-new div.meta div.delta").innerHTML = [
+			this.formatWithDigits(this.calculateDayToDayDelta('tests'), 2) + '%',
+			this.formatColumn('tests', this.calculateIncreaseOrDecrease(
+				this.calculateDailyDifferences('tests').slice(-1).shift(), 
+				this.calculateDailyDifferences('tests').slice(-2).shift()
+			)) >= 0 ? ' Daily Increase' : ' Daily Decrease'
+		].join("");
+
+		document.querySelector("#stats #stat-tests-new div.meta div.discrete").innerHTML = [
 			this.formatWithCommas(Math.abs(this.calculateDifferenceAtIndex('tests', this.data.tests.data.length - 2) - this.calculateDifferenceAtIndex('tests', this.data.tests.data.length - 1))),
 			this.formatColumn('tests', this.calculateIncreaseOrDecrease(
-				this.calculateDailyDifferences('tests').slice(-2).shift(), 
-				this.calculateDailyDifferences('tests').slice(-1).shift()
+				this.calculateDailyDifferences('tests').slice(-1).shift(), 
+				this.calculateDailyDifferences('tests').slice(-2).shift()
 			)) >= 0 ? ' More Than Yest.' : ' Less Than Yest.'
 		].join("");
 
@@ -829,7 +861,8 @@ var COVID_Tracker = function(city) {
 					'<td>' + this.formatWithCommas(this.data.deaths.data[k]) + '</td>',
 					'<td>' + this.formatWithCommas(this.calculateDifferenceAtIndex('deaths', k)) + '</td>',
 					'<td>' + this.formatWithDigits(this.calculateDelta('deaths', k), 2) + '%</td>',
-					'<td>' + this.calculateAttackRate(this.data.dates.length - k) + '</td>',
+					'<td>' + this.formatWithCommas(this.data.tests.data[k]) + '</td>',
+					'<td>' + this.formatWithCommas(this.calculateDifferenceAtIndex('tests', k)) + '</td>',
 				'</tr>'
 			].join(""));
 			
@@ -837,7 +870,7 @@ var COVID_Tracker = function(city) {
 				html.push([
 					'<tr>',
 						'<td>' + this.no_data_actual[this.no_data.indexOf(this.data.dates[k])] + '</td>',
-						'<td colspan="9">The State of Connecticut did not report data on ' + this.no_data_actual[this.no_data.indexOf(this.data.dates[k])] + '</td>',
+						'<td colspan="10">The State of Connecticut did not report data on ' + this.no_data_actual[this.no_data.indexOf(this.data.dates[k])] + '</td>',
 					'</tr>'
 				].join(""));
 			}
@@ -855,14 +888,15 @@ var COVID_Tracker = function(city) {
 					'<th>Total Deaths</th>',
 					'<th>New Deaths</th>',
 					'<th>Death Delta</th>',
-					'<th>Infection Rate</th>',
+					'<th>New Tests</td>',
+					'<th>Total Tests</td>',
 				'</thead>',
 				'<tbody>',
 					html.reverse().join(""),
 				'</tbody>',
 				'<tfoot>',
 					'<tr>',
-						'<td colspan="9"><a href="javascript:;" onclick="javascript:void(CT.toggleTable());">Show All Dates</a></td>',
+						'<td colspan="10"><a href="javascript:;" onclick="javascript:void(CT.toggleTable());">Show All Dates</a></td>',
 					'</tr>',
 				'</tfoot>',
 			'</table>'
@@ -973,6 +1007,19 @@ var COVID_Tracker = function(city) {
 		
 		return deltas;
 	};
+
+	this.calculateDayToDayDelta = function(type) {
+		var a = this.calculateDifferenceAtIndex(type, this.data[type].data.length - 1),
+			b = this.calculateDifferenceAtIndex(type, this.data[type].data.length - 2);
+		
+		if(a == 0 && b == 0) {
+			return 0;
+		} else if(a == 0 || b == 0) {
+			return Math.Infinity;
+		}
+		
+		return ((a / b) - 1) * 100;
+	}
 	
 	this.calculateDelta = function(type, index) {
 		var a = index || 0,
