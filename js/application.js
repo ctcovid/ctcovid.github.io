@@ -868,8 +868,6 @@ var COVID_Tracker = function(city) {
 	};
 
 	this.buildTableSchool = function() {
-		return;
-
 		if(this.data.city != 'Connecticut' && this.data.city.indexOf('county') == -1) {
 			var html = [];
 			
@@ -910,7 +908,7 @@ var COVID_Tracker = function(city) {
 									html.join(""),
 								'</tbody>',
 							'</table>',
-							'<p>Please Note: Only schools with at least 1 or more positive case of COVID-19 will be shown above.</p>'
+							'<p>Please Note: Only public schools with at least 1 or more positive case of COVID-19 will be shown above.</p>'
 						].join("");
 					}
 					
