@@ -183,12 +183,7 @@ var COVID_Tracker = function(city) {
 							data: this.calculateDailyCasesPer100K().slice(this.graphing.range),
 							backgroundColor: 'rgba(54, 162, 235, 0.2)',
 							borderColor: 'rgba(54, 162, 235, 1)',
-							borderWidth: 1,
-							trendlineLinear: this.graphing.range < 0 ? {
-								style: "rgba(255,105,180, .8)",
-								lineStyle: "dotted|solid",
-								width: 2
-							} : null
+							borderWidth: 1
 						}
 					],
 				}; break;
@@ -201,14 +196,9 @@ var COVID_Tracker = function(city) {
 						{
 							label: data['cases'].label,
 							data: data['cases'].data.slice(this.graphing.range),
-							backgroundColor: 'rgba(54, 162, 235, 0.2)',
+							backgroundColor: 'rgba(54, 162, 235, 1)',
 							borderColor: 'rgba(54, 162, 235, 1)',
-							borderWidth: 1,
-							trendlineLinear: this.graphing.range < 0 ? {
-								style: "rgba(255,105,180, .8)",
-								lineStyle: "dotted|solid",
-								width: 2
-							} : null
+							borderWidth: 0
 						}
 					],
 				}; break;
@@ -221,14 +211,9 @@ var COVID_Tracker = function(city) {
 					        {
 					            label: data['deaths'].label,
 					            data: data['deaths'].data.slice(this.graphing.range),
-					            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+					            backgroundColor: 'rgba(54, 162, 235, 1)',
 					            borderColor: 'rgba(54, 162, 235, 1)',
-					            borderWidth: 1,
-								trendlineLinear: this.graphing.range < 0 ? {
-									style: "rgba(255,105,180, .8)",
-									lineStyle: "dotted|solid",
-									width: 2
-								} : null
+					            borderWidth: 0
 					        }
 				        ]
 				}; break;
@@ -238,17 +223,23 @@ var COVID_Tracker = function(city) {
 				dataset = {
 					labels: data.dates.slice(this.graphing.range),
 			        datasets: [
+						{
+							type: 'line',
+							label: 'Total Hospitalized 7 Day Average',
+							data: this.calculateMovingAverage(data['hospitalizations'].data.slice(this.graphing.range), 7),
+							backgroundColor: 'rgba(255, 255, 255, 0)',
+							borderColor: 'rgba(255, 0, 0, 1)',
+							borderWidth: 1,
+							pointRadius: 0,
+							pointHitRadius: 0,
+							lineTension: 0
+						},
 				        {
 				            label: data['hospitalizations'].label,
 					        data: data['hospitalizations'].data.slice(this.graphing.range),
-				            backgroundColor: 'rgba(54, 162, 235, 0.2)',
-				            borderColor: 'rgba(54, 162, 235, 1)',
-				            borderWidth: 1,
-							trendlineLinear: this.graphing.range < 0 ? {
-								style: "rgba(255,105,180, .8)",
-								lineStyle: "dotted|solid",
-								width: 2
-							} : null
+				            backgroundColor: 'rgba(54, 162, 235, 1)',
+					        borderColor: 'rgba(54, 162, 235, 1)',
+				            borderWidth: 0
 				        }
 			        ]
 				}; break;
@@ -261,14 +252,9 @@ var COVID_Tracker = function(city) {
 				        {
 				            label: data['tests'].label,
 					        data: data['tests'].data.slice(this.graphing.range),
-				            backgroundColor: 'rgba(54, 162, 235, 0.2)',
-				            borderColor: 'rgba(54, 162, 235, 1)',
-				            borderWidth: 1,
-							trendlineLinear: this.graphing.range < 0 ? {
-								style: "rgba(255,105,180, .8)",
-								lineStyle: "dotted|solid",
-								width: 2
-							} : null
+				            backgroundColor: 'rgba(54, 162, 235, 1)',
+					        borderColor: 'rgba(54, 162, 235, 1)',
+				            borderWidth: 0
 				        }
 			        ]
 				}; break;
@@ -278,17 +264,25 @@ var COVID_Tracker = function(city) {
 				dataset = {
 					labels: data.dates.slice(this.graphing.range),
 			        datasets: [
+						{
+							type: 'line',
+							label: 'New 7 Day Case Average',
+							data: this.calculateMovingAverage(this.calculateDailyDifferences('cases').slice(this.graphing.range), 7),
+							backgroundColor: 'rgba(255, 255, 255, 0)',
+							borderColor: 'rgba(255, 0, 0, 1)',
+							borderWidth: 1,
+							pointRadius: 0,
+							pointHitRadius: 0,
+							pointHoverRadius: 0,
+							lineTension: 0
+						},
 				        {
+							type: 'bar',
 				            label: 'New Cases',
 				            data: this.calculateDailyDifferences('cases').slice(this.graphing.range),
-				            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+				            backgroundColor: 'rgba(54, 162, 235, 1)',
 				            borderColor: 'rgba(54, 162, 235, 1)',
-							borderWidth: 1,
-							trendlineLinear: this.graphing.range < 0 ? {
-								style: "rgba(255,105,180, .8)",
-								lineStyle: "dotted|solid",
-								width: 2
-							} : null
+							borderWidth: 0
 				        }
 			        ]
 				}; break;
@@ -298,17 +292,24 @@ var COVID_Tracker = function(city) {
 				dataset = {
 					labels: data.dates.slice(this.graphing.range),
 			        datasets: [
+						{
+							type: 'line',
+							label: 'New 7 Day Death Average',
+							data: this.calculateMovingAverage(this.calculateDailyDifferences('deaths').slice(this.graphing.range), 7),
+							backgroundColor: 'rgba(255, 255, 255, 0)',
+							borderColor: 'rgba(255, 0, 0, 1)',
+							borderWidth: 1,
+							pointRadius: 0,
+							pointHitRadius: 0,
+							pointHoverRadius: 0,
+							lineTension: 0
+						},
 				        {
 				            label: 'New Deaths',
 				            data: this.calculateDailyDifferences('deaths').slice(this.graphing.range),
-					        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+					        backgroundColor: 'rgba(54, 162, 235, 1)',
 					        borderColor: 'rgba(54, 162, 235, 1)',
-				            borderWidth: 1,
-							trendlineLinear: this.graphing.range < 0 ? {
-								style: "rgba(255,105,180, .8)",
-								lineStyle: "dotted|solid",
-								width: 2
-							} : null
+				            borderWidth: 0
 				        }
 			        ]
 				}; break;
@@ -318,17 +319,24 @@ var COVID_Tracker = function(city) {
 				dataset = {
 					labels: data.dates.slice(this.graphing.range),
 			        datasets: [
+						{
+							type: 'line',
+							label: 'New 7 Day Hospitalization Average',
+							data: this.calculateMovingAverage(this.calculateDailyDifferences('hospitalizations').slice(this.graphing.range), 7),
+							backgroundColor: 'rgba(255, 255, 255, 0)',
+							borderColor: 'rgba(255, 0, 0, 1)',
+							borderWidth: 1,
+							pointRadius: 0,
+							pointHitRadius: 0,
+							pointHoverRadius: 0,
+							lineTension: 0
+						},
 				        {
 				            label: 'New Hospitalizations',
 				            data: this.calculateDailyDifferences('hospitalizations').slice(this.graphing.range),
-					        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+					        backgroundColor: 'rgba(54, 162, 235, 1)',
 					        borderColor: 'rgba(54, 162, 235, 1)',
-				            borderWidth: 1,
-							trendlineLinear: this.graphing.range < 0 ? {
-								style: "rgba(255,105,180, .8)",
-								lineStyle: "dotted|solid",
-								width: 2
-							} : null
+				            borderWidth: 0
 				        }
 			        ]
 				}; break;
@@ -338,23 +346,30 @@ var COVID_Tracker = function(city) {
 				dataset = {
 					labels: data.dates.slice(this.graphing.range),
 			        datasets: [
+						{
+							type: 'line',
+							label: 'New 7 Day Test Average',
+							data: this.calculateMovingAverage(this.calculateDailyDifferences('tests').slice(this.graphing.range), 7),
+							backgroundColor: 'rgba(255, 255, 255, 0)',
+							borderColor: 'rgba(255, 0, 0, 1)',
+							borderWidth: 1,
+							pointRadius: 0,
+							pointHitRadius: 0,
+							pointHoverRadius: 0,
+							lineTension: 0
+						},
 				        {
 				            label: 'New Tests',
 				            data: this.calculateDailyDifferences('tests').slice(this.graphing.range),
-					        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+					        backgroundColor: 'rgba(54, 162, 235, 1)',
 					        borderColor: 'rgba(54, 162, 235, 1)',
-				            borderWidth: 1,
-							trendlineLinear: this.graphing.range < 0 ? {
-								style: "rgba(255,105,180, .8)",
-								lineStyle: "dotted|solid",
-								width: 2
-							} : null
+				            borderWidth: 0
 				        }
 			        ]
 				}; break;
 				
 			case "cases.delta":
-				type = 'line';
+				type = 'bar';
 				
 				var delta = this.calculateDailyDelta('cases').slice(this.graphing.range);
 				
@@ -372,20 +387,15 @@ var COVID_Tracker = function(city) {
 				        {
 				            label: 'Case Delta Rate',
 				            data: delta.slice(this.graphing.range),
-					        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+					        backgroundColor: 'rgba(54, 162, 235, 1)',
 					        borderColor: 'rgba(54, 162, 235, 1)',
-				            borderWidth: 1,
-							trendlineLinear: this.graphing.range < 0 ? {
-								style: "rgba(255,105,180, .8)",
-								lineStyle: "dotted|solid",
-								width: 2
-							} : null
+				            borderWidth: 0
 				        }
 			        ]
 				}; break;
 				
 			case "deaths.delta":
-				type = 'line';
+				type = 'bar';
 				
 				var delta = this.calculateDailyDelta('deaths').slice(this.graphing.range);
 				
@@ -403,20 +413,15 @@ var COVID_Tracker = function(city) {
 				        {
 				            label: 'Death Delta Rate',
 				            data: delta.slice(this.graphing.range),
-					        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+					        backgroundColor: 'rgba(54, 162, 235, 1)',
 					        borderColor: 'rgba(54, 162, 235, 1)',
-				            borderWidth: 1,
-							trendlineLinear: this.graphing.range < 0 ? {
-								style: "rgba(255,105,180, .8)",
-								lineStyle: "dotted|solid",
-								width: 2
-							} : null
+				            borderWidth: 0
 				        }
 			        ]
 				}; break;
 			
 			case "hospitalizations.delta":
-				type = 'line';
+				type = 'bar';
 				
 				var delta = this.calculateDailyDelta('hospitalizations').slice(this.graphing.range);
 				
@@ -434,20 +439,15 @@ var COVID_Tracker = function(city) {
 				        {
 				            label: 'Hospitalization Delta Rate',
 				            data: delta.slice(this.graphing.range),
-					        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+					        backgroundColor: 'rgba(54, 162, 235, 1)',
 					        borderColor: 'rgba(54, 162, 235, 1)',
-				            borderWidth: 1,
-							trendlineLinear: this.graphing.range < 0 ? {
-								style: "rgba(255,105,180, .8)",
-								lineStyle: "dotted|solid",
-								width: 2
-							} : null
+				            borderWidth: 0
 				        }
 			        ]
 				}; break;
 			
 			case "tests.delta":
-				type = 'line';
+				type = 'bar';
 				
 				var delta = this.calculateDailyDelta('tests').slice(this.graphing.range);
 				
@@ -465,14 +465,9 @@ var COVID_Tracker = function(city) {
 				        {
 				            label: 'Tests Delta Rate',
 				            data: delta.slice(this.graphing.range),
-					        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+					        backgroundColor: 'rgba(54, 162, 235, 1)',
 					        borderColor: 'rgba(54, 162, 235, 1)',
-				            borderWidth: 1,
-							trendlineLinear: this.graphing.range < 0 ? {
-								style: "rgba(255,105,180, .8)",
-								lineStyle: "dotted|solid",
-								width: 2
-							} : null
+				            borderWidth: 0
 				        }
 			        ]
 				}; break;
@@ -526,7 +521,7 @@ var COVID_Tracker = function(city) {
 			        tooltips: {
 						callbacks: {
 							label: labels || function(item, data) {
-								var val = data.datasets[0].data[item.index];
+								var val = data.datasets[data.datasets.length - 1].data[item.index];
 							
 								if(parseInt(val) >= 1000){
 									return data.datasets[item.datasetIndex].label + ': ' + val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -1011,30 +1006,23 @@ var COVID_Tracker = function(city) {
 		return a == b ? 0 : (a > b ? 1 : -1);
 	};
 
-	this.calculateMovingAverage = function(type, period) {
-		var data = this.data[type].data.reverse();
+	this.calculateMovingAverage = function(data, period) {
+		var ret = [];
 	
-		var key = [];
-		var val = [];
-	
-		for(k = 1; k <= Math.floor(data.length / period); k++) {
-			var start = (k - 1) * period,
-				end = k * period;
-	
+		for(k = 0; k < data.length; k++) {
+			var start = k,
+				end = k + period;
+			
 			var poi = data.slice(start, end);
 	
 			var num = poi.reduce(function(a, b) { 
 				return parseInt(a, 10) + parseInt(b, 10);
 			});
-	
-			key.push(this.data.dates[start]);
-			val.push(num / poi.length);
+
+			ret.push(Math.floor(num / poi.length));
 		}
 	
-		return {
-			dates: key,
-			data: val
-		};
+		return ret;
 	};
 
 	this.calculateCasesPer100K = function(index) {
