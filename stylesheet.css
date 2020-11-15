@@ -158,6 +158,10 @@ section#notice div.alert strong {
 	text-decoration: underline;
 }
 
+section#notice div.info p strong {
+	font-weight: 500;
+}
+
 section#notice div.alert p:before {
 	background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NzYgNTEyIiBmaWxsPSIjZmZkOTAwIj48cGF0aCBkPSJNNTY5LjUxNyA0NDAuMDEzQzU4Ny45NzUgNDcyLjAwNyA1NjQuODA2IDUxMiA1MjcuOTQgNTEySDQ4LjA1NGMtMzYuOTM3IDAtNTkuOTk5LTQwLjA1NS00MS41NzctNzEuOTg3TDI0Ni40MjMgMjMuOTg1YzE4LjQ2Ny0zMi4wMDkgNjQuNzItMzEuOTUxIDgzLjE1NCAwbDIzOS45NCA0MTYuMDI4ek0yODggMzU0Yy0yNS40MDUgMC00NiAyMC41OTUtNDYgNDZzMjAuNTk1IDQ2IDQ2IDQ2IDQ2LTIwLjU5NSA0Ni00Ni0yMC41OTUtNDYtNDYtNDZ6bS00My42NzMtMTY1LjM0Nmw3LjQxOCAxMzZjLjM0NyA2LjM2NCA1LjYwOSAxMS4zNDYgMTEuOTgyIDExLjM0Nmg0OC41NDZjNi4zNzMgMCAxMS42MzUtNC45ODIgMTEuOTgyLTExLjM0Nmw3LjQxOC0xMzZjLjM3NS02Ljg3NC01LjA5OC0xMi42NTQtMTEuOTgyLTEyLjY1NGgtNjMuMzgzYy02Ljg4NCAwLTEyLjM1NiA1Ljc4LTExLjk4MSAxMi42NTR6Ii8+PC9zdmc+");
 	background-position: center center;
@@ -278,31 +282,6 @@ section#meta div#badges span:last-child {
 	margin-right: 0;
 }
 
-section#meta div#badges span.college {
-	background: #600080;
-	color: #fff;
-}
-
-section#meta div#badges span.on-alert {
-	background: #d1d1d1;
-	color: #000;
-}
-
-section#meta div#badges span.orange-alert {
-	background: #ff8800;
-	color: #000;
-}
-
-section#meta div#badges span.red-alert {
-	background: #d42200;
-	color: #fff;
-}
-
-section#meta div#badges span.yellow-alert {
-	background: #ffe100;
-	color: #000;
-}
-
 section#meta div#updated strong {
 	font-weight: 500;
 }
@@ -415,6 +394,32 @@ section#stats div.column div.meta.decreasing {
 	background: #4ab53e !important;
 }
 
+section#stats div.column#stat-attack-rate,
+section#stats div.column#stat-alert-status,
+section#stats div.column#stat-college-university {
+	display: none;
+}
+
+section#stats div.column#stat-alert-status div.val span {
+	text-transform: uppercase;
+}
+
+section#stats div.column#stat-alert-status div.val span.white {
+	color: #d1d1d1;
+}
+
+section#stats div.column#stat-alert-status div.val span.yellow {
+	color: #ffe100;
+}
+
+section#stats div.column#stat-alert-status div.val span.orange {
+	color: #ff8800;
+}
+
+section#stats div.column#stat-alert-status div.val span.red {
+	color: #d42200;
+}
+
 /* Chart */
 section#chart {
 	margin: 40px 0;
@@ -511,14 +516,21 @@ body.city section#options div#delta {
 	margin-right: 0;
 }
 
-body.city section#stats div.column {
-	width: 28.33%;
-}
-
 body.city section#stats div#stat-hospitalized-new,
 body.city section#stats div#stat-hospitalized-total,
 body.city section#stats div#stat-r0 {
 	display: none;
+}
+
+body.city section#stats div.column#stat-attack-rate,
+body.city section#stats div.column#stat-alert-status,
+body.city section#stats div.column#stat-college-university {
+	display: inline-block;
+}
+
+body.city section#stats div.column#stat-per-100k,
+body.city section#stats div.column#stat-tpr {
+	margin-bottom: 4%;
 }
 
 /* Demographics */

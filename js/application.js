@@ -723,28 +723,33 @@ var COVID_Tracker = function(city) {
 		}
 
 		// college town indicator
-		document.querySelector("#badges").innerHTML = '';
-		if(this.data.city != 'Connecticut') {
-			if(this.calculateCasesPer100K() >= 15) {
-				document.querySelector("#badges").innerHTML += '<span class="red-alert" title="This city/town has critical levels of infection">Red Alert</span>';
-			} else if(this.calculateCasesPer100K() >= 10) {
-				document.querySelector("#badges").innerHTML += '<span class="orange-alert" title="This city/town has near critical levels of infection">Orange Alert</span>';
-			} else if(this.calculateCasesPer100K() >= 5) {
-				document.querySelector("#badges").innerHTML += '<span class="yellow-alert" title="This city/town has significant levels of infection">Yellow Alert</span>';
-			} else {
-				document.querySelector("#badges").innerHTML += '<span class="on-alert" title="This city/town must has normal levels of infection">On Alert - Stay Vigilent</span>';
+		if(['cities', 'counties'].indexOf(this.locationType(this.data.city)) != -1) {
+			document.querySelector("#stat-alert-status div.val").innerHTML = '';
+
+			if(this.data.city != 'Connecticut') {
+				if(this.calculateCasesPer100K() >= 15) {
+					document.querySelector("#stat-alert-status div.val").innerHTML += '<span class="red" title="This city/town has critical levels of infection">Red</span>';
+				} else if(this.calculateCasesPer100K() >= 10) {
+					document.querySelector("#stat-alert-status div.val").innerHTML += '<span class="orange" title="This city/town has near critical levels of infection">Orange</span>';
+				} else if(this.calculateCasesPer100K() >= 5) {
+					document.querySelector("#stat-alert-status div.val").innerHTML += '<span class="yellow" title="This city/town has significant levels of infection">Yellow</span>';
+				} else {
+					document.querySelector("#stat-alert-status div.val").innerHTML += '<span class="white" title="This city/town must has normal levels of infection">Grey</span>';
+				}
 			}
-		}
-		
-		if(typeof(this.data.colleges) == 'object' && this.data.colleges.length > 0) {
-			document.querySelector("#badges").innerHTML += '<span class="college">College/University Town</span>';
+			
+			if(typeof(this.data.colleges) == 'object' && this.data.colleges.length > 0) {
+				document.querySelector("#stat-college-university div.val").innerHTML = this.data.colleges.length;
+			} else {
+				document.querySelector("#stat-college-university div.val").innerHTML = 0;
+			}
+
+			document.querySelector("#stats #stat-attack-rate div.val").innerHTML = this.calculateAttackRate();
 		}
 	};
 
 	this.buildCovidActNowMessage = function() {
 		var cls = ['low', 'medium', 'high', 'critical'];
-
-		
 
 		for(k in this.data.covidactnow.thresholds[type]) {
 			if(num <= this.data.covidactnow.thresholds[type][k]) {
@@ -1004,6 +1009,32 @@ var COVID_Tracker = function(city) {
 	
 	this.calculateIncreaseOrDecrease = function(a, b) {
 		return a == b ? 0 : (a > b ? 1 : -1);
+	};
+
+	this.calculateMovingAverage = function(type, period) {
+		var data = this.data[type].data.reverse();
+	
+		var key = [];
+		var val = [];
+	
+		for(k = 1; k <= Math.floor(data.length / period); k++) {
+			var start = (k - 1) * period,
+				end = k * period;
+	
+			var poi = data.slice(start, end);
+	
+			var num = poi.reduce(function(a, b) { 
+				return parseInt(a, 10) + parseInt(b, 10);
+			});
+	
+			key.push(this.data.dates[start]);
+			val.push(num / poi.length);
+		}
+	
+		return {
+			dates: key,
+			data: val
+		};
 	};
 
 	this.calculateCasesPer100K = function(index) {
