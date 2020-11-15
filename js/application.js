@@ -824,6 +824,7 @@ var COVID_Tracker = function(city) {
 					'<td>' + this.data.dates[k] + '</td>',
 					'<td>' + this.formatWithCommas(this.data.cases.data[k]) + '</td>',
 					'<td>' + this.formatWithCommas(this.calculateDifferenceAtIndex('cases', k)) + '</td>',
+					'<td>' + this.calculateCasesPer100K(this.data.dates.length - k) + '</td>',
 					'<td>' + this.formatWithDigits(this.calculateDelta('cases', k), 2) + '%</td>',
 					'<td>' + this.formatWithCommas(this.data.deaths.data[k]) + '</td>',
 					'<td>' + this.formatWithCommas(this.calculateDifferenceAtIndex('deaths', k)) + '</td>',
@@ -836,7 +837,7 @@ var COVID_Tracker = function(city) {
 				html.push([
 					'<tr>',
 						'<td>' + this.no_data_actual[this.no_data.indexOf(this.data.dates[k])] + '</td>',
-						'<td colspan="7">The State of Connecticut did not report data on ' + this.no_data_actual[this.no_data.indexOf(this.data.dates[k])] + '</td>',
+						'<td colspan="9">The State of Connecticut did not report data on ' + this.no_data_actual[this.no_data.indexOf(this.data.dates[k])] + '</td>',
 					'</tr>'
 				].join(""));
 			}
@@ -849,6 +850,7 @@ var COVID_Tracker = function(city) {
 					'<th>Date</th>',
 					'<th>Total Cases</th>',
 					'<th>New Cases</th>',
+					'<th>Cases / 100K</th>',
 					'<th>Case Delta</th>',
 					'<th>Total Deaths</th>',
 					'<th>New Deaths</th>',
@@ -860,7 +862,7 @@ var COVID_Tracker = function(city) {
 				'</tbody>',
 				'<tfoot>',
 					'<tr>',
-						'<td colspan="8"><a href="javascript:;" onclick="javascript:void(CT.toggleTable());">Show All Dates</a></td>',
+						'<td colspan="9"><a href="javascript:;" onclick="javascript:void(CT.toggleTable());">Show All Dates</a></td>',
 					'</tr>',
 				'</tfoot>',
 			'</table>'
