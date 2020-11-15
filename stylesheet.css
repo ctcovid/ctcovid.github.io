@@ -621,7 +621,7 @@ section#table table tfoot td a:active,
 section#table table tfoot td a:link,
 section#table table tfoot td a:visited {
 	color: #1f70ad;
-	font-weight: 600;
+	font-weight: 500;
 }
 
 section#schools table thead th,
