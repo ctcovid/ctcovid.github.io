@@ -621,7 +621,7 @@ var COVID_Tracker = function(city) {
 		var date = new Date(Date.parse(this.data.dates[this.data.dates.length - 1] + ', 2020'));
 		    date.setDate(date.getDate() + 1);
 		
-		document.querySelector("#updated p span").innerHTML = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][date.getMonth()] + ' ' + date.getDate();
+		document.querySelector("#updated p span").innerHTML = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][date.getDay()] + ', ' + ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
 		
 		// cases
 		document.querySelector("#stats #stat-cases-new div.val").innerHTML = [
