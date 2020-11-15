@@ -43,10 +43,6 @@
 	</nav>
 	
 	<article></article>
-	
-	<section id="twitter">
-		Now available on CTCOVID.com: K-12 case statistics on City/Town pages &mdash; <a href="https://www.twitter.com/CTCOVID" rel="noopener nofollow" target="_blank">Follow Us On Twitter</a> For The Latest Updates.
-	</section>
 
 	<section id="top">
 		<div class="limit">
@@ -60,6 +56,10 @@
 					<div id="summary"></div>
 					<div id="updated">
 						<p><strong>Data Last Updated:</strong> <span></span></p>
+					</div>
+
+					<div id="twitter">
+						<a href="https://www.twitter.com/ctcovid" target="_blank" rel="noopener nofollow">Follow @CTCOVID on Twitter</a>
 					</div>
 				</div>
 			</section>
@@ -194,8 +194,8 @@
 				<div id="segmentation">
 					<p>Segmentation</p>
 					<ul>
-						<li id="selector-total"><a href="javascript:;" onclick="CT.buildGraph('total', 'segmentation');">Total</a></li>
 						<li id="selector-new"><a href="javascript:;" onclick="CT.buildGraph('new', 'segmentation');">New</a></li>
+						<li id="selector-total"><a href="javascript:;" onclick="CT.buildGraph('total', 'segmentation');">Total</a></li>
 						<li id="selector-delta"><a href="javascript:;" onclick="CT.buildGraph('delta', 'segmentation');">Rate Of Change</a></li>
 					</ul>
 				</div>
@@ -281,7 +281,6 @@
 	
 	LazyLoad.js([
 		'js/chart.min.js',
-		'js/chart.trendline.min.js',
 		'js/application.js?' + window.Build, 
 		'https://www.googletagmanager.com/gtag/js?id=UA-163338948-1'
 	], function() {

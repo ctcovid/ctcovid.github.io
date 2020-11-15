@@ -200,26 +200,6 @@ section#top div.limit {
 	max-width: 1160px;
 }
 
-/* Twitter */
-section#twitter {
-	background: #373737;
-	color: #fff;
-	font-size: 10pt;
-	font-weight: 300;
-	margin-top: -1px;
-	padding: 12px;
-	text-align: center;
-	text-transform: uppercase;
-}
-
-section#twitter a,
-section#twitter a:active,
-section#twitter a:link,
-section#twitter a:visited {
-	color: #fff;
-	font-weight: 500;
-}
-
 /* Meta Data */
 section#meta {
 	float: left;
@@ -257,11 +237,52 @@ section#meta p:last-child {
 section#meta div#summary,
 section#meta div#updated {
 	color: #555;
-	font-size: 12pt;
+	font-size: 11pt;
 	line-height: 175%;
 	margin: 0;
 	margin-top: 12px;
 	padding: 0;
+}
+
+section#meta div#twitter {
+	background: #1da1f2;
+	border-radius: 4px;
+	cursor: pointer;
+	display: inline-block;
+	margin-top: 24px;
+	padding: 8px;
+	padding-right: 12px;
+	position: relative;
+}
+
+section#meta div#twitter:hover {
+	background: #0488d9
+}
+
+section#meta div#twitter a,
+section#meta div#twitter a:active,
+section#meta div#twitter a:link,
+section#meta div#twitter a:visited {
+	color: #fff;
+	font-size: 10pt;
+	font-weight: 500;
+	line-height: 24px;
+	margin: 0;
+	padding: 0;
+	padding-left: 36px;
+	text-decoration: none;
+}
+
+section#meta div#twitter a:before {
+	background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNNDU5LjM3IDE1MS43MTZjLjMyNSA0LjU0OC4zMjUgOS4wOTcuMzI1IDEzLjY0NSAwIDEzOC43Mi0xMDUuNTgzIDI5OC41NTgtMjk4LjU1OCAyOTguNTU4LTU5LjQ1MiAwLTExNC42OC0xNy4yMTktMTYxLjEzNy00Ny4xMDYgOC40NDcuOTc0IDE2LjU2OCAxLjI5OSAyNS4zNCAxLjI5OSA0OS4wNTUgMCA5NC4yMTMtMTYuNTY4IDEzMC4yNzQtNDQuODMyLTQ2LjEzMi0uOTc1LTg0Ljc5Mi0zMS4xODgtOTguMTEyLTcyLjc3MiA2LjQ5OC45NzQgMTIuOTk1IDEuNjI0IDE5LjgxOCAxLjYyNCA5LjQyMSAwIDE4Ljg0My0xLjMgMjcuNjE0LTMuNTczLTQ4LjA4MS05Ljc0Ny04NC4xNDMtNTEuOTgtODQuMTQzLTEwMi45ODV2LTEuMjk5YzEzLjk2OSA3Ljc5NyAzMC4yMTQgMTIuNjcgNDcuNDMxIDEzLjMxOS0yOC4yNjQtMTguODQzLTQ2Ljc4MS01MS4wMDUtNDYuNzgxLTg3LjM5MSAwLTE5LjQ5MiA1LjE5Ny0zNy4zNiAxNC4yOTQtNTIuOTU0IDUxLjY1NSA2My42NzUgMTI5LjMgMTA1LjI1OCAyMTYuMzY1IDEwOS44MDctMS42MjQtNy43OTctMi41OTktMTUuOTE4LTIuNTk5LTI0LjA0IDAtNTcuODI4IDQ2Ljc4Mi0xMDQuOTM0IDEwNC45MzQtMTA0LjkzNCAzMC4yMTMgMCA1Ny41MDIgMTIuNjcgNzYuNjcgMzMuMTM3IDIzLjcxNS00LjU0OCA0Ni40NTYtMTMuMzIgNjYuNTk5LTI1LjM0LTcuNzk4IDI0LjM2Ni0yNC4zNjYgNDQuODMzLTQ2LjEzMiA1Ny44MjcgMjEuMTE3LTIuMjczIDQxLjU4NC04LjEyMiA2MC40MjYtMTYuMjQzLTE0LjI5MiAyMC43OTEtMzIuMTYxIDM5LjMwOC01Mi42MjggNTQuMjUzeiI+PC9wYXRoPjwvc3ZnPg==");
+	background-position: center center;
+	background-repeat: no-repeat;
+	content: '';
+	height: 24px;
+	left: 8px;
+	position: absolute;
+	top: 8px;
+	width: 24px;
 }
 
 section#meta div#badges {
