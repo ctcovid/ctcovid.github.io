@@ -868,6 +868,8 @@ var COVID_Tracker = function(city) {
 	};
 
 	this.buildTableSchool = function() {
+		return;
+
 		if(this.data.city != 'Connecticut' && this.data.city.indexOf('county') == -1) {
 			var html = [];
 			
