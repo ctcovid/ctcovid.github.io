@@ -29,7 +29,7 @@
 <p>If you are a Local/State/County Government located in the United States or one of its' territories and would like to license this software, please email <a href="mailto:media@ctcovid.com">licensing@ctcovid.com</a>.</p>
 
 <h4>Do you accept tips?</h4>
-<p>CTCOVID.com is provided free of charge, operated at my own expense and without the use of advertisements that would harm the usability of the website. If you would still like to send a tip, you can do so using the following links:</p>
+<p>CTCOVID.com is provided free of charge, operated at my own expense and without the use of advertisements that would harm the usability of the website.</p>
 
 <h4>I am a member of the media, how can I contact CTCOVID.com?</h4>
 <p>If you are a member of the media, you can send an email to <a href="mailto:media@ctcovid.com">media@ctcovid.com</a>. Please be sure to use the subject <strong>Media Inquiry</strong>; if you do not use this exact subject, your email will be discarded by our spam rules.</p>
