@@ -1032,7 +1032,7 @@ var COVID_Tracker = function(city) {
 		if(a == 0 && b == 0) {
 			return 0;
 		} else if(a == 0 || b == 0) {
-			return Infinity;
+			return 100;
 		}
 		
 		return ((a / b) - 1) * 100;
