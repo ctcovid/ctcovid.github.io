@@ -232,6 +232,7 @@ var COVID_Tracker = function(city) {
 							borderWidth: 1,
 							pointRadius: 0,
 							pointHitRadius: 0,
+							pointHoverRadius: 0,
 							lineTension: 0
 						},
 				        {
