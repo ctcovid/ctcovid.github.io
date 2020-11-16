@@ -1055,10 +1055,12 @@ var COVID_Tracker = function(city) {
 
 	this.calculateMovingAverage = function(data, period) {
 		var ret = [];
+
+		data = data.reverse();
 	
-		for(k = 0; k < data.length; k++) {
-			var start = k,
-				end = k + period;
+		for(k = period; k < data.length; k++) {
+			var start = k - period,
+				end = k;
 			
 			var poi = data.slice(start, end);
 	
@@ -1068,8 +1070,12 @@ var COVID_Tracker = function(city) {
 
 			ret.push(Math.floor(num / poi.length));
 		}
+
+		for(i = 0; i < period; i++) {
+			ret.push(null);
+		}
 	
-		return ret;
+		return ret.reverse();
 	};
 
 	this.calculateCasesPer100K = function(index) {
