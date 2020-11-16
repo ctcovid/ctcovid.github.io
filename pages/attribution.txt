@@ -9,23 +9,29 @@
 	
 	<li><a href="https://github.com/emn178/chartjs-plugin-labels" target="_blank" rel="noopener nofollow">Chart.js Labels</a><br />We use this for showing labels on our Chart.js doughnut graphs. Chart.js Label Plug-In is released under the <a href="/lib/licenses/chartjs-labels.txt" target="_blank" rel="noopener nofollow">MIT License</a><br />&nbsp;</li>
 	
-	<li><a href="https://github.com/Makanz/chartjs-plugin-trendline" target="_blank" rel="noopener nofollow">Chart.js Trendline Plug-In</a><br />While this is no longer used, we feel it should get credit as it previously was used to show trendlines on our graphs. Chart.js Trendline Plug-In is released under the <a href="https://github.com/Makanz/chartjs-plugin-trendline/blob/master/LICENSE" target="_blank" rel="noopener nofollow">MIT License</a><br />&nbsp;</li>
-	
 	<li><a href="https://www.iconfinder.com/iconsets/covid-19-coronavirus-protection-o-prevention-glyph" target="_blank" rel="noopener nofollow">Covid-19 Coronavirus Protection or Prevention Glyph icon set by KP Arts</a><br/>We use a modified version of the "mask" icon in a modified form as our "favicon" and "application icon". In accordance with the terms of the license, our modifications to this icon also released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener nofollow">CC BY-SA 3.0 License</a><br />&nbsp;
 
 	<li><a href="https://www.covidactnow.org" target="_blank" rel="noopener nofollow">COVIDActNow</a><br/>We use data from COVIDActNow to inform our outbreak indication monitor.<br />&nbsp;</li>
 
-	<li><a href="https://data.ct.gov/" target="_blank" rel="noopener nofollow">Connecticut Open Data</a><br />We use Connecticut Open Data to gather our data for the site each day. Connecticut Open Data operates their site and releases their data as public service.<br />&nbsp;</li>
+	<li><a href="https://data.ct.gov/" target="_blank" rel="noopener nofollow">Connecticut Open Data</a><br />We use Connecticut Open Data to gather our data for the site each day. Connecticut Open Data is operated by the State of Connecticut and releases their data as public service.<br />&nbsp;</li>
 	
 	<li><a href="https://www.fontawesome.com/" target="_blank" rel="noopener nofollow">FontAwesome</a><br />We use this package for the "exclamation", "info-circle" and "piggy bank", "twitter" icons on our site. Icon color has been modified, additionally, certain SVG attributes have been removed to reduce overall file size. FontAwesome is released under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener nofollow">CC 4.0 BY License</a><br />&nbsp;</li>
-	
-	<li><a href="https://www.html5boilerplate.com/" target="_blank" rel="noopener nofollow">HTML5 Boilerplate</a><br />While this is no longer used, we feel it should get credit as it was previously used for some server-side configuration on previous versions of CTCOVID.com  (<a href="https://github.com/h5bp/html5-boilerplate/blob/master/LICENSE.txt" rel="noopener nofollow">License</a>)<br />&nbsp;</li>
 
-	<li><a href="https://github.com/rgrove/lazyload" target="_blank" rel="noopener nofollow">LazyLoad.js</a><br/>This is used to "lazy load" assets on the website to ensure the site loads faster (<a href="/lib/licenses/lazyload.txt" rel="nofollow">License</a>)</li>
+	<li><a href="https://github.com/rgrove/lazyload" target="_blank" rel="noopener nofollow">LazyLoad.js</a><br/>This is used to "lazy load" assets on the website to ensure the site loads faster (<a href="/lib/licenses/lazyload.txt" rel="nofollow">License</a>)<br />&nbsp;</li>
 	
 	<li><a href="https://fonts.google.com/specimen/Libre+Franklin" target="_blank" rel="noopener nofollow">Libre Franklin Typeface</a><br />This is the typeface used on our site. Libre Franklin is released under the <a href="https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL" target="_blank" rel="noopener nofollow">Open Font License</a>.<br />&nbsp;</li>
 	
-	<li><a href="https://www.iconfinder.com/iconsets/outbreak-epidemic" target="_blank" rel="noopener nofollow">Pandemic and Outbreak Icon Pack by Anthony Ledoux</a><br/>While this is no longer used, we feel it should get credit as it was previously used in a modified form as our "favicon" and "application icon". In accordance with the terms of the license, our modifications to this icon also released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener nofollow">CC BY-SA 3.0 License</a><br />&nbsp;</li>
+	<li><a href="https://rt.live" target="_blank" rel="noopener nofollow">Rt COVID-19</a><br />We use data provided by Rt.live to provide the Rt number visible on the Statewide and County pages.<br />&nbsp;</li>
+</ul>
+
+<h2>Previously Used</h2>
+
+<p>While the following items are no longer used, we feel the projects below should still receive credit and attribution since their work was previously used.</p>
+
+<ul>
+	<li><a href="https://github.com/Makanz/chartjs-plugin-trendline" target="_blank" rel="noopener nofollow">Chart.js Trendline Plug-In</a><br />This was used to show trendlines on our graphs. Chart.js Trendline Plug-In is released under the <a href="https://github.com/Makanz/chartjs-plugin-trendline/blob/master/LICENSE" target="_blank" rel="noopener nofollow">MIT License</a><br />&nbsp;</li>
+
+	<li><a href="https://www.html5boilerplate.com/" target="_blank" rel="noopener nofollow">HTML5 Boilerplate</a><br />This was previously used for some server-side configuration on previous versions of CTCOVID.com  (<a href="https://github.com/h5bp/html5-boilerplate/blob/master/LICENSE.txt" rel="noopener nofollow">License</a>)<br />&nbsp;</li>
 	
-	<li><a href="https://rt.live" target="_blank" rel="noopener nofollow">R<sub>t</sub> Live</a><br />We use data provided by Rt.live to provide the R<sup>0</sup> number visible on the Statewide and County pages.<br />&nbsp;</li>
+	<li><a href="https://www.iconfinder.com/iconsets/outbreak-epidemic" target="_blank" rel="noopener nofollow">Pandemic and Outbreak Icon Pack by Anthony Ledoux</a><br/>This was previously used in a modified form as our "favicon" and "application icon". In accordance with the terms of the license, our modifications to this icon also released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener nofollow">CC BY-SA 3.0 License</a><br />&nbsp;</li>
 </ul>
