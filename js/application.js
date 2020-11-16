@@ -1069,7 +1069,7 @@ var COVID_Tracker = function(city) {
 				return parseInt(a, 10) + parseInt(b, 10);
 			});
 
-			ret.push(Math.floor(num / poi.length));
+			ret.push(Math.ceil(num / poi.length));
 		}
 
 		for(i = 0; i < period; i++) {
