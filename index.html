@@ -30,7 +30,7 @@
 	<script type="text/javascript">
 	var Build=Math.floor(new Date().getTime()/1000);
 	</script>
-	<script type="text/javascript" src="js/lazyload.min.js"></script>
+	<script type="text/javascript" src="lib/lazyload.min.js"></script>
 </head>
 <body>
 	<nav>
@@ -285,7 +285,8 @@
 	]);
 	
 	LazyLoad.js([
-		'js/chart.min.js',
+		'lib/chart.min.js',
+		'lib/chart.labels.min.js',
 		'js/application.js?' + window.Build, 
 		'https://www.googletagmanager.com/gtag/js?id=UA-163338948-1'
 	], function() {
