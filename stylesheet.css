@@ -269,7 +269,7 @@ section#meta div#twitter a:visited {
 	margin: 0;
 	padding: 8px;
 	padding-right: 12px;
-	padding-left: 42px;
+	padding-left: 46px;
 	text-decoration: none;
 }
 
@@ -279,7 +279,7 @@ section#meta div#twitter a:before {
 	background-repeat: no-repeat;
 	content: '';
 	height: 24px;
-	left: 8px;
+	left: 12px;
 	position: absolute;
 	top: 8px;
 	width: 24px;
