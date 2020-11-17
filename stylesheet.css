@@ -250,8 +250,6 @@ section#meta div#twitter {
 	cursor: pointer;
 	display: inline-block;
 	margin-top: 24px;
-	padding: 8px;
-	padding-right: 12px;
 	position: relative;
 }
 
@@ -264,12 +262,14 @@ section#meta div#twitter a:active,
 section#meta div#twitter a:link,
 section#meta div#twitter a:visited {
 	color: #fff;
+	display: block;
 	font-size: 10pt;
 	font-weight: 500;
 	line-height: 24px;
 	margin: 0;
-	padding: 0;
-	padding-left: 36px;
+	padding: 8px;
+	padding-right: 12px;
+	padding-left: 42px;
 	text-decoration: none;
 }
 
