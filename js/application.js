@@ -822,9 +822,9 @@ var COVID_Tracker = function(city) {
 			case 1:
 				message = (function(a, b, c, d, e) {
 					if(a == -1) {
-						return 'Over the past 7 days, new cases are <strong class="good">currently decreasing</strong> in ' + e + ', ' + (d > 0 ? 'however, deaths are <strong class="bad">currently increasing</strong>' : 'thankfully, <strong class="good">there have not been any deaths to date</strong>') + '.';
+						return 'Over the past 7 days, new cases are <strong class="good">currently decreasing</strong> in ' + e + ', ' + (d != 0 ? 'however, deaths are <strong class="bad">currently increasing</strong>' : 'thankfully, <strong class="good">there have not been any deaths to date</strong>') + '.';
 					} else if(a == 1) {
-						return 'Over the past 7 days, new cases are <strong class="bad">currently increasing</strong> in ' + e + ', ' + (d > 0 ? 'however, deaths <strong>have been relatively flat</strong> for several days' : 'thankfully, <strong class="good">there have not been any deaths to date</strong>') + '.';
+						return 'Over the past 7 days, new cases are <strong class="bad">currently increasing</strong> in ' + e + ', ' + (d != 0  ? 'however, deaths <strong>have been relatively flat</strong> for several days' : 'thankfully, <strong class="good">there have not been any deaths to date</strong>') + '.';
 					}
 				})(a, b, c, d, this.data.city);
 					
@@ -1176,7 +1176,7 @@ var COVID_Tracker = function(city) {
 		
 		var angle = Math.floor(Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI);
 		
-		return (angle <= variance && angle >= (variance * -1)) ? 0 : (angle > 0 ? 1 : -1);
+		return angle != 0 ? (angle > 0 ? 1 : -1) : 0;
 	};
 	
 	// formatting functions
