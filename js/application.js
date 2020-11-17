@@ -803,8 +803,8 @@ var COVID_Tracker = function(city) {
 	};
 	
 	this.buildSummaryMessage = function() {
-		var a = this.calculateTrend('cases', 6),
-			b = this.calculateTrend('deaths', 6),
+		var a = this.calculateTrend('cases', 7, 0),
+			b = this.calculateTrend('deaths', 7, 0),
 			c = this.calculateSum(this.data.cases.data),
 			d = this.calculateSum(this.data.deaths.data);
 			
@@ -813,7 +813,7 @@ var COVID_Tracker = function(city) {
 		switch(a + b) {
 			case -2: 
 				message = (function(a, b, c, d, e) {
-					return 'Over the past 5 days, new cases and deaths are <strong class="good">currently decreasing</strong> in ' + e + '. This means that social distancing and wearing face coverings are likely working and, as a result, <strong>new cases are being prevented and lives are being saved</strong>.';
+					return 'Over the past 7 days, new cases and deaths are <strong class="good">currently decreasing</strong> in ' + e + '. This means that social distancing and wearing face coverings are likely working and, as a result, <strong>new cases are being prevented and lives are being saved</strong>.';
 				})(a, b, c, d, this.data.city);
 				
 				break;
@@ -822,9 +822,9 @@ var COVID_Tracker = function(city) {
 			case 1:
 				message = (function(a, b, c, d, e) {
 					if(a == -1) {
-						return 'Over the past 5 days, new cases are <strong class="good">currently decreasing</strong> in ' + e + ', ' + (d > 0 ? 'however, deaths are <strong class="bad">currently increasing</strong> for several days' : 'thankfully, <strong class="good">there have not been any deaths to date</strong>') + '.';
+						return 'Over the past 7 days, new cases are <strong class="good">currently decreasing</strong> in ' + e + ', ' + (d > 0 ? 'however, deaths are <strong class="bad">currently increasing</strong>' : 'thankfully, <strong class="good">there have not been any deaths to date</strong>') + '.';
 					} else if(a == 1) {
-						return 'Over the past 5 days, new cases are <strong class="bad">currently increasing</strong> in ' + e + ', ' + (d > 0 ? 'however, deaths <strong>have been relatively flat</strong> for several days' : 'thankfully, <strong class="good">there have not been any deaths to date</strong>') + '.';
+						return 'Over the past 7 days, new cases are <strong class="bad">currently increasing</strong> in ' + e + ', ' + (d > 0 ? 'however, deaths <strong>have been relatively flat</strong> for several days' : 'thankfully, <strong class="good">there have not been any deaths to date</strong>') + '.';
 					}
 				})(a, b, c, d, this.data.city);
 					
@@ -839,9 +839,9 @@ var COVID_Tracker = function(city) {
 							'New cases of COVID-19 in ' + e + ' <strong class="good">have been relatively flat</strong> for several days. It is imperative to <strong>continue engaging in social distancing and wear a face covering</strong> as COVID-19 can spread asymptomatically.'
 						].join("");
 					} else if(a == 1) {
-						return 'Over the past 5 days, new cases are <strong class="bad">currently increasing</strong> in ' + e + ', however, deaths are <strong class="good">currently decreasing</strong>.';
+						return 'Over the past 7 days, new cases are <strong class="bad">currently increasing</strong> in ' + e + ', however, deaths are <strong class="good">currently decreasing</strong>.';
 					} else {
-						return 'Over the past 5 days, new cases are <strong class="good">currently decreasing</strong> in ' + e + ', however, deaths are <strong class="bad">currently increasing</strong>.';
+						return 'Over the past 7 days, new cases are <strong class="good">currently decreasing</strong> in ' + e + ', however, deaths are <strong class="bad">currently increasing</strong>.';
 					}
 				})(a, b, c, d, this.data.city);
 				
@@ -849,7 +849,7 @@ var COVID_Tracker = function(city) {
 			
 			case 2: 
 				message = (function(a, b, c, d, e) {
-					return 'Over the past 5 days, new cases and new deaths are <strong class="bad">currently increasing</strong> in ' + e + '.';
+					return 'Over the past 7 days, new cases and new deaths are <strong class="bad">currently increasing</strong> in ' + e + '.';
 				})(a, b, c, d, this.data.city);
 				
 				break;
@@ -1159,74 +1159,24 @@ var COVID_Tracker = function(city) {
 		return this.formatWithDigits(result || 0, 2) + '%';
 	};
 	
-	this.calculateTrend = function(type, count) {
-		var data = false;
-		var first = false;
+	this.calculateTrend = function(type, count, variance) {
+		var variance = variance || 0;
 		
-		if(this.calculateDailyDifferences(type).length >= count) {
-			data = this.calculateDailyDifferences(type).slice(count * -1);
-		}
+		var data = this.calculateDailyDifferences(type).slice(count * -2);
 		
-		if(data && (data.length < 4 || (count % 2) != 0)) {
-			return false;
-		}
+		var a = {
+			x: 0,
+			y: this.calculateSum(data.slice(0, count)) / count
+		};
 		
-		for(k in data) {
-			if(data[k] != 0) {
-				first = k;
-				break;
-			}
-		}
+		var b = {
+			x: 1,
+			y: this.calculateSum(data.slice(count * -1)) / count
+		};
 		
-		if((data.length - first) < count) {
-			data = data.slice(first);
-			
-			if(data % 2 != 0) {
-				data = data.slice(1);
-			}
-		}
+		var angle = Math.floor(Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI);
 		
-		var b = this.calculateSum(data.slice(0, data.length / 2)),
-			a = this.calculateSum(data.slice((data.length / 2) * -1));
-			
-		if(a == b) {
-			var data2 = this.data[type].data.slice(count * -1),
-				first = 0;
-			
-			for(k in data2) {
-				if(data[k] != 0) {
-					first = k - 1;
-					break;
-				}
-			}
-			
-			if((data2.length - first) < count) {
-				data2 = data2.slice(first);
-				
-				if(data2 % 2 != 0) {
-					data2 = data2.slice(1);
-				}
-			}
-			
-			var c = this.calculateAverage(data2.slice(0, data2.length / 2)),
-				d = this.calculateAverage(data2.slice((data2.length / 2) * -1));
-				
-			if(c != d) {
-				if(c < d) {
-					a = a + 1;
-				} else {
-					b = b + 1;
-				}
-			}
-		}
-		
-		if(b == 0) {
-			if(a != 0) {
-				a = -1;
-			}
-		}
-		
-		return a === b ? 0 : (a < b ? -1 : 1);
+		return (angle <= variance && angle >= (variance * -1)) ? 0 : (angle > 0 ? 1 : -1);
 	};
 	
 	// formatting functions
