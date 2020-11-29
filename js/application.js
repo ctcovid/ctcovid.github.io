@@ -759,6 +759,40 @@ var COVID_Tracker = function(city) {
 
 		return "";
 	}
+
+	this.buildLocationOutput = function() {
+		var counties = Math.ceil(this.counties.length / 4),
+			html = [];
+
+		for(k in this.counties) {
+			html.push('<li><a href="#' + this.formatCityName(this.counties[k]) + '">' + this.counties[k] + '</a></li>');
+		}
+
+		document.getElementById("locations-counties").innerHTML = [
+			'<ul>' + html.slice(0, counties).join("") + '</ul>',
+			'<ul>' + html.slice(counties, counties * 2).join("") + '</ul>',
+			'<ul>' + html.slice(counties * 2, counties * 3).join("") + '</ul>',
+			'<ul>' + html.slice(counties * 3, this.counties.length).join("") + '</ul>',
+			'<div class="fc"></div>'
+		].join("");
+		
+		var cities = Math.ceil(this.cities.length / 6),
+			html = [];
+
+		for(k in this.cities) {
+			html.push('<li><a href="#' + this.formatCityName(this.cities[k]) + '">' + this.cities[k] + '</a></li>');
+		}
+
+		document.getElementById("locations-cities").innerHTML = [
+			'<ul>' + html.slice(0, cities).join("") + '</ul>',
+			'<ul>' + html.slice(cities, cities * 2).join("") + '</ul>',
+			'<ul>' + html.slice(cities * 2, cities * 3).join("") + '</ul>',
+			'<ul>' + html.slice(cities * 3, cities * 4).join("") + '</ul>',
+			'<ul>' + html.slice(cities * 4, cities * 5).join("") + '</ul>',
+			'<ul>' + html.slice(cities * 5, this.cities.length).join("") + '</ul>',
+			'<div class="fc"></div>'
+		].join("");
+	},
 	
 	this.buildSummaryMessage = function() {
 		var a = this.calculateTrend('cases', 7, 0),
@@ -1300,6 +1334,7 @@ var COVID_Tracker = function(city) {
 			this.buildSummaryMessage();
 			this.buildStatistics();
 			this.buildTable();
+			this.buildLocationOutput();
 			this.buildTableSchool();
 			
 			document.querySelector("#meta #summary").innerHTML = this.buildSummaryMessage();

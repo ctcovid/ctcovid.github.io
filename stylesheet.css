@@ -716,6 +716,51 @@ section#table table thead th {
 	width: 10%;
 }
 
+/* Locations */
+section#locations h3 {
+	font-weight: 500;
+	margin-bottom: 6px;
+	margin-top: 12px;
+}
+
+section#locations h4 {
+	font-weight: 400;
+	margin-bottom: 8px;
+	margin-top: 12px;
+}
+
+section#locations div.counties,
+section#locations div.cities {
+	margin-bottom: 18px;
+}
+
+section#locations div.counties ul,
+section#locations div.cities ul {
+	float: left;
+	list-style: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 16.65%;
+}
+
+section#locations div.counties ul li,
+section#locations div.cities ul li {
+	margin: 4px 0;
+}
+
+section#locations div.counties ul li a,
+section#locations div.counties ul li a:active,
+section#locations div.counties ul li a:link,
+section#locations div.counties ul li a:visited,
+section#locations div.cities ul li a,
+section#locations div.cities ul li a:active,
+section#locations div.cities ul li a:link,
+section#locations div.cities ul li a:visited {
+	color: #1f70ad;
+	font-size: 10pt;
+}
+
 /* Important Information */
 section#information {
 	font-size: 11pt;
