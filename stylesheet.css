@@ -573,12 +573,21 @@ body.city section#stats div.column#stat-tpr {
 /* Demographics */
 section#demographics div.column {
 	float: left;
+	margin-bottom: 12px;
 	margin-right: 5%;
+	margin-top: 12px;
 	width: 30%;
 }
 
 section#demographics div.column.last {
 	margin-right: 0;
+}
+
+section#demographics div.column h4 {
+	font-weight: 400;
+	margin-bottom: 8px;
+	margin-top: 0;
+	text-transform: capitalize;
 }
 
 section#demographics div.column div.graph {
@@ -597,6 +606,7 @@ section#demographics div.column div.graph span {
 
 section#demographics h3 {
 	font-weight: 500;
+	margin-bottom: 6px;
 }
 
 body.city section#demographics,
