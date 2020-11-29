@@ -751,7 +751,7 @@ var COVID_Tracker = function(city) {
 					break;
 				}
 
-				html.push('<span class="segment" title="' + k + ': ' + this.formatWithDigits((first / sum) * 100, 1) + '% of ' + data_type + '" style="background: #' + colors[demographic][k] + '; width: ' + ((first / sum) * 100) + '%"></span>');
+				html.push('<span class="segment" style="background: #' + colors[demographic][k] + '; width: ' + ((first / sum) * 100) + '%"><div class="tooltip"><strong>' + data_type + ': ' + k + '</strong>' + this.formatWithCommas(first) + ' &mdash; ' + this.formatWithDigits((first / sum) * 100, 1) + '%</div></span>');
 			}
 
 			return '<div class="graph demographic">' + html.join("") + '<div class="fc"></div></div>';
