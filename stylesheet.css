@@ -574,7 +574,6 @@ body.city section#stats div.column#stat-tpr {
 section#demographics div.column {
 	float: left;
 	margin-right: 5%;
-	margin-bottom: 60px;
 	width: 30%;
 }
 
@@ -582,10 +581,18 @@ section#demographics div.column.last {
 	margin-right: 0;
 }
 
-section#demographics div.column h4 {
-	font-weight: 400;
-	margin-top: 0;
-	text-transform: capitalize;
+section#demographics div.column div.graph {
+	border-radius: 4px;
+	font-size: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 100%;
+}
+
+section#demographics div.column div.graph span {
+	display: inline-block;
+	float: left;
+	height: 30px;
 }
 
 section#demographics h3 {

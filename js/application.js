@@ -29,106 +29,10 @@ var COVID_Tracker = function(city) {
 	this.buildDemographicGraph = function(segment, data) {
 		var elem = segment + '-' + data;
 		
-		document.querySelector("#demographics .column#column-" + elem + "").innerHTML = '<h4>' + data + ' by ' + segment.replace(/s$/gi, '') + '</h4><canvas id="graph-' + elem + '" height="200"></canvas>';
-		
-		var ctx = document.querySelector("#demographics .column#column-" + elem + " canvas").getContext('2d');
-		
-		var out = [],
-			labels = [];
-		
-		for(k in this.data.demographics[segment][data]) {
-			out.push(this.data.demographics[segment][data][k]);
-			
-			if(segment != 'ethnicity') {
-				labels.push(k.charAt(0).toUpperCase() + k.slice(1));
-			} else {
-				labels.push(k);
-			}
-		}
-		
-		if(segment == 'ethnicity') {
-			background_colors = [
-				"rgba(232, 17, 35, 0.2)", 
-				"rgba(255, 140, 0, 0.2)", 
-				"rgba(255, 185, 0, 0.2)", 
-				"rgba(0, 204, 106, 0.2)", 
-				"rgba(16, 124, 16, 0.2)", 
-				"rgba(0, 183, 195, 0.2)", 
-				"rgba(0, 120, 215, 0.2)", 
-				"rgba(227, 0, 140, 0.2)", 
-				"rgba(136, 23, 152, 0.2)"
-			];
-			border_colors = [
-				"rgba(232, 17, 35, 1)", 
-				"rgba(255, 140, 0, 1)", 
-				"rgba(255, 185, 0, 1)", 
-				"rgba(0, 204, 106, 1)", 
-				"rgba(16, 124, 16, 1)", 
-				"rgba(0, 183, 195, 1)", 
-				"rgba(0, 120, 215, 1)", 
-				"rgba(227, 0, 140, 1)", 
-				"rgba(136, 23, 152, 1)"
-			];
-		} else if(segment == 'genders') {
-			background_colors = ["rgb(54, 162, 235, 0.2)", "rgb(255, 99, 132, 0.2)"];
-			border_colors = ["rgb(54, 162, 235, 1)", "rgb(255, 99, 132, 1)"];
-		} else if(segment == 'ages') {
-			background_colors = "rgb(255, 205, 86, 0.2)";
-			border_colors = "rgb(255, 205, 86)";
-		}
-		
-		window.demographics[data + '_' + segment] = new Chart(ctx, {
-		    type: segment == 'genders' ? 'doughnut' : 'bar',
-		    data: {
-			    labels: labels,
-		        datasets: [{
-			        data: out,
-			        backgroundColor: background_colors,
-			        borderColor: border_colors,
-			        borderWidth: 1
-		        }]
-			},
-		    options: {
-			    animation: {
-					duration: 0
-				},
-				hover: {
-					animationDuration: 0
-				},
-				responsiveAnimationDuration: 0,
-			    legend: {
-				    fontColor: '#fff',
-				    display: false,
-				    padding: 25,
-				    position: 'bottom'
-			    },
-			    maintainAspectRatio: false,
-				responsive: true,
-				tooltips: {
-					callbacks: {
-						label: function(item, data) {
-							var val = data.datasets[0].data[item.index];
-							
-							if(parseInt(val) >= 1000) {
-								return data.labels[item.index] + ': ' + val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-							} else {
-								return data.labels[item.index] + ': ' + val;
-							}
-						}
-					}
-				},
-				plugins: {
-					labels: {
-						fontFamily: "'Libre Franklin', sans-serif",
-						render: segment == 'genders' ? function(args) {
-						    return args.label + "\n" + args.percentage + '%';
-						} : function(args) {
-						    return args.label + "\n" + args.value;
-						}
-					}
-				}
-			}
-		});
+		document.querySelector("#demographics .column#column-" + elem + "").innerHTML = [
+			'<h4>' + data + ' by ' + segment.replace(/s$/gi, '') + '</h4>',
+			this.buildDemographicSummaryChart(segment, data)
+		].join("");
 	};
 	
 	this.buildGraph = function(g, css) {
@@ -801,6 +705,60 @@ var COVID_Tracker = function(city) {
 
 		return cls;
 	};
+
+	this.buildDemographicSummaryChart = function(demographic, data_type) {
+		var colors = {
+			ages: {
+				'0-9': 'F29E4C',
+				'10-19': 'F1C453',
+				'20-29': 'EFEA5A',
+				'30-39': 'B9E769',
+				'40-49': '83E377',
+				'50-59': '16DB93',
+				'60-69': '0DB39E',
+				'70-79': '048BA8',
+				'80 and older': '2C699A'
+			},
+			ethnicity: {
+				'Asian/Pac. Isl.': 'F29E4C',
+				'Black': 'F1C453',
+				'Hispanic': 'EFEA5A',
+				'Multiracial': 'B9E769',
+				'Native AK/Am.': '83E377',
+				'White': '16DB93'
+			},
+			genders: {
+				'male': '7BDFF2',
+				'female': 'F2B5D4'
+			}
+		};
+
+		if(typeof(colors[demographic]) == 'object') {
+			var data = this.data.demographics[demographic][data_type],
+				html = [],
+				sum = 0;
+
+			for(k in data) {
+				for(j in data[k]) {
+					sum += parseInt(data[k][j], 10);
+					break;
+				}
+			}
+
+			for(k in data) {
+				for(j in data[k]) {
+					var first = data[k][j];
+					break;
+				}
+
+				html.push('<span class="segment" title="' + k + ': ' + this.formatWithDigits((first / sum) * 100, 1) + '% of ' + data_type + '" style="background: #' + colors[demographic][k] + '; width: ' + ((first / sum) * 100) + '%"></span>');
+			}
+
+			return '<div class="graph demographic">' + html.join("") + '<div class="fc"></div></div>';
+		}
+
+		return "";
+	}
 	
 	this.buildSummaryMessage = function() {
 		var a = this.calculateTrend('cases', 7, 0),
