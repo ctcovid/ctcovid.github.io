@@ -717,6 +717,10 @@ section#table table thead th {
 }
 
 /* Locations */
+section#locations {
+	margin-top: 50px;
+}
+
 section#locations h3 {
 	font-weight: 500;
 	margin-bottom: 6px;
