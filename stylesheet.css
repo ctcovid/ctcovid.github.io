@@ -571,6 +571,10 @@ body.city section#stats div.column#stat-tpr {
 }
 
 /* Demographics */
+section#demographics div.container {
+	margin-top: 40px;
+}
+
 section#demographics div.column {
 	float: left;
 	margin-bottom: 12px;
@@ -584,6 +588,7 @@ section#demographics div.column.last {
 }
 
 section#demographics div.column h4 {
+	font-size: 12pt;
 	font-weight: 400;
 	margin-bottom: 8px;
 	margin-top: 0;
@@ -640,6 +645,68 @@ section#demographics div.column div.graph span div.tooltip:before {
 	top: -4px;
 	transform: rotate(45deg);
 	width: 8px;
+}
+
+section#demographics div.report div.sparkline {
+	box-sizing: border-box;
+	float: left;
+	padding-right: 15px;
+	width: 20%;
+}
+
+section#demographics div.report div.sparkline div.inner {
+	height: 175px;
+}
+
+section#demographics div.report div.stats {
+	float: left;
+	width: 60%;
+}
+
+section#demographics div.report div.stats ul {
+	list-style: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+section#demographics div.report div.stats ul li {
+	display: inline-block;
+	float: left;
+	margin-bottom: 24px;
+	margin-right: 3.33%;
+	text-align: center;
+	width: 22.5%;
+}
+
+section#demographics div.report div.stats ul li span,
+section#demographics div.report div.stats ul li strong {
+	display: block;
+}
+
+section#demographics div.report div.stats ul li span {
+	font-size: 11pt;
+	font-weight: 500;
+}
+
+section#demographics div.report div.stats ul li strong {
+	color: #2c2c2c;
+	font-size: 9pt;
+	margin-bottom: 8px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+section#demographics div.report div.stats ul li.last {
+	margin-right: 0;
+}
+
+section#demographics div.report h4 {
+	font-size: 12pt;
+	font-weight: 400;
+	margin-bottom: 24px;
 }
 
 section#demographics h3 {

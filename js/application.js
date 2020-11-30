@@ -760,6 +760,181 @@ var COVID_Tracker = function(city) {
 		return "";
 	}
 
+	this.buildDemographicOutput = function(demographic, segment) {
+		if(typeof(this.data.demographics[demographic].cases[segment]) == 'object') {
+			var types = ['cases', 'deaths'];
+
+			for(d in types) {
+				var data = this.data.demographics[demographic][types[d]][segment],
+					elem = segment + '-' + data;
+
+				document.querySelector("#demographics .report .sparkline." + types[d] + "").innerHTML = '<h4>' + types[d].charAt(0).toUpperCase() + types[d].slice(1) + '</h4><div class="inner"><canvas id="graph-' + demographic + '-cases" height="200"></canvas></div>';
+			
+				var ctx = document.querySelector("#demographics .report .sparkline." + types[d] + " .inner canvas").getContext('2d');
+				
+				var out = [],
+					labels = [];
+				
+				for(k in data) {
+					labels.push(k);
+					out.push(data[k]);
+				}
+
+				window.demographics[demographic + '_' + segment + '_' + types[d]] = new Chart(ctx, {
+					data: {
+						labels: labels.reverse(),
+						datasets: [
+							{
+								type: 'line',
+								label: 'Total Hospitalized 7 Day Average',
+								data: this.calculateMovingAverage(out.reverse(), 7),
+								backgroundColor: 'rgba(255, 255, 255, 0)',
+								borderColor: 'rgba(255, 0, 0, 1)',
+								borderWidth: 1,
+								pointRadius: 0,
+								pointHitRadius: 0,
+								pointHoverRadius: 0,
+								lineTension: 0
+							},
+							{
+								type: 'bar',
+								fill: true,
+								data: out.reverse(),
+								backgroundColor: 'rgba(54, 162, 235, 0)',
+				            	borderColor: 'rgba(54, 162, 235, 1)',
+								borderWidth: 1,
+								pointRadius: 0,
+								pointHitRadius: 0,
+								pointHoverRadius: 0,
+								lineTension: 0
+							}
+						]
+					},
+					options: {
+						animation: {
+							duration: 0
+						},
+						hover: {
+							animationDuration: 0
+						},
+						responsiveAnimationDuration: 0,
+						legend: {
+							display: false,
+						},
+						scales: {
+							xAxes: [{
+								gridLines: {
+									display: false,
+									drawBorder: true
+								},
+								position: 'top',
+								ticks: {
+									display: false
+								}
+							}],
+							yAxes:[{
+								gridLines: {
+									display: true,
+									drawBorder: true
+								},
+								position: 'left',
+								ticks: {
+									display: true
+								}
+							}]
+						},
+						maintainAspectRatio: false,
+						responsive: true,
+						tooltips: {
+							callbacks: {
+								label: function(item, data) {
+									var val = data.datasets[0].data[item.index];
+									
+									if(parseInt(val) >= 1000) {
+										return data.labels[item.index] + ': ' + val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+									} else {
+										return data.labels[item.index] + ': ' + val;
+									}
+								}
+							}
+						},
+						plugins: {
+							labels: {
+								fontFamily: "'Libre Franklin', sans-serif",
+								render: segment == 'genders' ? function(args) {
+									return args.label + "\n" + args.percentage + '%';
+								} : function(args) {
+									return args.label + "\n" + args.value;
+								}
+							}
+						}
+					}
+				});
+			}
+
+			document.querySelector("#demographics .selectors .metric").innerHTML = '';
+
+			for(seg in this.data.demographics[demographic].cases) {
+				document.querySelector("#demographics .selectors .metric").innerHTML += '<li id="selector-' + seg + '"><a href="javascript:;" onclick="CT.buildDemographicOutput(\'' + demographic + '\', \'' + seg + '\');">' + seg + '</a></li>';
+			}
+
+			for(k in this.data.demographics[demographic].cases[segment]) {
+				if(typeof(segment_cases) == 'undefined') {
+					var segment_cases = parseInt(this.data.demographics[demographic].cases[segment][k], 10);
+				} else if(typeof(yesterday_cases) == 'undefined') {
+					var yesterday_cases = parseInt(this.data.demographics[demographic].cases[segment][k], 10);
+				} else {
+					break;
+				}
+			}
+
+			for(k in this.data.demographics[demographic].deaths[segment]) {
+				if(typeof(segment_deaths) == 'undefined') {
+					var segment_deaths = parseInt(this.data.demographics[demographic].deaths[segment][k], 10);
+				} else if(typeof(yesterday_deaths) == 'undefined') {
+					var yesterday_deaths = parseInt(this.data.demographics[demographic].deaths[segment][k], 10);
+				} else {
+					break;
+				}
+			}
+
+			var segment_population = this.data.demographics[demographic].populations[segment];
+			var c = this.data.cases.data,
+				d = this.data.deaths.data;
+
+			var data_total_cases = c.reverse();
+
+			for(k in data_total_cases) {
+				var total_cases = parseInt(data_total_cases[k], 10);
+				break;
+			}
+			
+			var data_total_deaths = d.reverse();
+
+			for(k in data_total_deaths) {
+				var total_deaths = parseInt(data_total_deaths[k], 10);
+				break;
+			}
+
+			document.querySelector("#demographics-stat-total-cases span").innerHTML = this.formatWithCommas(segment_cases);
+			document.querySelector("#demographics-stat-total-deaths span").innerHTML = this.formatWithCommas(segment_deaths);
+			document.querySelector("#demographics-stat-new-cases span").innerHTML = this.formatWithCommas(segment_cases - yesterday_cases);
+			document.querySelector("#demographics-stat-new-deaths span").innerHTML = this.formatWithCommas(segment_deaths - yesterday_deaths);
+
+			document.querySelector("#demographics-stat-pct-cases span").innerHTML = this.formatWithDigits((segment_cases / total_cases) * 100, 2) + '%';
+			document.querySelector("#demographics-stat-pct-deaths span").innerHTML = this.formatWithDigits((segment_deaths / total_deaths) * 100, 2) + '%';
+			document.querySelector("#demographics-stat-pct-population span").innerHTML = this.formatWithDigits((segment_population / 3565000) * 100, 2) + '%';
+			document.querySelector("#demographics-stat-pct-infected span").innerHTML = this.formatWithDigits((segment_cases / segment_population) * 100, 2) + '%';
+
+			document.querySelector("#demographics-stat-cases-per100k span").innerHTML = this.formatWithDigits(((segment_cases - yesterday_cases) / segment_population) * 100000, 1);
+			document.querySelector("#demographics-stat-deaths-per100k span").innerHTML = this.formatWithDigits(((segment_deaths - yesterday_deaths) / segment_population) * 100000, 1);
+			document.querySelector("#demographics-stat-fatality-rate span").innerHTML = this.formatWithDigits((segment_deaths / segment_cases) * 100, 2) + '%';
+			document.querySelector("#demographics-stat-population span").innerHTML = this.formatWithCommas(segment_population);
+			
+
+		}
+	},
+
 	this.buildLocationOutput = function() {
 		var counties = Math.ceil(this.counties.length / 4),
 			html = [];
@@ -1355,6 +1530,8 @@ var COVID_Tracker = function(city) {
 				this.buildDemographicGraph('ethnicity', 'deaths');
 				this.buildDemographicGraph('genders', 'cases');
 				this.buildDemographicGraph('genders', 'deaths');
+
+				this.buildDemographicOutput('ages', '0-9');
 			} else if(this.formatCityName(this.data.city).indexOf('_county') != -1) {
 				document.body.className = 'county';
 			} else {
