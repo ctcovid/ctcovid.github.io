@@ -872,11 +872,17 @@ var COVID_Tracker = function(city) {
 				});
 			}
 
-			document.querySelector("#demographics .selectors .metric").innerHTML = '';
+			document.querySelector("#demographics .selectors #metric").innerHTML = '';
 
 			for(seg in this.data.demographics[demographic].cases) {
-				document.querySelector("#demographics .selectors .metric").innerHTML += '<li id="selector-' + seg + '"><a href="javascript:;" onclick="CT.buildDemographicOutput(\'' + demographic + '\', \'' + seg + '\');">' + seg + '</a></li>';
+				if(seg == segment) {
+					document.querySelector("#demographics .selectors #metric").innerHTML += '<li id="selector-' + seg + '" class="selected">' + seg + '</li>';
+				} else {
+					document.querySelector("#demographics .selectors #metric").innerHTML += '<li id="selector-' + seg + '"><a href="javascript:;" onclick="CT.buildDemographicOutput(\'' + demographic + '\', \'' + seg + '\');">' + seg + '</a></li>';
+				}
 			}
+
+			delete segment_cases, segment_deaths, segment_population, yesterday_cases, yesterday_deaths;
 
 			for(k in this.data.demographics[demographic].cases[segment]) {
 				if(typeof(segment_cases) == 'undefined') {
@@ -899,22 +905,9 @@ var COVID_Tracker = function(city) {
 			}
 
 			var segment_population = this.data.demographics[demographic].populations[segment];
-			var c = this.data.cases.data,
-				d = this.data.deaths.data;
 
-			var data_total_cases = c.reverse();
-
-			for(k in data_total_cases) {
-				var total_cases = parseInt(data_total_cases[k], 10);
-				break;
-			}
-			
-			var data_total_deaths = d.reverse();
-
-			for(k in data_total_deaths) {
-				var total_deaths = parseInt(data_total_deaths[k], 10);
-				break;
-			}
+			var total_cases = parseInt(this.data.cases.data[this.data.cases.data.length - 1], 10);
+			var total_deaths = parseInt(this.data.deaths.data[this.data.deaths.data.length - 1], 10);
 
 			document.querySelector("#demographics-stat-total-cases span").innerHTML = this.formatWithCommas(segment_cases);
 			document.querySelector("#demographics-stat-total-deaths span").innerHTML = this.formatWithCommas(segment_deaths);

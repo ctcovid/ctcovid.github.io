@@ -489,6 +489,7 @@ section#options #segmentation p {
 	text-transform: uppercase;
 }
 
+section#demographics ul,
 section#options ul {
 	font-size: 0;
 	list-style: none;
@@ -497,15 +498,21 @@ section#options ul {
 	padding: 0;
 }
 
+section#demographics ul li,
 section#options ul li {
 	border-left: 1px solid #e1e1e1;
 	float: left;
 }
 
+section#demographics ul li:first-child,
 section#options ul li:first-child {
 	border-left: 1px solid #fff;
 }
 
+section#demographics ul li a,
+section#demographics ul li a:active,
+section#demographics ul li a:link,
+section#demographics ul li a:visited,
 section#options ul li a,
 section#options ul li a:active,
 section#options ul li a:link,
@@ -524,15 +531,26 @@ section#options ul li a:visited {
 	white-space: nowrap;
 }
 
+section#demographics ul li:first-child a,
 section#options ul li:first-child a {
 	border-bottom-left-radius: 5px;
 	border-top-left-radius: 5px;
 }
 
+section#demographics ul li a.selected,
 section#options ul li a.selected {
 	background: #1f70ad;
 	color: #fff;
 	cursor: default;
+}
+
+section#demographics #demographic,
+section#demographics #metric {
+	float: left;
+}
+
+section#demographics #demographic {
+	margin-right: 25px;
 }
 
 body.city section#options ul li#selector-hospitalizations {
