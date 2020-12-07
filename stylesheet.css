@@ -799,6 +799,10 @@ section#table table {
 	border-collapse: collapse;
 }
 
+section#schools p {
+	line-height: 175%;
+}
+
 section#table table tbody tr.hideable {
 	display: none;
 }
