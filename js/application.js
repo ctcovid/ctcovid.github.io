@@ -706,6 +706,21 @@ var COVID_Tracker = function(city) {
 		return cls;
 	};
 
+	this.demographicTranslationTable = function(demographic, subdemographic) {
+		var translation = {
+			ages: {
+				'80 and older': '80'
+			},
+
+			ethnicity: {
+				'Asian/Pac. Isl.': 'asian',
+				'Native AK/Am.': 'native'
+			}
+		}
+
+		return typeof(translation[demographic]) == 'object' && typeof(translation[demographic][subdemographic]) == 'string' ? translation[demographic][subdemographic] : subdemographic.toLowerCase();
+	}
+
 	this.buildDemographicSummaryChart = function(demographic, data_type) {
 		var colors = {
 			ages: {
@@ -751,10 +766,10 @@ var COVID_Tracker = function(city) {
 					break;
 				}
 
-				html.push('<span class="segment" style="background: #' + colors[demographic][k] + '; width: ' + ((first / sum) * 100) + '%"><div class="tooltip"><strong>' + data_type + ': ' + k + '</strong>' + this.formatWithCommas(first) + ' &mdash; ' + this.formatWithDigits((first / sum) * 100, 1) + '%</div></span>');
+				html.push('<span class="segment" style="background: #' + colors[demographic][k] + '; width: ' + ((first / sum) * 100) + '%"><div class="tooltip"><strong>' + data_type + ': ' + k + '</strong>' + this.formatWithCommas(first) + ' ' + (first == 1 ? data_type.toLowerCase().substring(0, data_type.length - 1) : data_type.toLowerCase()) + ' &mdash; ' + this.formatWithDigits((first / sum) * 100, 1) + '%</div></span>');
 			}
 
-			return '<div class="graph demographic">' + html.join("") + '<div class="fc"></div></div>';
+			return '<div class="graph demographic">' + html.join("") + '</div><div class="fc"></div>';
 		}
 
 		return "";
@@ -876,9 +891,9 @@ var COVID_Tracker = function(city) {
 
 			for(seg in this.data.demographics[demographic].cases) {
 				if(seg == segment) {
-					document.querySelector("#demographics .selectors #metric").innerHTML += '<li id="selector-' + seg + '" class="selected">' + seg + '</li>';
+					document.querySelector("#demographics .selectors #metric").innerHTML += '<li id="selector-' + this.demographicTranslationTable(demographic, seg) + '"><a href="javascript:;" class="selected">' + seg + '</a></li>';
 				} else {
-					document.querySelector("#demographics .selectors #metric").innerHTML += '<li id="selector-' + seg + '"><a href="javascript:;" onclick="CT.buildDemographicOutput(\'' + demographic + '\', \'' + seg + '\');">' + seg + '</a></li>';
+					document.querySelector("#demographics .selectors #metric").innerHTML += '<li id="selector-' + this.demographicTranslationTable(demographic, seg) + '"><a href="javascript:;" onclick="CT.buildDemographicOutput(\'' + demographic + '\', \'' + seg + '\');">' + seg + '</a></li>';
 				}
 			}
 
@@ -924,7 +939,13 @@ var COVID_Tracker = function(city) {
 			document.querySelector("#demographics-stat-fatality-rate span").innerHTML = this.formatWithDigits((segment_deaths / segment_cases) * 100, 2) + '%';
 			document.querySelector("#demographics-stat-population span").innerHTML = this.formatWithCommas(segment_population);
 			
+			var elems = document.querySelectorAll("#demographics .selectors #demographic li a")
 
+			for(e in elems) {
+				elems[e].className = '';
+			}
+
+			document.querySelector("#demographics .selectors #demographic li#selector-" + demographic + " a").className = 'selected';
 		}
 	},
 
