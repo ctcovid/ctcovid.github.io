@@ -157,7 +157,11 @@ section#notice div.info p {
 section#notice div.alert p a,
 section#notice div.alert p a:active,
 section#notice div.alert p a:link,
-section#notice div.alert p a:visited {
+section#notice div.alert p a:visited,
+section#notice div.info p a,
+section#notice div.info p a:active,
+section#notice div.info p a:link,
+section#notice div.info p a:visited {
 	color: #1f70ad;
 	font-weight: 500;
 }
