@@ -813,7 +813,7 @@ var COVID_Tracker = function(city) {
 				var data = this.data.demographics[demographic][types[d]][segment],
 					elem = segment + '-' + data;
 
-				document.querySelector("#demographics .report .sparkline." + types[d] + "").innerHTML = '<h4>' + types[d].charAt(0).toUpperCase() + types[d].slice(1) + ' (' + demographic.charAt(0).toUpperCase() + demographic.substring(1, demographic.length) + ': ' + segment + ')</h4><div class="inner"><canvas id="graph-' + demographic + '-cases" height="200"></canvas></div>';
+				document.querySelector("#demographics .report .sparkline." + types[d] + "").innerHTML = '<h4>' + types[d].charAt(0).toUpperCase() + types[d].slice(1) + ' (' + (demographic != 'genders' ? segment : (segment.charAt(0).toUpperCase() + segment.slice(1))) + ')</h4><div class="inner"><canvas id="graph-' + demographic + '-cases" height="200"></canvas></div>';
 			
 				var ctx = document.querySelector("#demographics .report .sparkline." + types[d] + " .inner canvas").getContext('2d');
 				
