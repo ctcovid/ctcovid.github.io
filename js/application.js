@@ -806,14 +806,14 @@ var COVID_Tracker = function(city) {
 	}
 
 	this.buildDemographicOutput = function(demographic, segment) {
-		if(typeof(this.data.demographics[demographic].cases[segment]) == 'object') {
+		if(typeof(this.data.demographics[demographic].cases[segment]) == 'object' && segment != 'Multiracial') {
 			var types = ['cases', 'deaths'];
 
 			for(d in types) {
 				var data = this.data.demographics[demographic][types[d]][segment],
 					elem = segment + '-' + data;
 
-				document.querySelector("#demographics .report .sparkline." + types[d] + "").innerHTML = '<h4>' + types[d].charAt(0).toUpperCase() + types[d].slice(1) + ' (' + demographic.charAt(0).toUpperCase() + demographic.substring(1, demographic.length - 1) + ': ' + this.demographicTranslationTableReverse(demographic, segment) + ')</h4><div class="inner"><canvas id="graph-' + demographic + '-cases" height="200"></canvas></div>';
+				document.querySelector("#demographics .report .sparkline." + types[d] + "").innerHTML = '<h4>' + types[d].charAt(0).toUpperCase() + types[d].slice(1) + ' (' + demographic.charAt(0).toUpperCase() + demographic.substring(1, demographic.length) + ': ' + segment + ')</h4><div class="inner"><canvas id="graph-' + demographic + '-cases" height="200"></canvas></div>';
 			
 				var ctx = document.querySelector("#demographics .report .sparkline." + types[d] + " .inner canvas").getContext('2d');
 				
@@ -920,6 +920,8 @@ var COVID_Tracker = function(city) {
 			document.querySelector("#demographics .selectors #metric").innerHTML = '';
 
 			for(seg in this.data.demographics[demographic].cases) {
+				if(seg == 'Multiracial') continue;
+				
 				if(seg == segment) {
 					document.querySelector("#demographics .selectors #metric").innerHTML += '<li id="selector-' + this.demographicTranslationTable(demographic, seg) + '"><a href="javascript:;" class="selected">' + seg + '</a></li>';
 				} else {
@@ -930,6 +932,8 @@ var COVID_Tracker = function(city) {
 			delete segment_cases, segment_deaths, segment_population, yesterday_cases, yesterday_deaths;
 
 			for(k in this.data.demographics[demographic].cases[segment]) {
+				if(seg == 'Multiracial') continue;
+				
 				if(typeof(segment_cases) == 'undefined') {
 					var segment_cases = parseInt(this.data.demographics[demographic].cases[segment][k], 10);
 				} else if(typeof(yesterday_cases) == 'undefined') {
