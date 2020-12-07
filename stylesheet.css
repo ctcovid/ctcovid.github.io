@@ -489,6 +489,10 @@ section#options #segmentation p {
 	text-transform: uppercase;
 }
 
+section#demographics .selectors {
+	margin-top: 12px;
+}
+
 section#demographics ul,
 section#options ul {
 	font-size: 0;
@@ -567,7 +571,11 @@ body.county section#options ul li#selector-tests a,
 body.state section#options ul li#selector-tests a,
 section#options ul li#selector-60 a,
 section#options ul li#selector-delta a,
-section#options ul li#selector-logarithmic a {
+section#options ul li#selector-logarithmic a,
+section#demographics ul li#selector-80 a,
+section#demographics ul li#selector-male a,
+section#demographics ul li#selector-white a,
+section#demographics ul li#selector-ethnicity a {
 	border-bottom-right-radius: 5px;
 	border-top-right-radius: 5px;
 }
@@ -1048,6 +1056,18 @@ section#copyright p:first-child {
 		float: none;
 		width: 100%;
 	}
+
+	section#demographics .desktop {
+		display: none;
+	}
+
+	section#demographics .mobile {
+		display: block;
+	}
+
+	section#demographics .mobile p {
+		line-height: 150%;
+	}
 	
 	section#demographics div.column {
 		margin: 20px 0;
@@ -1076,7 +1096,7 @@ section#copyright p:first-child {
 	}
 	
 	section#table .container table {
-		width: 1000px;
+		width: 1200px;
 	}
 	
 	section#table .container table td,

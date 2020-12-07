@@ -217,9 +217,8 @@
 		</section>
 		
 		<section id="demographics">
-
 			<div class="container">
-				<h3>Case/Death Demographic Summary</h3>
+				<h3>Case/Death by Demographic Summary</h3>
 				
 				<div class="column" id="column-ages-cases"></div>
 				<div class="column" id="column-genders-cases"></div>
@@ -231,56 +230,62 @@
 			</div>
 
 			<div class="container">
-				<h3>Case/Death Demographic Report</h3>
+				<h3>Case/Death by Demographic Report</h3>
 
-				<div class="selectors">
-					<ul id="demographic">
-						<li id="selector-ages"><a href="javascript:;" onclick="CT.buildDemographicOutput('ages', '0-9');">Age</a></li>
-						<li id="selector-genders"><a href="javascript:;" onclick="CT.buildDemographicOutput('genders', 'female');">Gender</a></li>
-						<li id="selector-ethnicity"><a href="javascript:;" onclick="CT.buildDemographicOutput('ethnicity', 'Asian/Pac. Isl.');">Race/Ethnicity</a></li>
-					</ul>
-
-					<ul id="metric">
-
-					</ul>
-
-					<div class="fc"></div>
+				<div class="mobile">
+					<p>Please visit CTCOVID.com on a desktop or tablet device to view our Case/Death by Demographic Report. We are working as quickly as possible for a mobile friendly experience.</p>
 				</div>
 
-				<div class="report">
-					<div class="sparkline cases">
-						
-					</div>
+				<div class="desktop">
+					<div class="selectors">
+						<ul id="demographic">
+							<li id="selector-ages"><a href="javascript:;" onclick="CT.buildDemographicOutput('ages', '0-9');">Age</a></li>
+							<li id="selector-genders"><a href="javascript:;" onclick="CT.buildDemographicOutput('genders', 'female');">Gender</a></li>
+							<li id="selector-ethnicity"><a href="javascript:;" onclick="CT.buildDemographicOutput('ethnicity', 'Asian/Pac. Isl.');">Race/Ethnicity</a></li>
+						</ul>
 
-					<div class="sparkline deaths">
+						<ul id="metric">
 
-					</div>
-
-					<div class="stats">
-						<h4>Statistics</h4>
-						<ul>
-							<li id="demographics-stat-total-cases"><strong>Total Cases</strong><span>0</span></li>
-							<li id="demographics-stat-total-deaths"><strong>Total Deaths</strong><span>0</span></li>
-							<li id="demographics-stat-new-cases"><strong>New Cases</strong><span>0</span></li>
-							<li id="demographics-stat-new-deaths" class="last"><strong>New Deaths</strong><span>0</span></li>
-
-							<li id="demographics-stat-cases-per100k"><strong>Cases Per 100K</strong><span>0</span></li>
-							<li id="demographics-stat-deaths-per100k"><strong>Deaths Per 100K</strong><span>0</span></li>
-							<li id="demographics-stat-fatality-rate"><strong>Fatality Rate</strong><span>0</span></li>
-							<li id="demographics-stat-population" class="last"><strong>Population</strong><span>0</span></li>
-
-							<li id="demographics-stat-pct-cases"><strong>% Of Cases</strong><span>0</span></li>
-							<li id="demographics-stat-pct-deaths"><strong>% Of Deaths</strong><span>0</span></li>
-							<li id="demographics-stat-pct-population"><strong>% Of Population</strong><span>0</span></li>
-							<li id="demographics-stat-pct-infected" class="last"><strong>% Infected</strong><span>0</span></li>
 						</ul>
 
 						<div class="fc"></div>
 					</div>
 
-					<div class="fc"></div>
+					<div class="report">
+						<div class="sparkline cases">
+							
+						</div>
 
-					<div class="outcomes"></div>
+						<div class="sparkline deaths">
+
+						</div>
+
+						<div class="stats">
+							<h4>Statistics</h4>
+							<ul>
+								<li id="demographics-stat-total-cases"><strong>Total Cases</strong><span>0</span></li>
+								<li id="demographics-stat-total-deaths"><strong>Total Deaths</strong><span>0</span></li>
+								<li id="demographics-stat-new-cases"><strong>New Cases</strong><span>0</span></li>
+								<li id="demographics-stat-new-deaths" class="last"><strong>New Deaths</strong><span>0</span></li>
+
+								<li id="demographics-stat-cases-per100k"><strong>Cases Per 100K</strong><span>0</span></li>
+								<li id="demographics-stat-deaths-per100k"><strong>Deaths Per 100K</strong><span>0</span></li>
+								<li id="demographics-stat-fatality-rate"><strong>Fatality Rate</strong><span>0</span></li>
+								<li id="demographics-stat-population" class="last"><strong>Population</strong><span>0</span></li>
+
+								<li id="demographics-stat-pct-cases"><strong>% Of Cases</strong><span>0</span></li>
+								<li id="demographics-stat-pct-deaths"><strong>% Of Deaths</strong><span>0</span></li>
+								<li id="demographics-stat-pct-population"><strong>% Of Population</strong><span>0</span></li>
+								<li id="demographics-stat-pct-infected" class="last"><strong>% Infected</strong><span>0</span></li>
+							</ul>
+
+							<div class="fc"></div>
+						</div>
+
+						<div class="fc"></div>
+
+						<div class="outcomes"></div>
+					</div>
 				</div>
 			</div>
 		</section>

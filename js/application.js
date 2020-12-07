@@ -704,7 +704,7 @@ var COVID_Tracker = function(city) {
 		}
 
 		return cls;
-	};
+	};	
 
 	this.demographicTranslationTable = function(demographic, subdemographic) {
 		var translation = {
@@ -719,6 +719,36 @@ var COVID_Tracker = function(city) {
 		}
 
 		return typeof(translation[demographic]) == 'object' && typeof(translation[demographic][subdemographic]) == 'string' ? translation[demographic][subdemographic] : subdemographic.toLowerCase();
+	}
+
+	this.demographicTranslationTableReverse = function(demographic, subdemographic) {
+		var translation = {
+			ages: {
+				'0-9': '0-9',
+				'10-19': '10-19',
+				'20-29': '20-29',
+				'30-39': '30-39',
+				'40-49': '40-49',
+				'50-59': '50-59',
+				'60-69': '60-69',
+				'70-79': '70-79',
+				'80': '80 and older'
+			},
+			ethnicity: {
+				'asian': 'Asian/Pac. Isl.',
+				'black': 'Black',
+				'hispanic': 'Hispanic',
+				'multiracial': 'Multiracial',
+				'native': 'Native AK/Am.',
+				'white': 'White'
+			},
+			genders: {
+				'male': 'Male',
+				'female': 'Female'
+			}
+		}
+
+		return translation[demographic][subdemographic];
 	}
 
 	this.buildDemographicSummaryChart = function(demographic, data_type) {
@@ -783,7 +813,7 @@ var COVID_Tracker = function(city) {
 				var data = this.data.demographics[demographic][types[d]][segment],
 					elem = segment + '-' + data;
 
-				document.querySelector("#demographics .report .sparkline." + types[d] + "").innerHTML = '<h4>' + types[d].charAt(0).toUpperCase() + types[d].slice(1) + '</h4><div class="inner"><canvas id="graph-' + demographic + '-cases" height="200"></canvas></div>';
+				document.querySelector("#demographics .report .sparkline." + types[d] + "").innerHTML = '<h4>' + types[d].charAt(0).toUpperCase() + types[d].slice(1) + ' (' + demographic.charAt(0).toUpperCase() + demographic.substring(1, demographic.length - 1) + ': ' + this.demographicTranslationTableReverse(demographic, segment) + ')</h4><div class="inner"><canvas id="graph-' + demographic + '-cases" height="200"></canvas></div>';
 			
 				var ctx = document.querySelector("#demographics .report .sparkline." + types[d] + " .inner canvas").getContext('2d');
 				
