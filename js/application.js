@@ -884,7 +884,8 @@ var COVID_Tracker = function(city) {
 								},
 								position: 'left',
 								ticks: {
-									display: true
+									display: true,
+									beginAtZero: true
 								}
 							}]
 						},
