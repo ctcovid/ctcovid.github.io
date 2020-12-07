@@ -984,7 +984,11 @@ var COVID_Tracker = function(city) {
 			html = [];
 
 		for(k in this.counties) {
-			html.push('<li><a href="#' + this.formatCityName(this.counties[k]) + '">' + this.counties[k] + '</a></li>');
+			if(this.data.city == this.counties[k]) {
+				html.push('<li><strong>' + this.counties[k] + '</strong></li>');
+			} else {
+				html.push('<li><a href="#' + this.formatCityName(this.counties[k]) + '">' + this.counties[k] + '</a></li>');
+			}
 		}
 
 		document.getElementById("locations-counties").innerHTML = [
@@ -999,7 +1003,11 @@ var COVID_Tracker = function(city) {
 			html = [];
 
 		for(k in this.cities) {
-			html.push('<li><a href="#' + this.formatCityName(this.cities[k]) + '">' + this.cities[k] + '</a></li>');
+			if(this.data.city == this.cities[k]) {
+				html.push('<li><strong>' + this.cities[k] + '</strong></li>');
+			} else {
+				html.push('<li><a href="#' + this.formatCityName(this.cities[k]) + '">' + this.cities[k] + '</a></li>');
+			}
 		}
 
 		document.getElementById("locations-cities").innerHTML = [

@@ -113,6 +113,14 @@ nav h1 {
 	text-transform: uppercase;
 }
 
+nav h1 a,
+nav h1 a:active,
+nav h1 a:link,
+nav h1 a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+
 nav select {
 	float: right;
 	font-size: 11pt;
