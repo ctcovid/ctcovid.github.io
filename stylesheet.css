@@ -489,8 +489,8 @@ section#options #segmentation p {
 	text-transform: uppercase;
 }
 
-section#demographics .selectors {
-	margin-top: 12px;
+section#demographics .mobile {
+	display: none;
 }
 
 section#demographics ul,
@@ -498,7 +498,8 @@ section#options ul {
 	font-size: 0;
 	list-style: none;
 	list-style-type: none;
-	margin: 0;
+	margin: 12px 0;
+	margin-bottom: 0;
 	padding: 0;
 }
 
