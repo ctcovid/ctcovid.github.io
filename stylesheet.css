@@ -1129,8 +1129,8 @@ section#copyright p:first-child {
 		height: 24px;
 	}
 	
-	section#locations div.counties ul li, 
-	section#locations div.cities ul li {
+	section#locations div.counties ul, 
+	section#locations div.cities ul {
 		float: none;
 		width: 100%;
 	}
