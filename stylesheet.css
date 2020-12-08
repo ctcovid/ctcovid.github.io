@@ -1129,6 +1129,12 @@ section#copyright p:first-child {
 		height: 24px;
 	}
 	
+	section#locations div.counties ul li, 
+	section#locations div.cities ul li {
+		float: none;
+		width: 100%;
+	}
+	
 	section#information p {
 		font-size: 12pt;
 	}
