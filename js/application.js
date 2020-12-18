@@ -1566,7 +1566,6 @@ var COVID_Tracker = function(city) {
 			this.buildSummaryMessage();
 			this.buildStatistics();
 			this.buildTable();
-			this.buildLocationOutput();
 			this.buildTableSchool();
 			
 			document.querySelector("#meta #summary").innerHTML = this.buildSummaryMessage();
