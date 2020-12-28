@@ -773,6 +773,15 @@ body.county section#demographics {
 	display: none;
 }
 
+body.city section#stats div.column.vaccine,
+body.county section#stats div.column.vaccine {
+	display: none;
+}
+
+body.state section#stats div.column.single {
+	padding: 18px 12px;
+}
+
 /* Schools */
 section#schools table tbody td:first-child,
 section#schools table thead th:first-child {
