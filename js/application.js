@@ -538,7 +538,7 @@ var COVID_Tracker = function(city) {
 			'Fri': 'Fri',
 		};
 		
-		document.querySelector("#updated p span").innerHTML = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][date.getDay()] + ', ' + ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+		document.querySelector("#updated p span").innerHTML = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][date.getDay()] + ', ' + ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][date.getMonth()] + ' ' + date.getDate() + ', 2021';
 		
 		// cases
 		document.querySelector("#stats #stat-cases-new div.val").innerHTML = [
