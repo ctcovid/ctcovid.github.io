@@ -523,7 +523,7 @@ var COVID_Tracker = function(city) {
 	};
 	
 	this.buildStatistics = function() {
-		var date = new Date(Date.parse(this.data.dates[this.data.dates.length - 1] + ', 2020'));
+		var date = new Date(Date.parse(this.data.dates[this.data.dates.length - 1] + ', 2021'));
 		    date.setDate(date.getDate() + 1);
 		    
 		var shift_index_negative = CT.data.updated.day == 'Sun' ? -4 : -2,
@@ -538,7 +538,7 @@ var COVID_Tracker = function(city) {
 			'Fri': 'Fri',
 		};
 		
-		document.querySelector("#updated p span").innerHTML = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][date.getDay()] + ', ' + ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][date.getMonth()] + ' ' + date.getDate() + ', 2021';
+		document.querySelector("#updated p span").innerHTML = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][date.getDay()] + ', ' + ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
 		
 		// cases
 		document.querySelector("#stats #stat-cases-new div.val").innerHTML = [
