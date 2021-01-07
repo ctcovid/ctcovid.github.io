@@ -1079,7 +1079,7 @@ var COVID_Tracker = function(city) {
 				break;
 		}
 		
-		message = '<p>' + message + ' <strong>New cases and deaths can still happen at any time</strong>. Continue to social distance, wear a face covering and follow the practices and instructions provided to you from your local, state and/or federal health officials.</p>';
+		message = '<p>' + message + ' <strong>New cases and deaths can still happen at any time</strong>.</p><p>Continue to social distance, wear a face covering and follow the practices and instructions provided to you from your local, state and/or federal health officials.</p>';
 		
 		if(a == 0 && c != 0 && 0) {
 			message += '<p><strong>Important:</strong> While it may appear that the new cases graph is beginning to flatten, it is important to remember that a limited time of no growth is not necessarily indicative of a long-term trend; consistent decreases in nearby towns and cities is required to declare a flattening curve.</p>';
