@@ -15,7 +15,7 @@
 
 	<li><a href="https://data.ct.gov/" target="_blank" rel="noopener nofollow">Connecticut Open Data</a><br />We use Connecticut Open Data to gather our data for the site each day. Connecticut Open Data is operated by the State of Connecticut and releases their data as public service.<br />&nbsp;</li>
 	
-	<li><a href="https://www.fontawesome.com/" target="_blank" rel="noopener nofollow">FontAwesome</a><br />We use this package for the "exclamation", "info-circle" and "piggy bank", "twitter" icons on our site. Icon color has been modified, additionally, certain SVG attributes have been removed to reduce overall file size. FontAwesome is released under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener nofollow">CC 4.0 BY License</a><br />&nbsp;</li>
+	<li><a href="https://www.fontawesome.com/" target="_blank" rel="noopener nofollow">FontAwesome</a><br />We use this package for the "exclamation", "facebook-f", "info-circle" and "twitter" icons on our site. Icon color has been modified, additionally, certain SVG attributes have been removed to reduce overall file size. FontAwesome is released under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener nofollow">CC 4.0 BY License</a><br />&nbsp;</li>
 
 	<li><a href="https://github.com/rgrove/lazyload" target="_blank" rel="noopener nofollow">LazyLoad.js</a><br/>This is used to "lazy load" assets on the website to ensure the site loads faster (<a href="/lib/licenses/lazyload.txt" rel="nofollow">License</a>)<br />&nbsp;</li>
 	

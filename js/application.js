@@ -1459,6 +1459,16 @@ var COVID_Tracker = function(city) {
 		return null;
 	};
 	
+	// share functionality
+	this.share = function(service) {
+		if(service == 'facebook') {
+			var url = 'https://www.facebook.com/sharer.php?u=' + encodeURIComponent('https://www.ctcovid.com'),
+				options = 'toolbar=0,status=0,resizable=1,width=636,height=436';
+			
+			window.open(url, 'sharer', options);
+		}
+	};
+	
 	// ui
 	this.toggleTable = function() {
 		document.querySelector("#table table tfoot").style.display = 'none';
