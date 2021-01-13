@@ -243,7 +243,8 @@ section#meta p:last-child {
 }
 
 section#meta div#summary,
-section#meta div#updated {
+section#meta div#updated,
+section#meta div#vaccinations {
 	color: #555;
 	font-size: 11pt;
 	line-height: 175%;
@@ -354,7 +355,8 @@ section#meta div#badges span:last-child {
 	margin-right: 0;
 }
 
-section#meta div#updated strong {
+section#meta div#updated strong,
+section#meta div#vaccinations strong {
 	font-weight: 500;
 }
 
@@ -1240,8 +1242,10 @@ section#copyright p:first-child {
 	
 	section#meta div#summary,
 	section#meta div#updated,
+	section#meta div#vaccinations,
 	section#meta div#summary p,
-	section#meta div#updated p {
+	section#meta div#updated p,
+	section#meta div#vaccinations p {
 		font-size: 8pt;
 	}
 	
