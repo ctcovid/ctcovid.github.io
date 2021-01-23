@@ -1,7 +1,7 @@
 <p><strong><a href="/">&laquo; Go Back To The Data</a></strong></p>
 
 <h1>CTCOVID.com Frequently Asked Questions</h1>
-<p>Last Updated: November 15, 2020</p>
+<p>Last Updated: January 23, 2021</p>
 
 <hr/>
 
@@ -9,7 +9,7 @@
 <p>No, this website is operated by a private individual.</p>
 
 <h4>Does this site provide medical advice or public health recommendations?</h4>
-<p>No. Please visit the <a href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html" target="_blank" rel="noopener nofollow">Centers for Disease Control and Prevention</a> website or the <a href="https://portal.ct.gov/coronavirus" target="_blank" rel="noopener nofollow">Connecticut COVID-19 Portal</a> websites for more information. If you suspect you have COVID-19, isolate yourself from others and contact your physician or a licensed medical professional. If you feel you are experiencing worrying symptoms, seek medical help or call 911.</p>
+<p>No. Please visit the <a href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html" target="_blank" rel="noopener nofollow">Centers for Disease Control and Prevention</a> website or the <a href="https://portal.ct.gov/coronavirus" target="_blank" rel="noopener nofollow">Connecticut COVID-19 Portal</a> websites for more information regarding COVID-19.</p>
 
 <h4>Why is hospitalization data not available for my town/city or county?</h4>
 <p>Unfortunately, the State of Connecticuts' Department of Public Health only provides this information on a state-wide level. In the event that the state offers this data on a more granular level, we will add it as soon as possible.</p>
@@ -32,7 +32,7 @@
 <p>If you are a Local/State/County Government located in the United States or one of its' territories and would like to license this software, please email <a href="mailto:media@ctcovid.com">licensing@ctcovid.com</a>.</p>
 
 <h4>Do you accept tips?</h4>
-<p>No. Please donate to your local food pantry instead.</p>
+<p>No. Please donate to the <a href="https://www.ctfoodbank.org/" target="_blank" rel="noopener nofollow">Connecticut Food Bank</a> or your local food pantry or soup kitchen instead.</p>
 
 <h4>I am a member of the media, how can I contact CTCOVID.com?</h4>
 <p>If you are a member of the media, you can send an email to <a href="mailto:media@ctcovid.com">media@ctcovid.com</a>. Please be sure to use the subject <strong>Media Inquiry</strong>; if you do not use this exact subject, your email will be discarded by our spam rules.</p>
