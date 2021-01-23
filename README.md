@@ -7,7 +7,7 @@ This software tracks case, hospitalizations and death statistics from COVID-19 i
 
 ### License
 
-Copyright (c) 2020 CTCOVID.com
+Copyright (c) 2020 - 2021 CTCOVID.com
 All Rights Reserved.
 
 Duplication of this code, in part or in whole, without the express written permission of CTCOVID.com is explicitly prohibited.
