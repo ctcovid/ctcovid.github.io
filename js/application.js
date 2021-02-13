@@ -469,8 +469,8 @@ var COVID_Tracker = function(city) {
 					},
 					responsiveAnimationDuration: 0,
 				    legend: {
-					    display: false,
-					    padding: 25,
+					    display: type == 'stacked' ? true : false,
+					    padding: 50,
 					    position: 'bottom'
 				    },
 				    maintainAspectRatio: false,
