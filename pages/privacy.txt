@@ -1,11 +1,11 @@
 <p><strong><a href="/">&laquo; Go Back To The Data</a></strong></p>
 
-<h1>Privacy Policy for CTCOVID.com</h1>
-<p>Last Updated: November 1, 2020</p>
-
 <hr/>
 
-<p>If you require any more information or have any questions about our privacy policy, please feel free to contact us by email at privacy@ctcovid.com. Please be sure to use the exact subject <strong>Privacy Policy</strong> to ensure delivery; you will receive an auto-response if we receive your email.</p>
+<h1>Privacy Policy for CTCOVID.com</h1>
+<p>Last Updated: February 13, 2021</p>
+
+<hr/>
 
 <p>At CTCOVID.com we consider the privacy of our visitors to be extremely important. This privacy policy document describes in detail the types of personal information is collected and recorded by CTCOVID.com and how we use it.</p>
 
@@ -82,5 +82,8 @@
 <h3>Consent</h3>
 <p>By using our website, you hereby consent to our privacy policy and agree to its terms.</p>
 
+<h3>Questions</h3>
+<p>If you have any questions about this privacy policy, please send an email to E_M_A_I_L. Please be sure to use the exact subject <strong>Privacy Policy</strong> or your email will not be delivered; you will receive an automated response if we successfully receive your email &mdash; please allow up to 14 days for a response. <strong>Do not send any emails unrelated to this Privacy Policy to this address, we will not read, review or respond to them under any circumstances.</strong>.</p>
+
 <h3>Update</h3>
-<p>This Privacy Policy was last updated on April 18, 2020. Should we update, amend or make any changes to our privacy policy, those changes will be posted here.</p>
+<p>This Privacy Policy was last updated on February 13, 2021. Should we update, amend or make any changes to our privacy policy, those changes will be posted here.</p>
