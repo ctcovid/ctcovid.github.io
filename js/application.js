@@ -47,6 +47,7 @@ var COVID_Tracker = function(city) {
 			'deaths', 
 			'hospitalizations',
 			'tests',
+			'vaccinations',
 			'delta', 
 			'new', 
 			'total',
@@ -77,6 +78,80 @@ var COVID_Tracker = function(city) {
 			type = false;
 		
 		switch(this.graphing.data + "." + this.graphing.segmentation) {
+			case "vaccinations.total": 
+				type = 'stacked';
+				dataset = {
+					labels: data.vaccinations.dates.slice(this.graphing.range),
+					datasets: [
+						{
+							label: 'Vaccinations (1st Dose)',
+							data: data.vaccinations.initiated.slice(this.graphing.range),
+							backgroundColor: 'rgba(125, 186, 231, 1)',
+							borderColor: 'rgba(125, 186, 231, 1)',
+							borderWidth: 1
+						},
+						{
+							label: 'Vaccinations (2nd Dose)',
+							data: data.vaccinations.completed.slice(this.graphing.range),
+							backgroundColor: 'rgba(31, 112, 173, 1)',
+							borderColor: 'rgba(31, 112, 173, 1)',
+							borderWidth: 1
+						}
+					],
+				}; break;
+			
+			case "vaccinations.new": 
+				type = 'stacked';
+				dataset = {
+					labels: data.vaccinations.dates.slice(this.graphing.range || 1),
+					datasets: [
+						{
+							label: 'Vaccinations (1st Dose)',
+							data: this.calculateDailyDifferencesSubtype('vaccinations', 'initiated').slice(this.graphing.range),
+							backgroundColor: 'rgba(125, 186, 231, 1)',
+							borderColor: 'rgba(125, 186, 231, 1)',
+							borderWidth: 1
+						},
+						{
+							label: 'Vaccinations (2nd Dose)',
+							data: this.calculateDailyDifferencesSubtype('vaccinations', 'completed').slice(this.graphing.range),
+							backgroundColor: 'rgba(31, 112, 173, 1)',
+							borderColor: 'rgba(31, 112, 173, 1)',
+							borderWidth: 1
+						}
+					],
+				}; break;
+			
+			case "vaccinations.delta": 
+				var labels = function(item, data) {
+					return data.datasets[item.datasetIndex].label + ': ' + data.datasets[item.datasetIndex].data[item.index] + '%';
+				};
+				
+				var ticks = function(value, index, values) {
+					return value.toString() + "%";
+				};
+			
+				type = 'stacked';
+				dataset = {
+					labels: data.vaccinations.dates.slice(this.graphing.range),
+					datasets: [
+						{
+							label: 'Vaccinations (1st Dose)',
+							data: this.calculateDailyDeltaSubtype('vaccinations', 'initiated').slice(this.graphing.range),
+							backgroundColor: 'rgba(125, 186, 231, 1)',
+							borderColor: 'rgba(125, 186, 231, 1)',
+							borderWidth: 1
+						},
+						{
+							label: 'Vaccinations (2nd Dose)',
+							data: this.calculateDailyDeltaSubtype('vaccinations', 'completed').slice(this.graphing.range),
+							backgroundColor: 'rgba(31, 112, 173, 1)',
+							borderColor: 'rgba(31, 112, 173, 1)',
+							borderWidth: 1
+						}
+					],
+				}; break;
+			
 			case "per100k.total": 
 				type = 'line';
 				dataset = {
@@ -383,7 +458,7 @@ var COVID_Tracker = function(city) {
 		
 		if(dataset) {
 			window.graph = new window.Chart(ctx, {
-			    type: type,
+			    type: type == 'stacked' ? 'bar' : type,
 			    data: dataset,
 			    options: {
 				    animation: {
@@ -402,6 +477,7 @@ var COVID_Tracker = function(city) {
 					responsive: true,
 			        scales: {
 				        xAxes: [{
+					        stacked: type == 'stacked' ? true: false,
 					        ticks: {
 								autoSkip: true,
 								maxRotation: 90,
@@ -410,6 +486,7 @@ var COVID_Tracker = function(city) {
 				        }],
 			            yAxes: [{
 				            type: CT.graphing.plotting,
+					        stacked: type == 'stacked' ? true: false,
 			                ticks: {
 				                autoSkip: true,
 			                    beginAtZero: !this.graphing.range,
@@ -424,9 +501,11 @@ var COVID_Tracker = function(city) {
 			            }]
 			        },
 			        tooltips: {
+				        mode: 'index',
+				        intersect: false,
 						callbacks: {
 							label: labels || function(item, data) {
-								var val = data.datasets[data.datasets.length - 1].data[item.index];
+								var val = data.datasets[item.datasetIndex].data[item.index];
 							
 								if(parseInt(val) >= 1000){
 									return data.datasets[item.datasetIndex].label + ': ' + val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -439,7 +518,7 @@ var COVID_Tracker = function(city) {
 			    }
 			});
 			
-			if(['new', 'total', 'delta', 'cases', 'per100k', 'deaths', 'hospitalizations', 'tests'].indexOf(g) != -1 || css == 'range') {
+			if(['new', 'total', 'delta', 'cases', 'per100k', 'deaths', 'hospitalizations', 'tests', 'vaccinations'].indexOf(g) != -1 || css == 'range') {
 				if(css) {
 					var elems = document.querySelectorAll("#options #" + css + " ul li a");
 					
@@ -523,8 +602,10 @@ var COVID_Tracker = function(city) {
 	};
 	
 	this.buildStatistics = function() {
-		var date = new Date(Date.parse(this.data.dates[this.data.dates.length - 1] + ', 2021'));
+		var date = new Date(Date.parse(this.data.dates[this.data.dates.length - 1]));
 		    date.setDate(date.getDate() + 1);
+		    
+		    console.dir(date);
 		    
 		var shift_index_negative = CT.data.updated.day == 'Sun' ? -4 : -2,
 			shift_index = CT.data.updated.day == 'Sun' ? 4 : 2;
@@ -649,6 +730,25 @@ var COVID_Tracker = function(city) {
 			)) >= 0 ? ' More Than ' : ' Less Than ',
 			previous[CT.data.updated.day] + '.'
 		].join("");
+		
+		// vaccinations
+		if(typeof(this.data.vaccinations) == 'object' && this.data.vaccinations.distributed.length > 0) {
+			document.querySelector("#stats #stat-vaccine-dose-1 div.val").innerHTML = [
+				this.formatWithCommas(this.data.vaccinations.initiated[this.data.vaccinations.initiated.length - 1])
+			].join("");
+			
+			document.querySelector("#stats #stat-vaccine-dose-2 div.val").innerHTML = [
+				this.formatWithCommas(this.data.vaccinations.completed[this.data.vaccinations.completed.length - 1])
+			].join("");
+			
+			document.querySelector("#stats #stat-vaccine-dose-1-pct div.val").innerHTML = [
+				this.formatWithDigits((this.data.vaccinations.initiated[this.data.vaccinations.initiated.length - 1] / this.data.population) * 100, 2) + '%'
+			].join("");
+			
+			document.querySelector("#stats #stat-vaccine-dose-2-pct div.val").innerHTML = [
+				this.formatWithDigits((this.data.vaccinations.completed[this.data.vaccinations.completed.length - 1] / this.data.population) * 100, 2) + '%'
+			].join("");
+		}
 
 		// cases per 100k
 		if(typeof(this.data.covidactnow) == 'object') {
@@ -1233,6 +1333,22 @@ var COVID_Tracker = function(city) {
 		return output;
 	};
 	
+	this.calculateDailyDifferencesSubtype = function(type, sub) {
+		var output = [];
+		
+		for(k in this.data[type][sub]) {
+			if(this.data[type][sub][k] - this.data[type][sub][k - 1] >= 0) {
+				if(!isNaN(this.data[type][sub][k - 1])) {
+					output.push(this.data[type][sub][k] - this.data[type][sub][k - 1]);
+				} else {
+					output.push(0);
+				}
+			}
+		}
+		
+		return output;
+	};
+	
 	this.calculateDailyDelta = function(type) {
 		var deltas = new Array();
 		
@@ -1243,6 +1359,22 @@ var COVID_Tracker = function(city) {
 				deltas.push(0);
 			} else {
 				deltas.push(parseFloat(this.formatWithDigits(this.calculateDelta(type, k), 2)));
+			}
+		}
+		
+		return deltas;
+	};
+	
+	this.calculateDailyDeltaSubtype = function(type, sub) {
+		var deltas = new Array();
+		
+		var first = false;
+		
+		for(k in this.data[type][sub]) {
+			if(k == 0) {
+				deltas.push(0);
+			} else {
+				deltas.push(parseFloat(this.formatWithDigits(this.calculateDeltaSubtype(type, sub, k), 2)));
 			}
 		}
 		
@@ -1282,6 +1414,23 @@ var COVID_Tracker = function(city) {
 		}
 		
 		var delta = ((this.data[type].data[a] / this.data[type].data[b]) - 1) * 100;
+		
+		return delta != Infinity ? delta : 100;
+	};
+	
+	this.calculateDeltaSubtype = function(type, sub, index) {
+		var a = index || 0,
+			b = a - 1;
+			
+		if(
+			isNaN(this.data[type][sub][a]) || 
+			isNaN(this.data[type][sub][b]) || 
+			isNaN(this.data[type][sub][a] / this.data[type][sub][b])
+		) {
+			return 0;
+		}
+		
+		var delta = ((this.data[type][sub][a] / this.data[type][sub][b]) - 1) * 100;
 		
 		return delta != Infinity ? delta : 100;
 	};

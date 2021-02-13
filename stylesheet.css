@@ -620,9 +620,14 @@ body.city section#options ul li#selector-hospitalizations {
 	display: none;
 }
 
+body.city section#options ul li#selector-vaccinations,
+body.county section#options ul li#selector-vaccinations {
+	display: none;
+}
+
 body.city section#options ul li#selector-tests a,
 body.county section#options ul li#selector-tests a,
-body.state section#options ul li#selector-tests a,
+body.state section#options ul li#selector-vaccinations a,
 section#options ul li#selector-60 a,
 section#options ul li#selector-delta a,
 section#options ul li#selector-logarithmic a,
@@ -1096,7 +1101,7 @@ section#copyright p:first-child {
 	}
 	
 	section#options div#data ul li {
-		width: 25%;
+		width: 20%;
 	}
 	
 	section#options #plotting ul li {

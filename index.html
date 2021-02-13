@@ -117,6 +117,26 @@
 							<div class="delta">0 Since 1/1</div>
 						</div>
 					</div>
+
+					<div class="column single vaccine" id="stat-vaccine-dose-1" title="Indicates how many people who have received their first dose of a COVID-19 vaccine.">
+						<div class="name">Vaccinated Dose 1</div>
+						<div class="val">0</div>
+					</div>
+
+					<div class="column single vaccine" id="stat-vaccine-dose-1-pct" title="Indicates the percentage of the population that has received their first dose of a COVID-19 vaccine.">
+						<div class="name">% Pop. Vac. Dose 1</div>
+						<div class="val">0%</div>
+					</div>
+
+					<div class="column single vaccine" id="stat-vaccine-dose-2" title="Indicates how many people who have received their final dose of a COVID-19 vaccine.">
+						<div class="name">Vaccinated Dose 2</div>
+						<div class="val">0</div>
+					</div>
+
+					<div class="column single vaccine" id="stat-vaccine-dose-2-pct" title="Indicates the percentage of the population that has received their first dose of a COVID-19 vaccine.">
+						<div class="name">% Pop. Vac. Dose 2</div>
+						<div class="val">0%</div>
+					</div>
 					
 					<div class="column single" id="stat-cases-total">
 						<div class="name">Total Cases</div>
@@ -136,26 +156,6 @@
 					<div class="column single" id="stat-tests-total">
 						<div class="name">Total Tests</div>
 						<div class="val">0.0%</div>
-					</div>
-
-					<div class="column single vaccine" id="stat-vaccine-dose-1" title="Indicates how many people who have received their first dose of a COVID-19 vaccine.">
-						<div class="name">Vaccinated Dose 1</div>
-						<div class="val">450,204</div>
-					</div>
-
-					<div class="column single vaccine" id="stat-vaccine-dose-1-pct" title="Indicates what percentage of the state has received their first dose of a COVID-19 vaccine.">
-						<div class="name">% Pop. Vac. Dose 1</div>
-						<div class="val">12.63%</div>
-					</div>
-
-					<div class="column single vaccine" id="stat-vaccine-dose-2" title="Indicates number of doses received so far by the state.">
-						<div class="name">Doses Received</div>
-						<div class="val">814,525</div>
-					</div>
-
-					<div class="column single vaccine" id="stat-vaccine-dose-2-pct" title="Indicates what percentage total doses received by the state that has been administered.">
-						<div class="name">% Doses Used</div>
-						<div class="val">76.94%</div>
 					</div>
 					
 					<div class="column single last" id="stat-per-100k" title="Indicates how many people per 100K people get infected with COVID-19 per day.">
@@ -221,6 +221,7 @@
 						<li id="selector-deaths"><a href="javascript:;" onclick="CT.buildGraph('deaths', 'data');">Deaths</a></li>
 						<li id="selector-hospitalizations"><a href="javascript:;" onclick="CT.buildGraph('hospitalizations', 'data');">Hospitalizations</a></li>
 						<li id="selector-tests"><a href="javascript:;" onclick="CT.buildGraph('tests', 'data');">Tests</a></li>
+						<li id="selector-vaccinations"><a href="javascript:;" onclick="CT.buildGraph('vaccinations', 'data');">Vaccinations</a></li>
 					</ul>
 				</div>
 				<div id="segmentation">
