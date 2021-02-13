@@ -1,7 +1,7 @@
 <p><strong><a href="/">&laquo; Go Back To The Data</a></strong></p>
 
 <h1>CTCOVID.com Frequently Asked Questions</h1>
-<p>Last Updated: January 23, 2021</p>
+<p>Last Updated: February 13, 2021</p>
 
 <hr/>
 
@@ -15,7 +15,7 @@
 <p>Unfortunately, the State of Connecticuts' Department of Public Health only provides this information on a state-wide level. In the event that the state offers this data on a more granular level, we will add it as soon as possible.</p>
 
 <h4>When is this site updated?</h4>
-<p>The site is updated daily at approximately 5:30pm EDT. We depend on the data being available from the State of Connecticut, as a result, there may be some delay. We will usually announce on Twitter when the data has been updated.</p>
+<p>The site is updated daily at approximately 5:30pm EDT. We depend on the data being available from the State of Connecticut and CDC, as a result, there may be some delay. We will usually announce on <a href="https://www.twitter.com/ctcovid" target="_blank" rel="noopener nofollow">Twitter</a> when the data has been updated.</p>
 
 <h4>Do you guarantee the accuracy of the data on this website?</h4>
 <p>No &mdash; all information on CTCOVID.com is presented without any guarantee of accuracy, correctness or completeness.</p>
@@ -29,15 +29,11 @@
 <h4>Is the software behind CTCOVID.com open source?</h4>
 <p>No, the software behind CTCOVID.com, except the components described on our <a href="#attribution">Attribution</a> page, is copyrighted and proprietary. However, most of source code is written in HTML and JavaScript, and as a result, is "source available"; you are free to review it for self-educational purposes on <a href="https://www.github.com/ctcovid/ctcovid.github.io" target="_blank" rel="noopener nofollow">GitHub</a>.</p>
 
-<p>If you are a Local/State/County Government located in the United States or one of its' territories and would like to license this software, please email <a href="mailto:media@ctcovid.com">licensing@ctcovid.com</a>.</p>
-
 <h4>Do you accept tips?</h4>
 <p>No. Please donate to the <a href="https://www.ctfoodbank.org/" target="_blank" rel="noopener nofollow">Connecticut Food Bank</a> or your local food pantry or soup kitchen instead.</p>
 
 <h4>I am a member of the media, how can I contact CTCOVID.com?</h4>
-<p>If you are a member of the media, you can send an email to <a href="mailto:media@ctcovid.com">media@ctcovid.com</a>. Please be sure to use the subject <strong>Media Inquiry</strong>; if you do not use this exact subject, your email will be discarded by our spam rules.</p>
-
-<p>Please be sure to include your name, phone number and name of the organization that you represent. You must email us from an email address associated with your organization.</p>
+<p>If you are a member of the media, you can reach out to us on <a href="https://www.twitter.com/ctcovid" target="_blank" rel="noopener nofollow">Twitter</a> and we'll get in touch with you via DM.</p>
 
 <h4>I have another question or comment about this website, how can I contact CTCOVID.com?</h4>
-<p>If you are not a member of the media or a government/public health official, please reach out to us via Twitter if you have any questions about our website.</p>
+<p>Please reach out to us via <a href="https://www.twitter.com/ctcovid" target="_blank" rel="noopener nofollow">Twitter</a> if you have any questions about this website.</p>
