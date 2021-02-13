@@ -1,7 +1,5 @@
 <p><strong><a href="/">&laquo; Go Back To The Data</a></strong></p>
 
-<hr/>
-
 <h1>Privacy Policy for CTCOVID.com</h1>
 <p>Last Updated: February 13, 2021</p>
 
