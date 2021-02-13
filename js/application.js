@@ -732,7 +732,7 @@ var COVID_Tracker = function(city) {
 		].join("");
 		
 		// vaccinations
-		if(typeof(this.data.vaccinations) == 'object' && this.data.vaccinations.distributed.length > 0) {
+		if(typeof(this.data.vaccinations) == 'object' && this.data.vaccinations.initiated.length > 0) {
 			document.querySelector("#stats #stat-vaccine-dose-1 div.val").innerHTML = [
 				this.formatWithCommas(this.data.vaccinations.initiated[this.data.vaccinations.initiated.length - 1])
 			].join("");
