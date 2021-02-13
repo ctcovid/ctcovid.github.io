@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Connecticut COVID-19 Case Statistic Tracker | CTCOVID.com</title>
+	<title>COVID-19 in Connecticut Statistics | CTCOVID.com</title>
 	
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	
-	<meta name="description" content="Track COVID-19 (Coronavirus) cases, deaths and hospitalizations in the State of Connecticut, including data from your local city, town and county" />
+	<meta name="description" content="View statistics about COVID-19 in Connecticut such as new cases, deaths and hospitalization statistics, including data about your local city, town and county." />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="theme-color" content="#1f70ad" />
 	<meta name="google-site-verification" content="W8vZpEdEBVCm95aBM811MUmmuElzrDresjqgzUB7sF8" />
@@ -23,8 +23,8 @@
 	
 	<meta property="og:url" content="https://www.ctcovid.com" />
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="Connecticut COVID-19 Case Tracker" />
-	<meta property="og:description" content="Track cases of COVID-19 (Coronavirus) in the State of Connecticut, including data from your local city or town." />
+	<meta property="og:title" content="Connecticut COVID-19 Statistics" />
+	<meta property="og:description" content="Track COVID-19 (Coronavirus) statistics in the State of Connecticut." />
 	<meta property="og:image" content="https://www.ctcovid.com/preview.jpg" />
 	
 	<script type="text/javascript">
@@ -35,7 +35,7 @@
 <body>
 	<nav>
 		<div class="container">
-			<h1><a href="#connecticut">Connecticut COVID-19 Case Tracker</a></h1>
+			<h1><a href="#connecticut">COVID-19 In Connecticut Statistics</a></h1>
 			
 			<select aria-label="Choose Your County, City or Town"></select>
 			
@@ -198,6 +198,10 @@
 			</section>
 			
 			<div class="fc"></div>
+			
+			<section id="disclaimer">
+				<div class="container">This website is NOT affiliated with the State of Connecticut, any medical institution or testing/vaccination location. It is operated by a private individual solely to provide an easy-to-use alternative to the dashboard provided by the State. You can visit the State of Connecticuts' official COVID-19 web page by <a href="https://portal.ct.gov/Coronavirus" rel="noopener nofollow" target="_blank" style="color: black;">clicking here</a>.</div>
+			</section>
 		</div>
 	</section>
 	
@@ -345,7 +349,7 @@
 			<div class="container">
 				<h3>Important Information</h3>
 				
-				<p>CTCOVID.com allows you to track cases of COVID-19 in Connecticut. You can track case, death and hospitalization statistics on a daily basis for your city, town, county or statewide.</p>
+				<p>CTCOVID.com allows you to view statistics about COVID-19 in Connecticut. You can view case, death and hospitalization statistics on a daily basis for your city, town, county or statewide.</p>
 				
 				<p>This website does not provide medical or public health advice and is not intended to diagnose, treat, cure, or prevent any disease. Please visit the <a href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html" target="_blank" rel="noopener nofollow">Centers for Disease Control and Prevention</a> website for more information about COVID-19.</p>
 				
@@ -393,7 +397,7 @@
 			}
 		} catch(e) {}
 		
-		window.CT = new COVID_Tracker(window.location.hash != '' && window.location.hash != null ? (window.location.hash.replace('#', '') || 'connecticut') : 'connecticut');
+		window.CT = new COVID_Statistics(window.location.hash != '' && window.location.hash != null ? (window.location.hash.replace('#', '') || 'connecticut') : 'connecticut');
 	});
 	
 	// frame buster

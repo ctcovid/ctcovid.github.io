@@ -127,6 +127,15 @@ nav select {
 	padding: 4px;
 }
 
+/* Disclaimer */
+section#disclaimer {
+	font-size: 11pt; 
+	font-weight: bold; 
+	color: red;
+	line-height: 175%;
+	padding-bottom: 25px;
+}
+
 /* Notice */
 section#notice {
 	margin-top: 15px;
@@ -1063,6 +1072,7 @@ section#copyright p:first-child {
 		padding-bottom: 13px;
 	}
 	
+	section#disclaimer div.container,
 	section#stats div.container {
 		padding: 13px;
 	}

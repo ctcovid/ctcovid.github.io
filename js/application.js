@@ -1,4 +1,4 @@
-var COVID_Tracker = function(city) {
+var COVID_Statistics = function(city) {
 	this.data = false;
 	
 	// list of ct cities
@@ -549,7 +549,7 @@ var COVID_Tracker = function(city) {
 			document.querySelector("section#top").style.display = 'block';
 			document.querySelector("main").style.display = 'block';
 		} else {
-			document.querySelector("article").innerHTML = '<div class="container">' + data + '</div>';
+			document.querySelector("article").innerHTML = '<div class="container">' + data.replace('E_M_A_I_L', ['m', 'o', 'c', '.', 'd', 'i', 'v', 'o', 'c', 't', 'c', '@', 'y', 'l', 'n', 'o', '.', 's', 't', 's', 'e', 'u', 'q', 'e', 'r', '.', 'y', 'c', 'i', 'l', 'o', 'p', '.', 'y', 'c', 'a', 'v', 'i', 'r', 'p'].reverse().join("")) + '</div>';
 			document.querySelector("article").style.display = 'block';
 			document.querySelector("section#top").style.display = 'none';
 			document.querySelector("main").style.display = 'none';
@@ -1179,7 +1179,7 @@ var COVID_Tracker = function(city) {
 				break;
 		}
 		
-		message = '<p>' + message + ' <strong>New cases and deaths can still happen at any time</strong>.</p><p>Continue to social distance, wear a face covering and follow the practices and instructions provided to you from your local, state and/or federal health officials.</p>';
+		message = '<p>' + message + ' <strong>New cases and deaths can still happen at any time</strong>.</p>';
 		
 		if(a == 0 && c != 0 && 0) {
 			message += '<p><strong>Important:</strong> While it may appear that the new cases graph is beginning to flatten, it is important to remember that a limited time of no growth is not necessarily indicative of a long-term trend; consistent decreases in nearby towns and cities is required to declare a flattening curve.</p>';
