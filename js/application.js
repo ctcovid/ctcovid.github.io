@@ -605,8 +605,6 @@ var COVID_Statistics = function(city) {
 		var date = new Date(Date.parse(this.data.dates[this.data.dates.length - 1]));
 		    date.setDate(date.getDate() + 1);
 		    
-		    console.dir(date);
-		    
 		var shift_index_negative = CT.data.updated.day == 'Sun' ? -4 : -2,
 			shift_index = CT.data.updated.day == 'Sun' ? 4 : 2;
 		
