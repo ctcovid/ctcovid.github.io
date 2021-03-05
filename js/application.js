@@ -746,6 +746,36 @@ var COVID_Statistics = function(city) {
 			document.querySelector("#stats #stat-vaccine-dose-2-pct div.val").innerHTML = [
 				this.formatWithDigits((this.data.vaccinations.completed[this.data.vaccinations.completed.length - 1] / this.data.population) * 100, 2) + '%'
 			].join("");
+			
+			// 
+			var last_vaccination_date = new Date(Date.parse(this.data.vaccinations.dates[this.data.vaccinations.dates.length - 1]));
+			var last_vaccination_date = (last_vaccination_date.getMonth() + 1) + '/' + last_vaccination_date.getDate();
+			
+			document.querySelector("#stats #stat-vaccine-dose-1 div.meta div.discrete").innerHTML = [
+				this.formatWithCommas(Math.abs(this.data.vaccinations.initiated[this.data.vaccinations.initiated.length - 2] - this.data.vaccinations.initiated[this.data.vaccinations.initiated.length - 1])),
+				' Doses Since ' + last_vaccination_date
+			].join("");
+			
+			document.querySelector("#stats #stat-vaccine-dose-1 div.meta div.delta").innerHTML = document.querySelector("#stats #stat-vaccine-dose-1 div.meta div.discrete").innerHTML;
+			
+			document.querySelector("#stats #stat-vaccine-dose-2 div.meta div.discrete").innerHTML = [
+				this.formatWithCommas(Math.abs(this.data.vaccinations.completed[this.data.vaccinations.completed.length - 2] - this.data.vaccinations.completed[this.data.vaccinations.completed.length - 1])),
+				' Doses Since ' + last_vaccination_date
+			].join("");
+			
+			document.querySelector("#stats #stat-vaccine-dose-2 div.meta div.delta").innerHTML = document.querySelector("#stats #stat-vaccine-dose-2 div.meta div.discrete").innerHTML;
+			
+			document.querySelector("#stats #stat-vaccine-dose-1-pct div.meta div.discrete").innerHTML = [
+				this.formatWithDigits((this.data.vaccinations.initiated[this.data.vaccinations.initiated.length - 1] / this.data.population16plus) * 100, 2) + '% of Age 16+ Pop.'
+			].join("");
+			
+			document.querySelector("#stats #stat-vaccine-dose-1-pct div.meta div.delta").innerHTML = document.querySelector("#stats #stat-vaccine-dose-1-pct div.meta div.discrete").innerHTML;
+			
+			document.querySelector("#stats #stat-vaccine-dose-2-pct div.meta div.discrete").innerHTML = [
+				this.formatWithDigits((this.data.vaccinations.completed[this.data.vaccinations.completed.length - 1] / this.data.population16plus) * 100, 2) + '% of Age 16+ Pop.'
+			].join("");
+			
+			document.querySelector("#stats #stat-vaccine-dose-2-pct div.meta div.delta").innerHTML = document.querySelector("#stats #stat-vaccine-dose-2-pct div.meta div.discrete").innerHTML;
 		}
 
 		// cases per 100k
