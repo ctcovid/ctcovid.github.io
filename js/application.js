@@ -1365,12 +1365,14 @@ var COVID_Statistics = function(city) {
 		var output = [];
 		
 		for(k in this.data[type][sub]) {
-			if(this.data[type][sub][k] - this.data[type][sub][k - 1] >= 0) {
+			if((this.data[type][sub][k] - this.data[type][sub][k - 1]) >= 0) {
 				if(!isNaN(this.data[type][sub][k - 1])) {
 					output.push(this.data[type][sub][k] - this.data[type][sub][k - 1]);
 				} else {
 					output.push(0);
 				}
+			} else {
+				output.push(0);
 			}
 		}
 		
