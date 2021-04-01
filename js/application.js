@@ -103,7 +103,7 @@ var COVID_Statistics = function(city) {
 			case "vaccinations.new": 
 				type = 'stacked';
 				dataset = {
-					labels: data.vaccinations.dates.slice(this.graphing.range || 1),
+					labels: data.vaccinations.dates.slice(this.graphing.range),
 					datasets: [
 						{
 							label: 'Vaccinations (1st Dose)',
