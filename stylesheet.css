@@ -517,6 +517,9 @@ section#stats div.column.hoverable:hover div.discrete {
 
 section#stats div.column.hoverable:hover div.delta {
 	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 /* Chart */
