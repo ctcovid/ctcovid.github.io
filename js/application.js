@@ -766,13 +766,13 @@ var COVID_Statistics = function(city) {
 			document.querySelector("#stats #stat-vaccine-dose-2 div.meta div.delta").innerHTML = document.querySelector("#stats #stat-vaccine-dose-2 div.meta div.discrete").innerHTML;
 			
 			document.querySelector("#stats #stat-vaccine-dose-1-pct div.meta div.discrete").innerHTML = [
-				this.formatWithDigits((this.data.vaccinations.initiated[this.data.vaccinations.initiated.length - 1] / this.data.population16plus) * 100, 2) + '% of Age 16+ Pop.'
+				this.formatWithDigits((this.data.vaccinations.initiated[this.data.vaccinations.initiated.length - 1] / this.data.population16plus) * 100, 2) + '% of Age 12+ Pop.'
 			].join("");
 			
 			document.querySelector("#stats #stat-vaccine-dose-1-pct div.meta div.delta").innerHTML = document.querySelector("#stats #stat-vaccine-dose-1-pct div.meta div.discrete").innerHTML;
 			
 			document.querySelector("#stats #stat-vaccine-dose-2-pct div.meta div.discrete").innerHTML = [
-				this.formatWithDigits((this.data.vaccinations.completed[this.data.vaccinations.completed.length - 1] / this.data.population16plus) * 100, 2) + '% of Age 16+ Pop.'
+				this.formatWithDigits((this.data.vaccinations.completed[this.data.vaccinations.completed.length - 1] / this.data.population16plus) * 100, 2) + '% of Age 12+ Pop.'
 			].join("");
 			
 			document.querySelector("#stats #stat-vaccine-dose-2-pct div.meta div.delta").innerHTML = document.querySelector("#stats #stat-vaccine-dose-2-pct div.meta div.discrete").innerHTML;
