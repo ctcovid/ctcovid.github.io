@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>COVID-19 in Connecticut Statistics | CTCOVID.com</title>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	
+	<meta name="description" content="View statistics about COVID-19 in Connecticut such as new cases, deaths and hospitalization statistics, including data about your local city, town and county." />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="theme-color" content="#1f70ad" />
+	<meta name="google-site-verification" content="W8vZpEdEBVCm95aBM811MUmmuElzrDresjqgzUB7sF8" />
+	
+	<link rel="canonical" href="https://www.ctcovid.com" />
+	<link rel="icon" type="image/x-icon" href="favicon.ico" />
+	<link rel="manifest" href="manifest.json" />
+	
+	<link rel="apple-touch-icon" href="icons/192x192.png">
+	
+	<link rel="preconnect" href="https://www.ctcovid.com" />
+	<link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	
+	<meta property="og:url" content="https://www.ctcovid.com" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Connecticut COVID-19 Statistics" />
+	<meta property="og:description" content="Track COVID-19 (Coronavirus) statistics in the State of Connecticut." />
+	<meta property="og:image" content="https://www.ctcovid.com/preview.jpg" />
+	
+	<script type="text/javascript">
+	var Build=Math.floor(new Date().getTime()/1000);
+	</script>
+	<script type="text/javascript" src="lib/lazyload.min.js"></script>
+</head>
+<body>
+	<nav>
+		<div class="container">
+			<h1><a href="#connecticut">COVID-19 In Connecticut Statistics</a></h1>
+			
+			<select aria-label="Choose Your County, City or Town"></select>
+			
+			<div class="fc"></div>
+		</div>
+	</nav>
+	
+	<article></article>
+
+	<section id="top">
+	
+		<div class="limit">
+			<section id="notice" style="padding-top: 20px; margin-bottom: 0 !important;">
+				<div class="container">
+					<div class="alert">
+						<p><strong>Important Information:</strong><br/>This is the archived version of CTCOVID.com; updates are currently paused. <a href="/">Click here</a> for more information.</p>
+					</div>
+				</div>
+			</section>
+		
+			<section id="meta">
+				<div class="container">
+					<h3 id="city"></h3>
+					<span id="population"></span>
+					<div class="fc"></div>
+					
+					<div id="badges"></div>
+					<div id="summary"></div>
+					<div id="updated">
+						<p><strong>Data Last Updated:</strong> <span></span>.</p>
+					</div>
+					<!--
+					<div id="vaccinations">
+						<p><strong>Vaccination Data Last Updated:</strong> <span>Sunday, February 14, 2021</span>.</p>
+					</div>
+					-->
+					<!--
+					<div id="facebook">
+						<a href="javascript:;" onclick="javascript:CT.share('facebook');" rel="noopener nofollow">Share On Facebook</a>
+					</div>
+					-->
+
+					<div id="twitter">
+						<a href="https://www.twitter.com/ctcovid" target="_blank" rel="noopener nofollow">Follow Us On Twitter</a>
+					</div>
+					
+					<div class="fc"></div>
+				</div>
+			</section>
+			
+			<section id="stats">
+				<div class="container">
+					<div class="column hoverable" id="stat-cases-new">
+						<div class="name">New Cases</div>
+						<div class="val">&nbsp;</div>
+						
+						<div class="meta">
+							<div class="discrete">0 Since 1/1</div>
+							<div class="delta">0 Since 1/1</div>
+						</div>
+					</div>
+
+					<div class="column hoverable" id="stat-deaths-new">
+						<div class="name">New Deaths</div>
+						<div class="val">0</div>
+						
+						<div class="meta">
+							<div class="discrete">0 Since 1/1</div>
+							<div class="delta">0 Since 1/1</div>
+						</div>
+					</div>
+
+					<div class="column hoverable" id="stat-hospitalizations-new">
+						<div class="name">New Hospitalized</div>
+						<div class="val">0</div>
+						
+						<div class="meta">
+							<div class="discrete">0 Since 1/1</div>
+							<div class="delta">0 Since 1/1</div>
+						</div>
+					</div>
+					
+					<div class="column hoverable" id="stat-tests-new">
+						<div class="name">New Tests</div>
+						<div class="val">0</div>
+						
+						<div class="meta">
+							<div class="discrete">0 Since 1/1</div>
+							<div class="delta">0 Since 1/1</div>
+						</div>
+					</div>
+
+					<div class="column hoverable vaccine" id="stat-vaccine-dose-1" title="Indicates how many people who have received their first dose of a COVID-19 vaccine.">
+						<div class="name">Vaccinated Dose 1</div>
+						<div class="val">0</div>
+						
+						<div class="meta decreasing">
+							<div class="discrete">0 Since 1/1</div>
+							<div class="delta">0 Since 1/1</div>
+						</div>
+					</div>
+
+					<div class="column hoverable vaccine" id="stat-vaccine-dose-1-pct" title="Indicates the percentage of the population that has received their first dose of a COVID-19 vaccine.">
+						<div class="name">% Pop. Vac. Dose 1</div>
+						<div class="val">0%</div>
+						
+						<div class="meta decreasing">
+							<div class="discrete">0 Since 1/1</div>
+							<div class="delta">0 Since 1/1</div>
+						</div>
+					</div>
+
+					<div class="column hoverable vaccine" id="stat-vaccine-dose-2" title="Indicates how many people who have received their final dose of a COVID-19 vaccine.">
+						<div class="name">Vaccinated Dose 2</div>
+						<div class="val">0</div>
+						
+						<div class="meta decreasing">
+							<div class="discrete">0 Since 1/1</div>
+							<div class="delta">0 Since 1/1</div>
+						</div>
+					</div>
+
+					<div class="column hoverable vaccine" id="stat-vaccine-dose-2-pct" title="Indicates the percentage of the population that has received their first dose of a COVID-19 vaccine.">
+						<div class="name">% Pop. Vac. Dose 2</div>
+						<div class="val">0%</div>
+						
+						<div class="meta decreasing">
+							<div class="discrete">0 Since 1/1</div>
+							<div class="delta">0 Since 1/1</div>
+						</div>
+					</div>
+					
+					<div class="column single" id="stat-cases-total">
+						<div class="name">Total Cases</div>
+						<div class="val">0.0</div>
+					</div>
+					
+					<div class="column single" id="stat-deaths-total">
+						<div class="name">Total Deaths</div>
+						<div class="val">0%</div>
+					</div>
+					
+					<div class="column single" id="stat-hospitalizations-total">
+						<div class="name">Total Hospitalized</div>
+						<div class="val">0.0</div>
+					</div>
+					
+					<div class="column single" id="stat-tests-total">
+						<div class="name">Total Tests</div>
+						<div class="val">0.0%</div>
+					</div>
+					
+					<div class="column single last" id="stat-per-100k" title="Indicates how many people per 100K people get infected with COVID-19 per day.">
+						<div class="name">Cases per 100K</div>
+						<div class="val">0.0</div>
+					</div>
+					
+					<div class="column single last" id="stat-tpr" title="Indicates the percentage of tests that resulted in a confirmed COVID-19 case.">
+						<div class="name">Positive Test Rate</div>
+						<div class="val">0%</div>
+					</div>
+					
+					<div class="column single last" id="stat-r0" title="Rt measures the number of people the average COVID-19 infected individual goes on to infect.">
+						<div class="name">Rt Estimate</div>
+						<div class="val">0.0</div>
+					</div>
+					
+					<div class="column single last" id="stat-fatality-rate" title="Percentage of people who have died from COVID-19.">
+						<div class="name">Fatality Rate</div>
+						<div class="val">0.0%</div>
+					</div>
+					
+					<div class="column single last" id="stat-attack-rate" title="Percentage of people who have been infected cumulatively.">
+						<div class="name">% Infected</div>
+						<div class="val">0.0%</div>
+					</div>
+					
+					<div class="column single last" id="stat-alert-status" title="Percentage of people who have been infected cumulatively.">
+						<div class="name">Alert Status</div>
+						<div class="val">None</div>
+					</div>
+					
+					<div class="column single last" id="stat-college-university" title="Percentage of people who have been infected cumulatively.">
+						<div class="name"># of Colleges</div>
+						<div class="val">0</div>
+					</div>
+					
+					<div class="fc"></div>
+				</div>
+			</section>
+			
+			<section id="disclaimer">
+				<div class="container">
+				<p>This website is NOT affiliated with the State of Connecticut, any medical institution or testing/vaccination location. It is operated by a private individual solely to provide an easy-to-use alternative to the dashboard provided by the State. You can visit the State of Connecticuts' official COVID-19 web page by <a href="https://portal.ct.gov/Coronavirus" rel="noopener nofollow" target="_blank" style="color: black;">clicking here</a>.</p></div>
+		</section>
+			
+			<div class="fc"></div>
+		</div>
+	</section>
+	
+	<main>
+		<section id="options">
+			<div class="container">
+				<div id="data">
+					<p>Data</p>
+					<ul>
+						<li id="selector-cases"><a href="javascript:;" onclick="CT.buildGraph('cases', 'data');">Cases</a></li>
+						<li id="selector-deaths"><a href="javascript:;" onclick="CT.buildGraph('deaths', 'data');">Deaths</a></li>
+						<li id="selector-hospitalizations"><a href="javascript:;" onclick="CT.buildGraph('hospitalizations', 'data');">Hospitalizations</a></li>
+						<li id="selector-tests"><a href="javascript:;" onclick="CT.buildGraph('tests', 'data');">Tests</a></li>
+						<li id="selector-vaccinations"><a href="javascript:;" onclick="CT.buildGraph('vaccinations', 'data');">Vaccinations</a></li>
+					</ul>
+				</div>
+				<div id="segmentation">
+					<p>Segmentation</p>
+					<ul>
+						<li id="selector-new"><a href="javascript:;" onclick="CT.buildGraph('new', 'segmentation');">New</a></li>
+						<li id="selector-total"><a href="javascript:;" onclick="CT.buildGraph('total', 'segmentation');">Total</a></li>
+						<li id="selector-delta"><a href="javascript:;" onclick="CT.buildGraph('delta', 'segmentation');">Rate Of Change</a></li>
+					</ul>
+				</div>
+				<div id="range">
+					<p>Range</p>
+					<ul>
+						<li id="selector-0"><a href="javascript:;" onclick="CT.buildGraph(0, 'range');">All</a></li>
+						<li id="selector-15"><a href="javascript:;" onclick="CT.buildGraph(15, 'range');">15 Day</a></li>
+						<li id="selector-30"><a href="javascript:;" onclick="CT.buildGraph(30, 'range');">30 Day</a></li>
+						<li id="selector-60"><a href="javascript:;" onclick="CT.buildGraph(60, 'range');">60 Day</a></li>
+					</ul>
+				</div>
+				<div id="plotting">
+					<p>Plot Method</p>
+					<ul>
+						<li id="selector-linear"><a href="javascript:;" onclick="CT.buildGraph('linear', 'plotting');">Linear</a></li>
+						<li id="selector-logarithmic"><a href="javascript:;" onclick="CT.buildGraph('logarithmic', 'plotting');">Logarithmic</a></li>
+					</ul>
+					<div class="fc"></div>
+				</div>
+				<div class="fc"></div>
+			</div>
+		</section>
+		
+		<section id="chart">
+			<div class="container"></div>
+		</section>
+		
+		<section id="demographics">
+			<div class="container">
+				<h3>Case/Death by Demographic Summary</h3>
+				
+				<div class="column" id="column-ages-cases"></div>
+				<div class="column" id="column-genders-cases"></div>
+				<div class="column last" id="column-ethnicity-cases"></div>
+				<div class="column" id="column-ages-deaths"></div>
+				<div class="column" id="column-genders-deaths"></div>
+				<div class="column last" id="column-ethnicity-deaths"></div>
+				<div class="fc"></div>
+			</div>
+
+			<div class="container">
+				<h3>Case/Death by Demographic Report</h3>
+
+				<div class="mobile">
+					<p>Please visit CTCOVID.com on a desktop or tablet device to view our Case/Death by Demographic Report. We are working as quickly as possible for a mobile friendly experience.</p>
+				</div>
+
+				<div class="desktop">
+					<div class="selectors">
+						<ul id="demographic">
+							<li id="selector-ages"><a href="javascript:;" onclick="CT.buildDemographicOutput('ages', '0-9');">Age</a></li>
+							<li id="selector-genders"><a href="javascript:;" onclick="CT.buildDemographicOutput('genders', 'female');">Gender</a></li>
+							<li id="selector-ethnicity"><a href="javascript:;" onclick="CT.buildDemographicOutput('ethnicity', 'Asian/Pac. Isl.');">Race/Ethnicity</a></li>
+						</ul>
+
+						<ul id="metric">
+
+						</ul>
+
+						<div class="fc"></div>
+					</div>
+
+					<div class="report">
+						<div class="sparkline cases">
+							
+						</div>
+
+						<div class="sparkline deaths">
+
+						</div>
+
+						<div class="stats">
+							<h4>Statistics</h4>
+							<ul>
+								<li id="demographics-stat-total-cases"><strong>Total Cases</strong><span>0</span></li>
+								<li id="demographics-stat-total-deaths"><strong>Total Deaths</strong><span>0</span></li>
+								<li id="demographics-stat-new-cases"><strong>New Cases</strong><span>0</span></li>
+								<li id="demographics-stat-new-deaths" class="last"><strong>New Deaths</strong><span>0</span></li>
+
+								<li id="demographics-stat-cases-per100k"><strong>Cases Per 100K</strong><span>0</span></li>
+								<li id="demographics-stat-deaths-per100k"><strong>Deaths Per 100K</strong><span>0</span></li>
+								<li id="demographics-stat-fatality-rate"><strong>Fatality Rate</strong><span>0</span></li>
+								<li id="demographics-stat-population" class="last"><strong>Population</strong><span>0</span></li>
+
+								<li id="demographics-stat-pct-cases"><strong>% Of Cases</strong><span>0</span></li>
+								<li id="demographics-stat-pct-deaths"><strong>% Of Deaths</strong><span>0</span></li>
+								<li id="demographics-stat-pct-population"><strong>% Of Population</strong><span>0</span></li>
+								<li id="demographics-stat-pct-infected" class="last"><strong>% Infected</strong><span>0</span></li>
+							</ul>
+
+							<div class="fc"></div>
+						</div>
+
+						<div class="fc"></div>
+
+						<div class="outcomes"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<section id="table">
+			<div class="container">
+				
+			</div>
+		</section>
+
+		<section id="schools">
+			<div class="container">
+				
+			</div>
+		</section>
+		
+		<section id="information">
+			<div class="container">
+				<h3>Important Information</h3>
+				
+				<p><strong>This website will no longer be available after Saturday, June 19.</strong></p>
+				
+				<p>CTCOVID.com allows you to view statistics about COVID-19 in Connecticut. You can view case, death and hospitalization statistics on a daily basis for your city, town, county or statewide.</p>
+				
+				<p>This website does not provide medical or public health advice and is not intended to diagnose, treat, cure, or prevent any disease. Please visit the <a href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html" target="_blank" rel="noopener nofollow">Centers for Disease Control and Prevention</a> website for more information about COVID-19.</p>
+				
+				<p>This website is operated by a private individual and is in no way connected, affiliated, associated or operated by any governmental agency, university, medical organization or any public or private health organization.</p>
+				
+				<p>COVID-19 case data is usually updated Monday through Friday using data provided by <a href="https://data.ct.gov" rel="noopener nofollow" target="_blank">Connecticut Open Data</a> and <a href="https://www.covidactnow.org" rel="noopener nofollow" target="_blank">CovidActNow</a>. Vaccination data is updated using data provided by <a href="https://covid.cdc.gov/covid-data-tracker/#vaccinations" target="_blank" rel="noopener nofollow">Centers for Disease Control Vaccination Tracker</a> and <a href="https://www.covidactnow.org" rel="noopener nofollow" target="_blank">CovidActNow</a>.</p>
+			</div>
+		</section>
+		
+		<section id="copyright">
+			<div class="container">
+				<p>Copyright &copy; 2020 - 2021 CTCOVID.com &mdash; <span>All Rights Reserved.</span></p>
+				<p><a href="https://www.twitter.com/ctcovid" target="_blank" rel="noopener nofollow">Follow Us On Twitter</a> &nbsp;|&nbsp; <a href="#faq" rel="nofollow">Frequently Asked Questions</a> &nbsp;|&nbsp; <a href="#attribution" rel="nofollow">Attribution</a> &nbsp;|&nbsp; <a href="https://github.com/ctcovid/ctcovid.github.io/issues" rel="nofollow noopener" target="_blank">Report A Bug</a> &nbsp;|&nbsp; <a href="#disclaimer" rel="nofollow">Disclaimer</a> &nbsp;|&nbsp; <a href="#privacy" rel="nofollow">Privacy Policy</a></p>
+				<div class="fc"></div>
+			</div>
+		</section>
+	</main>
+	
+	<script>
+	LazyLoad.css([
+		'stylesheet.css?' + window.Build,
+		'https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500&display=swap'
+	]);
+	
+	LazyLoad.js([
+		'lib/chart.min.js',
+		'lib/chart.labels.min.js',
+		'js/application.js?' + window.Build, 
+		'https://www.googletagmanager.com/gtag/js?id=UA-163338948-1'
+	], function() {
+		if(window.location.hostname == 'www.ctcovid.com') {
+			window.dataLayer = window.dataLayer || [];
+			
+			function gtag(){
+				dataLayer.push(arguments);
+			}
+			
+			gtag('js', new Date());
+			gtag('config', 'UA-163338948-1');
+		}
+		
+		try {
+			if(window.localStorage && window.localStorage.getItem('last_viewed_city') != '') {
+				window.location.hash = "#" + window.localStorage.getItem('last_viewed_city');
+			}
+		} catch(e) {}
+		
+		window.CT = new COVID_Statistics(window.location.hash != '' && window.location.hash != null ? (window.location.hash.replace('#', '') || 'connecticut') : 'connecticut');
+	});
+	
+	// frame buster
+	if(top != self) {
+		top.location = location;
+	}
+	</script>
+</body>
+</html>
